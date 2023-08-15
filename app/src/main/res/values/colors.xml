@@ -6,4 +6,5 @@
     <color name="green">#228c22</color>
     <color name="pantone_189">#f8a3bc</color>
     <color name="pantone_red">#ef3340</color>
+    <color name="pantone_lightGreen">#CCCCCC</color>
 </resources>
