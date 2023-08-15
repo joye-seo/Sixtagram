@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Sixtagram</string>
+    <string name="login_edit_password">비밀 번호 입력 하세요</string>
+    <string name="login_edit_email">이메일을 입력 하세요</string>
+    <string name="sign_up_email_overlap">중복 확인</string>
+    <string name="login_edit_name">이름을 입력 하세요</string>
+    <string name="sign_up_residence">거주지를 입력 하세요</string>
+    <string name="sign_up_mbti">mbti를 입력 하세요</string>
+    <string name="sign_up_hobby">취미를 입력 하세요</string>
+    <string name="sign_up_blog">블로그 주소를 입력 하세요</string>
+    <string name="sign_up_github">github 주소를 입력 하세요</string>
+    <string name="sign_up_concern">관심사를 입력 하세요</string>
+    <string name="sign_up_member">회원 가입 완료</string>
 </resources>
