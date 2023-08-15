@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.postDelayed
+import com.example.sixtagram.community.CommunityActivity
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
 
     private fun actionSplash() {
         Handler().postDelayed(2500) {
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, CommunityActivity::class.java)
             startActivity(intent)
             finish()
         }

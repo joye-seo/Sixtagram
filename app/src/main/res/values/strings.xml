@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Sixtagram</string>
+    <string name="calendar">캘린더</string>
+    <string name="member">멤버</string>
+    <string name="game">게임</string>
+    <string name="community">커뮤니티</string>
     <string name="login_edit_password">비밀 번호 입력 하세요</string>
     <string name="login_edit_email">이메일을 입력 하세요</string>
     <string name="sign_up_email_overlap">중복 확인</string>

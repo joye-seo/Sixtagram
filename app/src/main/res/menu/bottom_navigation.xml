@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/member"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_people"
+        android:title="@string/member" />
+
+    <item
+        android:id="@+id/calendar"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_calander"
+        android:title="@string/calendar" />
+
+    <item
+        android:id="@+id/community"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_community"
+        android:title="@string/community" />
+
+    <item
+        android:id="@+id/game"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_game"
+        android:title="@string/game" />
+
+</menu>
