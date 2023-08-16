@@ -21,6 +21,7 @@
     <string name="login_login_button">Login</string>
     <string name="login_membership">SignUp</string>
     <string name="login_member_search">Find ID Password</string>
+    <string name="notice">notice</string>
     <string name="sign_up_email_check">Please enter your email</string>
     <string name="sign_up_password_check">Please enter a password</string>
     <string name="sign_up_password_check2">6 or more characters with a combination of English, numbers and special characters</string>
