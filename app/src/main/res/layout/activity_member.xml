@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="6dp"
             android:text="Member"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="24dp"
-
+                android:background="@drawable/ic_member_circledimage"
                 android:layout_marginBottom="0dp"
                 android:src="@drawable/ic_member_test"
                 tools:src="@tools:sample/avatars" />
@@ -79,6 +79,7 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="0dp"
+                android:background="@drawable/ic_member_circledimage"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
@@ -111,7 +112,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="0dp"
                 android:src="@drawable/ic_member_test"
-                tools:src="@tools:sample/avatars" />
+                android:background="@drawable/ic_member_circledimage"                tools:src="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/textView5"
@@ -141,7 +142,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="0dp"
                 android:src="@drawable/ic_member_test"
-                tools:src="@tools:sample/avatars" />
+                android:background="@drawable/ic_member_circledimage"                tools:src="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -180,7 +181,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="0dp"
                 android:src="@drawable/ic_member_test"
-                tools:src="@tools:sample/avatars" />
+                android:background="@drawable/ic_member_circledimage"                tools:src="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/textView7"
