@@ -1,39 +1,53 @@
-package com.example.sixtagram.community
+package com.example.sixtagram.calendar
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import com.example.sixtagram.R
-import com.example.sixtagram.calendar.CalendarActivity
+import com.example.sixtagram.community.CommunityActivity
 import com.example.sixtagram.game.GameStartActivity
 import com.example.sixtagram.member.MemberActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class CommunityActivity : AppCompatActivity() {
+class CalendarActivity : AppCompatActivity() {
 
     private val bottomNav: BottomNavigationView by lazy {
         findViewById(R.id.bottom_nav)
     }
 
+    lateinit var mRvDiary: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_community)
+
+        setContentView(R.layout.activity_calendar)
+
         initNavigation()
+
+
+        mRvDiary = findViewById(R.id.recycler_diary)
+
+        val btnBlueWrite: FloatingActionButton = findViewById(R.id.btn_blue_write)
+        btnBlueWrite.setOnClickListener {
+
+
+        }
     }
 
-    private fun initNavigation() = with(bottomNav)
-    {
-        selectedItemId = R.id.community
+    private fun initNavigation() = with(bottomNav) {
+
+        selectedItemId = R.id.calendar
 
         val member = MemberActivity()
-        val calendar = CalendarActivity()
+        val community = CommunityActivity()
         val game = GameStartActivity()
 
         setOnItemSelectedListener { item ->
-
             when (item.itemId) {
                 R.id.member -> mBinding(member)
-                R.id.calendar -> mBinding(calendar)
+                R.id.community -> mBinding(community)
                 R.id.game -> mBinding(game)
             }
             true

@@ -1,12 +1,11 @@
 package com.example.sixtagram.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 import com.example.sixtagram.member.MemberActivity
 import com.example.sixtagram.memberData.Member
@@ -55,6 +54,7 @@ class LoginActivity : AppCompatActivity() {
             startActivity(memberShipIntent)
         }
     }
+
     private fun toast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
