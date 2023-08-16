@@ -8,7 +8,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/constraintLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/email"
@@ -84,19 +87,24 @@
                 app:srcCompat="@drawable/ic_login_password" />
 
 
-            <EditText
-                android:id="@+id/password"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="@string/login_edit_password"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView3"
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:passwordToggleEnabled="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/login_edit_password"
+                    android:inputType="textPassword"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -129,19 +137,24 @@
                 app:srcCompat="@drawable/ic_login_password" />
 
 
-            <EditText
-                android:id="@+id/password2"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="@string/login_edit_password"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView5"
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:passwordToggleEnabled="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password2"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/login_edit_password"
+                    android:inputType="textPassword"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -150,7 +163,7 @@
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="50dp"
             android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
@@ -521,12 +534,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginTop="15dp"
-            android:text="TextView"
+            android:text="@string/sign_up_email_check"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email" />
 
         <Button
-            android:id="@+id/emailOverlap"
+            android:id="@+id/emailOverlap2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
@@ -537,13 +550,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email" />
 
+        <Button
+            android:id="@+id/passOverlap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/sign_up_email_overlap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordText2" />
+
         <TextView
             android:id="@+id/passwordCheck"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginTop="5dp"
-            android:text="TextView"
+            android:text="@string/sign_up_password_check2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordText" />
 
@@ -553,7 +578,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginTop="5dp"
-            android:text="TextView"
+            android:text="@string/sign_up_password_check"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordText2" />
 
