@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sixtagram</string>
+    <string name="calendar">Calendar</string>
+    <string name="member">Member</string>
+    <string name="game">Game</string>
+    <string name="community">Community</string>
+    <string name="login_edit_password">Enter your password</string>
+    <string name="login_edit_email">Enter your email</string>
+    <string name="sign_up_email_overlap">"Double check "</string>
+    <string name="login_edit_name">Enter your name</string>
+    <string name="sign_up_residence">Enter your home address.</string>
+    <string name="sign_up_mbti">Enter your mbti</string>
+    <string name="sign_up_hobby">Enter your hobby</string>
+    <string name="sign_up_blog">Enter your blog address</string>
+    <string name="sign_up_github">Enter your github address</string>
+    <string name="sign_up_concern">Enter your interests</string>
+    <string name="sign_up_member">Member registration completed</string>
+    <string name="login_email">Enter your email</string>
+    <string name="login_password">Enter your password</string>
+    <string name="login_login_button">Login</string>
+    <string name="login_membership">SignUp</string>
+    <string name="login_member_search">Find ID Password</string>
+</resources>
