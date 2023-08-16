@@ -53,7 +53,8 @@
                 android:layout_marginStart="18dp"
                 android:layout_marginEnd="40dp"
                 android:text="서수현 (로그인 한 사람)"
-                android:textSize="18dp" />
+                android:textSize="18dp"
+                android:layout_marginTop="25dp"/>
 
         </LinearLayout>
 
@@ -82,7 +83,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:src="@drawable/ic_member_test"
-                android:text="권민석" />
+                android:text="권민석"
+                android:layout_marginTop="25dp"/>
 
         </LinearLayout>
 
@@ -112,7 +114,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:text="이동규" />
+                android:text="이동규"
+                android:layout_marginTop="25dp"/>
 
         </LinearLayout>
 
@@ -141,7 +144,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:text="이성진" />
+                android:text="이성진"
+                android:layout_marginTop="25dp"/>
 
         </LinearLayout>
 
@@ -179,7 +183,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
-                android:text="조원준" />
+                android:text="조원준"
+                android:layout_marginTop="25dp"/>
 
         </LinearLayout>
 
