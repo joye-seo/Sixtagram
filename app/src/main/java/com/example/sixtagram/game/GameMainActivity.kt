@@ -1,5 +1,6 @@
 package com.example.sixtagram.game
 
+import android.content.Context
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
@@ -12,6 +13,8 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
+import com.google.android.material.internal.ViewUtils.dpToPx
+import kotlin.random.Random
 
 class GameMainActivity : AppCompatActivity() {
     private lateinit var chronometer: Chronometer
@@ -51,6 +54,9 @@ class GameMainActivity : AppCompatActivity() {
             findViewById<Button>(R.id.button25)
         )
 
+        val handlerText = Handler() // 추가해준거1-1
+        var isTextHidden = false // 추가해준거1-2
+
         val btfn = findViewById<Button>(R.id.button27)
         val btri = findViewById<Button>(R.id.button29)
         val tv1 = findViewById<TextView>(R.id.textView1)
@@ -67,7 +73,25 @@ class GameMainActivity : AppCompatActivity() {
         var countfn = 1
         var count2 = 0 // 이지모드 이전 인덱스 추적용
         val originalBackgroundColor2 = buttons[0].backgroundTintList
+        val updateTextRunnable = object : Runnable { // 추가해준거1-3
+            override fun run() {
+                // 모든 버튼의 텍스트 변경
+                for (button in buttons) {
+                    if (isTextHidden) {
+                        button.text = button.tag.toString()  // tag에 원래의 텍스트를 저장했다고 가정
+                    } else {
+                        button.tag = button.text
+                        button.text = ""
+//                        button.setTextColor(originalBackgroundColor2)
+                    }
+                }
 
+                isTextHidden = !isTextHidden
+
+                // 1초마다 텍스트 변경 (1000ms = 1s)
+                handlerText.postDelayed(this, 333)
+            }
+        }
 
         chronometer.onChronometerTickListener = Chronometer.OnChronometerTickListener {
             val elapsedMillis = SystemClock.elapsedRealtime() - it.base
@@ -80,120 +104,180 @@ class GameMainActivity : AppCompatActivity() {
         tv1.setText("찾아야 되는 숫자 : ${count}")
 
         btfn.setOnClickListener {
-            if (countfn % 5 == 0) {
-                val toast = Toast.makeText(this, "${countfn}번이나 다음숫자 찾기를 하셧군요?", Toast.LENGTH_SHORT)
+            var randommessage: String = ""
+            var randommessagenumber = 0
+
+            val layoutParams = btfn.layoutParams
+            layoutParams.height = dpToPx(this@GameMainActivity, 50f - countfn*2)
+            btfn.layoutParams = layoutParams
+            if((countfn % 9 == 0)){randommessagenumber = 3
+
+            }
+            else {randommessagenumber = (0..2).random()}
+            if (countfn % 3 == 0) {
+
+                if(countfn == 21){
+                    layoutParams.height = dpToPx(this@GameMainActivity, 50f)
+                    btfn.layoutParams = layoutParams
+                    btfn.backgroundTintList = ColorStateList.valueOf(Color.WHITE)
+                    btfn.setText("버튼이 찌그러져 죽었어요")
+                    btfn.setTextColor(Color.BLACK)
+                    randommessagenumber = 4
+                }
+                when (randommessagenumber) {
+                    0 -> {
+                        randommessage = "${countfn}번이나 힌트를 누르셧군요?"
+                    }
+
+                    1 -> {
+                        randommessage = "${countfn}번 눌렀으면 힌트없이 해보자구요"
+                    }
+
+                    2 -> {
+                        randommessage = "힌트를 누르면 최종스코어가 낮아져요."
+                    }
+
+                    3 -> {
+                        randommessage = "그만!!!!!!! 버튼부서지겠다!!!"
+                    }
+                    4 -> {
+                        randommessage = "버튼을 죽이셨어요"}
+                }
+
+                val toast = Toast.makeText(this, "${randommessage}", Toast.LENGTH_SHORT)
                 toast.show()
                 Handler(Looper.getMainLooper()).postDelayed({
                     // Toast 숨기기
                     toast.cancel()
-                }, 2500)  // 2.5초 후에 토스트 메시지를 숨깁니다.
+                }, 2000)  // 2초 후에 토스트 메시지를 숨깁니다.
                 // 더 이상의 논리식을 실행하지 않습니다.
             }
-            if (state2 == 1) {
-                val toast = Toast.makeText(this, "게임이 종료되었습니다.", Toast.LENGTH_SHORT)
-                toast.show()
-                Handler(Looper.getMainLooper()).postDelayed({
-                    // Toast 숨기기
-                    toast.cancel()
-                }, 500)  // 0.5초 후에 토스트 메시지를 숨깁니다.
-                // 더 이상의 논리식을 실행하지 않습니다.
-                return@setOnClickListener
-            }
-
-            when (state) {
-                "1~25" -> {
-                    countfn++
-                    for (i in 0..24) {
-                        if (buttons[i].text == count.toString()) {
-                            val originalBackgroundColor = buttons[i].backgroundTintList
-                            val originalTextColor = buttons[i].currentTextColor
-
-                            // 클릭 효과 적용
-                            buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
-                            buttons[i].setTextColor(Color.BLACK)
-
-                            // 짧은 시간 후 원래의 색상으로 복구
-                            Handler(Looper.getMainLooper()).postDelayed({
-                                buttons[i].backgroundTintList = originalBackgroundColor
-                                buttons[i].setTextColor(originalTextColor)
-                            }, 400)
-                            break
-                        }
-                    }
+                if (state2 == 1) {
+                    val toast = Toast.makeText(this, "게임이 종료되었습니다.", Toast.LENGTH_SHORT)
+                    toast.show()
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        // Toast 숨기기
+                        toast.cancel()
+                    }, 500)  // 0.5초 후에 토스트 메시지를 숨깁니다.
+                    // 더 이상의 논리식을 실행하지 않습니다.
+                    return@setOnClickListener
                 }
 
-                "1~50" -> {
-                    countfn++
-                    for (i in 0..49) {
-                        if (buttons[i].text == count.toString()) {
-                            val originalBackgroundColor = buttons[i].backgroundTintList
-                            val originalTextColor = buttons[i].currentTextColor
+                when (state) {
+                    "1~25" -> {
+                        countfn++
+                        for (i in 0..24) {
+                            if (buttons[i].text == count.toString()) {
+                                val originalBackgroundColor = buttons[i].backgroundTintList
+                                val originalTextColor = buttons[i].currentTextColor
 
-                            // 클릭 효과 적용
-                            buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
-                            buttons[i].setTextColor(Color.BLACK)
+                                // 클릭 효과 적용
+                                buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
+                                buttons[i].setTextColor(Color.BLACK)
 
-                            // 짧은 시간 후 원래의 색상으로 복구
-                            Handler(Looper.getMainLooper()).postDelayed({
-                                buttons[i].backgroundTintList = originalBackgroundColor
-                                buttons[i].setTextColor(originalTextColor)
-                            }, 400)
-                            break
+                                // 짧은 시간 후 원래의 색상으로 복구
+                                Handler(Looper.getMainLooper()).postDelayed({
+                                    buttons[i].backgroundTintList = originalBackgroundColor
+                                    buttons[i].setTextColor(originalTextColor)
+                                }, 400)
+                                break
+                            }
                         }
                     }
 
+                    "1~50" -> {
+                        countfn++
+                        for (i in 0..49) {
+                            if (buttons[i].text == count.toString()) {
+                                val originalBackgroundColor = buttons[i].backgroundTintList
+                                val originalTextColor = buttons[i].currentTextColor
+
+                                // 클릭 효과 적용
+                                buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
+                                buttons[i].setTextColor(Color.BLACK)
+
+                                // 짧은 시간 후 원래의 색상으로 복구
+                                Handler(Looper.getMainLooper()).postDelayed({
+                                    buttons[i].backgroundTintList = originalBackgroundColor
+                                    buttons[i].setTextColor(originalTextColor)
+                                }, 400)
+                                break
+                            }
+                        }
+
+                    }
                 }
+
+            }
+            btri.setOnClickListener {
+                finish()
+                startActivity(intent)
             }
 
-        }
-        btri.setOnClickListener {
-            finish()
-            startActivity(intent)
-        }
+            for (i in buttons.indices) {
+                buttons[i].setText("${numbers[i]}")
+            }
 
-        for (i in buttons.indices) {
-            buttons[i].setText("${numbers[i]}")
-        }
-
-        if (state3 == "이지 모드") {
-            for (i in 0..24) {
-                if (buttons[i].text == "1") {
-                    count2 = i
-                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
-                    buttons[i].setTextColor(Color.BLACK)
+            if (state3 == "이지 모드") {
+                for (i in 0..24) {
+                    if (buttons[i].text == "1") {
+                        count2 = i
+                        buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
+                        buttons[i].setTextColor(Color.BLACK)
+                    }
                 }
             }
-        }
-        for (i in buttons.indices) {
-            buttons[i].setOnClickListener {
+            for (i in buttons.indices) {
+                buttons[i].setOnClickListener {
 
-                if (count.toString() == ((buttons[i].text).toString())) {
-                    when (count) {
-                        1 -> {
+                    if (count.toString() == ((buttons[i].text).toString())) {
+                        when (count) {
+                            1 -> {
 //                                elapsedTime = 0L  // elapsedTime 초기화
-                            handler.post(updateRunnable)  // 타이머 시작
-                            if (state == "1~25") {
-//                                    buttons[i].text = ""
-                                buttons[i].visibility = Button.INVISIBLE
-                            } else if (state == "1~50") {
-                                buttons[i].text = numbers2[i].toString()
-                            }
-                        }
+                                handler.post(updateRunnable)  // 타이머 시작
 
-                        in 2..24 -> {
-                            if (state == "1~50") {
-                                buttons[i].text = numbers2[i].toString()
-                            } else if (state == "1~25") {
+                                if(state3 == "하드 모드")
+                                {handlerText.post(updateTextRunnable)}
+                                if (state == "1~25") {
 //                                    buttons[i].text = ""
-                                buttons[i].visibility = Button.INVISIBLE
+                                    buttons[i].visibility = Button.INVISIBLE
+                                } else if (state == "1~50") {
+                                    buttons[i].text = numbers2[i].toString()
+                                }
                             }
-                        }
 
-                        25 -> {
-                            if (state == "1~50") {
-                                buttons[i].text = numbers2[i].toString()
-                            } else if (state == "1~25") {
+                            in 2..24 -> {
+                                if (state == "1~50") {
+                                    buttons[i].text = numbers2[i].toString()
+                                } else if (state == "1~25") {
 //                                    buttons[i].text = ""
+                                    buttons[i].visibility = Button.INVISIBLE
+                                }
+                            }
+
+                            25 -> {
+                                if (state == "1~50") {
+                                    buttons[i].text = numbers2[i].toString()
+                                } else if (state == "1~25") {
+//                                    buttons[i].text = ""
+                                    buttons[i].visibility = Button.INVISIBLE
+                                    handler.removeCallbacks(updateRunnable)  // 타이머 정지
+                                    finalTime = elapsedTime
+                                    tv1.setText("끝!!!! 축하드립니다!!!")
+                                    tv2.setText("기록 : ${finalTime / 1000}.${finalTime % 1000}")
+                                    state2 = 1
+                                }
+                            }
+
+                            in 26..49 -> {
+                                if (state == "1~50") {
+//                                    buttons[i].text = ""
+                                    buttons[i].visibility = Button.INVISIBLE
+                                }
+                            }
+
+                            50 -> {
+//                                buttons[i].text = ""
                                 buttons[i].visibility = Button.INVISIBLE
                                 handler.removeCallbacks(updateRunnable)  // 타이머 정지
                                 finalTime = elapsedTime
@@ -201,66 +285,52 @@ class GameMainActivity : AppCompatActivity() {
                                 tv2.setText("기록 : ${finalTime / 1000}.${finalTime % 1000}")
                                 state2 = 1
                             }
-                        }
 
-                        in 26..49 -> {
-                            if (state == "1~50") {
-//                                    buttons[i].text = ""
-                                buttons[i].visibility = Button.INVISIBLE
+                        }
+                        count++
+                        if (state3 == "이지 모드") {
+
+                            for (j in 0..24) {
+                                if ((count).toString() == ((buttons[j].text).toString())) {
+                                    buttons[j].backgroundTintList =
+                                        ColorStateList.valueOf(Color.BLUE)
+                                    buttons[j].setTextColor(Color.BLACK)
+                                    buttons[count2].backgroundTintList = originalBackgroundColor2
+                                    buttons[count2].setTextColor(Color.WHITE)
+                                    count2 = j
+                                    break
+                                }
                             }
                         }
-
-                        50 -> {
-//                                buttons[i].text = ""
-                            buttons[i].visibility = Button.INVISIBLE
-                            handler.removeCallbacks(updateRunnable)  // 타이머 정지
-                            finalTime = elapsedTime
-                            tv1.setText("끝!!!! 축하드립니다!!!")
-                            tv2.setText("기록 : ${finalTime / 1000}.${finalTime % 1000}")
-                            state2 = 1
+                        if (state2 != 1) {
+                            tv1.setText("찾아야 되는 숫자 : ${count}")
                         }
-
-                    }
-                    count++
-                    if (state3 == "이지 모드") {
-
-                        for (j in 0..24) {
-                            if ((count).toString() == ((buttons[j].text).toString())) {
-                                buttons[j].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
-                                buttons[j].setTextColor(Color.BLACK)
-                                buttons[count2].backgroundTintList = originalBackgroundColor2
-                                buttons[count2].setTextColor(Color.WHITE)
-                                count2 = j
-                                break
-                            }
-                        }
-                    }
-                    if (state2 != 1) {
-                        tv1.setText("찾아야 되는 숫자 : ${count}")
                     }
                 }
             }
         }
+
+    fun dpToPx(context: Context, dp: Float): Int {
+        val density = context.resources.displayMetrics.density
+        return (dp * density + 0.5f).toInt()
     }
+        private val updateRunnable: Runnable = object : Runnable {
+            override fun run() {
+                elapsedTime += (updateIntervalMillis) * 5 / 3
+                val totalSeconds = elapsedTime / 1000
+                val minutes = totalSeconds / 60
+                val seconds = totalSeconds % 60
+                val milliseconds = elapsedTime % 1000
+                chronometer.text = String.format("%02d:%02d.%03d", minutes, seconds, milliseconds)
 
-    private val updateRunnable: Runnable = object : Runnable {
-        override fun run() {
-            elapsedTime += (updateIntervalMillis) * 5 / 3
-            val totalSeconds = elapsedTime / 1000
-            val minutes = totalSeconds / 60
-            val seconds = totalSeconds % 60
-            val milliseconds = elapsedTime % 1000
-            chronometer.text = String.format("%02d:%02d.%03d", minutes, seconds, milliseconds)
-
-            handler.postDelayed(this, updateIntervalMillis)
+                handler.postDelayed(this, updateIntervalMillis)
+            }
+        }
+        override fun onDestroy() {
+            super.onDestroy()
+            handler.removeCallbacks(updateRunnable)
         }
     }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        handler.removeCallbacks(updateRunnable)
-    }
-}
 
 // 추가하고자 하는 기능
 // 1. 난이도별 구현하기(1~25 / 1~50 / 1~75) 1~25면 STATE1 1~50이면
@@ -284,9 +354,19 @@ class GameMainActivity : AppCompatActivity() {
 // 17. 추가할꺼 : 다 쓴 버튼은 사라지게 하기.
 // 18. 추가할꺼 : 점수 만들기.
 // 18. 추가할꺼 : 이지 , 1~25가 기본
-// 18. 추가할꺼 : 노멀 : 2.5배 , 1~50 : 4배
+// 18. 추가할꺼 : 노멀 : 2.5배 하드 5배 , 1~50 : 4배
 // 18. 추가할꺼 : 다음숫자 찾기 횟수에 따라 점수 차감
 // 19. 클릭했을때 select
 // 20. 1 클릭했을떄 시작을 알려주는 뭔가를 추가해주기
 // 21. 버튼을 누르면 잠깐 이미지 바뀌고 사라지게끔 select 이용
 // 22. 다음 화면 3 2 1 하고 화면이 뜨게끔.
+// 23. 랜덤으로 뜨게해보자 토글메세지.
+// 24. 버튼 어느한도 이상으로 누르면 버튼 부서지는 모양도 추가해보자.
+// 25. 그리고 버튼 부서지겟다는 어느한도이상일때만 나오도록(0~2까지만 구현하고 count
+// 26. 하드모드(숫자가 잠시동안 나타낫다 사라졋다를 반복하게끔)
+// 26. 지옥모드(숫자가 잠시동안 나타낫다 사라졋다를 반복하게끔 나타낫을때만 클릭가능)
+// 27. 점수 만들기
+// 28. 게임 일시정지
+// 29. 게임 설명서?
+// 30. 플레이스토어에 1to50 비슷한 게임들 찾아보면서 비교해가면서 추가할만한거 찾아보기
+// 31.

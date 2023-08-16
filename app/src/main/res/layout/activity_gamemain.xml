@@ -360,8 +360,8 @@
     <Button
         android:id="@+id/button27"
         android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:text="다음숫자 찾기(클릭)"
+        android:layout_height="50dp"
+        android:text="힌트(다음숫자 찾기)"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -371,10 +371,11 @@
         app:layout_constraintVertical_bias="0.8" />
 
 
+
     <Button
         android:id="@+id/button29"
         android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="게임 재시작"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
