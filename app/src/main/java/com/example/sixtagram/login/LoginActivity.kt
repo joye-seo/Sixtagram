@@ -3,6 +3,7 @@ package com.example.sixtagram.login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -19,12 +20,15 @@ class LoginActivity : AppCompatActivity() {
         var i: Int
 
         var email = findViewById<EditText>(R.id.email2)
-        var password = findViewById<EditText>(R.id.password)
+        var password = findViewById<EditText>(R.id.password2)
         val btn1 = findViewById<Button>(R.id.login)
         val btn2 = findViewById<Button>(R.id.memberShip)
 
+//        password.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+
+
         btn1.setOnClickListener {
-            if (email.text.isNullOrEmpty() && password.text.isNullOrEmpty()) {
+            if (email.text.isNullOrEmpty() || password.text.isNullOrEmpty()) {
                 toast("아이디와 비번을 입력 하여 주세요")
             } else {
                 i = 0

@@ -11,4 +11,9 @@
     <string name="sign_up_github">github 주소를 입력 하세요</string>
     <string name="sign_up_concern">관심사를 입력 하세요</string>
     <string name="sign_up_member">회원 가입 완료</string>
+    <string name="login_email">이메일을 입력 하세요</string>
+    <string name="login_password">비밀 번호를 입력 하세요</string>
+    <string name="login_login_button">로그인</string>
+    <string name="login_membership">회원 가입</string>
+    <string name="login_member_search">아이디와 비밀 번호 찾기</string>
 </resources>
