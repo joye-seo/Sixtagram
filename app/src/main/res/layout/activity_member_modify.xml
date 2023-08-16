@@ -31,13 +31,12 @@
             tools:layout_editor_absoluteX="0dp">
 
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView2"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="24dp"
-                android:background="@drawable/ic_member_circledimage"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:src="@drawable/ic_member_test" />
 
             <TextView
                 android:id="@+id/textView9"
