@@ -1,7 +1,7 @@
 package com.example.sixtagram.community
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 
 class CommunityAddActivity : AppCompatActivity() {

@@ -1,6 +1,6 @@
-package com.example.sixtagram.calander
+package com.example.sixtagram.calendar
 
-class CalanderModel {
+class CalendarModel {
 
     var id : Int = 0              // 게시물 고유 ID 값
     var title : String = ""       // 게시물 제목

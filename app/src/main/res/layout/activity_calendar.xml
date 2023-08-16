@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".calander.CalanderActivity">
+    tools:context=".calendar.CalendarActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,15 +14,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_margin="16dp"
             android:gravity="center"
-            android:layout_margin="16dp">
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@drawable/ic_calander"
-                android:layout_marginRight="20sp"/>
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_calendar" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -30,9 +30,7 @@
                 android:text="캘린더 입니다."
                 android:textColor="@color/black"
                 android:textSize="24sp"
-                android:textStyle="bold"/>
-
-
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -43,10 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="16dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-
-
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 
     </LinearLayout>
@@ -55,11 +50,21 @@
         android:id="@+id/btn_blue_write"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_marginRight="24dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:backgroundTint="#448AFF"
         android:src="@drawable/ic_modify"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/white" />
 
-</FrameLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottom_navigation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

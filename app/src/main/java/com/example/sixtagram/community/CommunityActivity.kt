@@ -3,10 +3,10 @@ package com.example.sixtagram.community
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.sixtagram.MainActivity
 import com.example.sixtagram.R
-import com.example.sixtagram.calander.CalanderActivity
-import com.example.sixtagram.game.GameActivity
+import com.example.sixtagram.calendar.CalendarActivity
+import com.example.sixtagram.game.GameStartActivity
+import com.example.sixtagram.member.MemberActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CommunityActivity : AppCompatActivity() {
@@ -23,13 +23,13 @@ class CommunityActivity : AppCompatActivity() {
 
     private fun initNavigation() = with(bottomNav)
     {
-        bottomNav.selectedItemId = R.id.community
+        selectedItemId = R.id.community
 
-        val member = MainActivity()
-        val calendar = CalanderActivity()
-        val game = GameActivity()
+        val member = MemberActivity()
+        val calendar = CalendarActivity()
+        val game = GameStartActivity()
 
-        this.setOnItemSelectedListener { item ->
+        setOnItemSelectedListener { item ->
 
             when (item.itemId) {
                 R.id.member -> mBinding(member)

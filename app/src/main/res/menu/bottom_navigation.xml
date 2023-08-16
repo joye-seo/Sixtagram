@@ -10,7 +10,7 @@
     <item
         android:id="@+id/calendar"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_calander"
+        android:icon="@drawable/ic_calendar"
         android:title="@string/calendar" />
 
     <item
