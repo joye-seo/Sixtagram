@@ -15,11 +15,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        var memberList = Member.retrieveMembers()
+        val memberList = Member.retrieveMembers()
         var i: Int
-
-        var email = findViewById<EditText>(R.id.email2)
-        var password = findViewById<EditText>(R.id.password2)
+        val email = findViewById<EditText>(R.id.email2)
+        val password = findViewById<EditText>(R.id.password2)
         val btn1 = findViewById<Button>(R.id.login)
         val btn2 = findViewById<Button>(R.id.memberShip)
 
