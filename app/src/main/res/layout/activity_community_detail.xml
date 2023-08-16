@@ -1,8 +1,163 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
     tools:context=".community.CommunityDetailActivity">
+
+    <LinearLayout
+        android:id="@+id/layout_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_community_detail_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:src="@drawable/ic_back" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_community_detail_modify"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:padding="8dp"
+            android:src="@drawable/ic_modify" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_community_detail_delete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_delete" />
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_app_bar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_community_detail_profile"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:src="@color/pantone_189"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_community_detail_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:text="이름"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_community_detail_profile"
+                app:layout_constraintStart_toEndOf="@id/iv_community_detail_profile"
+                app:layout_constraintTop_toTopOf="@id/iv_community_detail_profile" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_community_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/pantone_189"
+                app:layout_constraintTop_toBottomOf="@id/iv_community_detail_profile"
+                app:srcCompat="@drawable/ic_image_add" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_community_detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="테스트입니다"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_community_detail_image" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_community_detail_content"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_community_detail_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_write_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="작성일자"
+                app:layout_constraintEnd_toStartOf="@id/tv_write_time"
+                app:layout_constraintTop_toBottomOf="@id/tv_community_detail_content" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_write_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="작성일자"
+                app:layout_constraintBottom_toBottomOf="@id/tv_write_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_write_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_modify_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="수정일자"
+                app:layout_constraintEnd_toStartOf="@id/tv_modify_time"
+                app:layout_constraintTop_toBottomOf="@id/tv_write_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_modify_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="작성일자"
+                app:layout_constraintBottom_toBottomOf="@id/tv_modify_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf=""
+                app:layout_constraintTop_toTopOf="@id/tv_modify_title" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_heart"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_modify_time"
+                app:lottie_rawRes="@raw/lottie_heart" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

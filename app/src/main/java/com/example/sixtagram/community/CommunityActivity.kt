@@ -10,7 +10,7 @@ import com.example.sixtagram.member.MemberActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CommunityActivity : AppCompatActivity() {
-
+    
     private val bottomNav: BottomNavigationView by lazy {
         findViewById(R.id.bottom_nav)
     }
