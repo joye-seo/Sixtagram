@@ -13,8 +13,20 @@
         android:theme="@style/Theme.Sixtagram"
         tools:targetApi="31">
         <activity
-            android:name=".game.GameActivity"
+            android:name=".game.GameEndActivity"
             android:exported="false" />
+        <activity
+            android:name=".game.GameMainActivitiy"
+            android:exported="false" />
+        <activity
+            android:name=".game.GameStartActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".community.CommunityAddActivity"
             android:exported="false" />
@@ -48,13 +60,7 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
