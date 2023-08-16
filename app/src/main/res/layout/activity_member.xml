@@ -45,7 +45,7 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="24dp"
-
+                android:background="@drawable/ic_member_circledimage"
                 android:layout_marginBottom="0dp"
                 android:src="@drawable/ic_member_test"
                 tools:src="@tools:sample/avatars" />
@@ -79,6 +79,7 @@
                 android:layout_height="80dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="0dp"
+                android:background="@drawable/ic_member_circledimage"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
@@ -111,6 +112,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="0dp"
                 android:src="@drawable/ic_member_test"
+                android:background="@drawable/ic_member_circledimage"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
@@ -141,6 +143,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="0dp"
                 android:src="@drawable/ic_member_test"
+                android:background="@drawable/ic_member_circledimage"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
@@ -180,6 +183,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginBottom="0dp"
                 android:src="@drawable/ic_member_test"
+                android:background="@drawable/ic_member_circledimage"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
