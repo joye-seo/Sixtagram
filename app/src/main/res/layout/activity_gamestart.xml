@@ -35,7 +35,7 @@
         android:id="@+id/button3"
         android:layout_width="150dp"
         android:layout_height="60dp"
-        android:text="노멀 모드"
+        android:text="이지 모드"
         android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

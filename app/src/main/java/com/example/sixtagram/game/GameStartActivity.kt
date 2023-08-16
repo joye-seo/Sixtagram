@@ -25,7 +25,7 @@ class GameStartActivity : AppCompatActivity() {
         val btLv = findViewById<Button>(R.id.button2)
         val btm = findViewById<Button>(R.id.button3)
         var numsize: String = "1~25" // "1~25" "1~50"
-        var mode: String = "노멀 모드" // "easy" "normal"
+        var mode: String = "이지 모드" // "easy" "normal" "hard"
 
         btSt.setOnClickListener {
             val intent2 = Intent(this, GameMainActivity::class.java)
@@ -45,12 +45,15 @@ class GameStartActivity : AppCompatActivity() {
 
         btm.setOnClickListener {
             when (mode) {
-                "노멀 모드" -> {
-                    mode = "이지 모드"
-                }
-
                 "이지 모드" -> {
                     mode = "노멀 모드"
+                }
+                "노멀 모드" -> {
+                    mode = "하드 모드"
+                }
+
+                "하드 모드" -> {
+                    mode = "이지 모드"
                 }
             }
             btm.setText("${mode}")
