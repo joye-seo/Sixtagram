@@ -29,10 +29,9 @@
             android:exported="false" />
         <activity
             android:name=".community.CommunityActivity"
-            android:exported="false" />
-        <activity
-            android:name=".calendar.CalendarActivity"
-            android:exported="false" />
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".calendar.CalendarActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".member.MemberModifyActivity"
             android:exported="false" />
@@ -41,14 +40,15 @@
             android:exported="false" />
         <activity
             android:name=".member.MemberActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false"></activity>
         <activity
             android:name=".login.SignUpActivity"
             android:exported="false" />
+        <activity android:name=".calendar.NotionTextEditActivity" />
+
         <activity
-            android:name=".login.LoginActivity"
-            android:exported="true" >
+            android:name=".calendar.CalendarActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

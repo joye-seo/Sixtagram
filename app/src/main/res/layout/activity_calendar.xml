@@ -7,18 +7,21 @@
     tools:context=".calendar.CalendarActivity"
     android:background="#f8a3bc">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
+            android:background="#CCCCCC"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:background="#CCCCCC">
+            android:orientation="horizontal">
 
             <ImageView
                 android:layout_width="30dp"
@@ -37,6 +40,43 @@
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_margin="16dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_notifications" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="공지사항 : "
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/notionTxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="공지사항을 변경해주세요."
+                android:textColor="#228c22" />
+
+            <ImageView
+                android:id="@+id/notionBtn"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/ic_modify" />
+
+
+        </LinearLayout>
 
         <TextView
             android:id="@+id/dayText"
@@ -44,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:textSize="24sp"/>
+            android:textSize="24sp" />
 
 
         <CalendarView
@@ -55,22 +95,36 @@
             android:background="@color/white" />
 
 
+                <TextView
+                    android:id="@+id/memoTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="114dp"
+                    android:text="메모장 입니다." />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/clearBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#448AFF"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/writeBtn"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="#448AFF"
+            android:src="@drawable/ic_modify"
+            app:tint="@color/white" />
+
+
     </LinearLayout>
-
-
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_blue_write"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:backgroundTint="#448AFF"
-        android:src="@drawable/ic_modify"
-        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:tint="@color/white" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
