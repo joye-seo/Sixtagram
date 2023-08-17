@@ -86,7 +86,7 @@
             app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress2"
+            android:id="@+id/et_email"
             android:layout_width="219dp"
             android:layout_height="51dp"
             android:layout_marginStart="30dp"
@@ -105,10 +105,10 @@
             android:text="거주지"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+            app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/tv_regidence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -125,10 +125,10 @@
             android:text="mbti"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_regidence" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/tv_mbti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="비밀"
@@ -145,10 +145,10 @@
             android:text="취미"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_mbti" />
 
         <TextView
-            android:id="@+id/textView16"
+            android:id="@+id/tv_hobby"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -165,10 +165,10 @@
             android:text="관심사"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView16" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_hobby" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/tv_interest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
@@ -185,10 +185,10 @@
             android:text="블로그주소"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_interest" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/tv_blog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ㅁㄴㅇㅁㄴㅇㅁㄴㅇ"
@@ -205,10 +205,10 @@
             android:text="깃헙 주소"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_blog" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/tv_github"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ㅁㄴㅇㅁㄴㅇㅁㄴㅇ"
@@ -225,10 +225,10 @@
             android:text="하고 싶은 말"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_github" />
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/tv_saying"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="잘부탁드립니다"
