@@ -44,7 +44,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'de.hdodenhof:circleimageview:3.1.0' //Circle ImageView
     implementation("androidx.cardview:cardview:1.0.0") //cardView
-
+    implementation 'com.google.code.gson:gson:2.8.6'
 
     //lottie animation
     implementation 'com.airbnb.android:lottie:6.1.0'
