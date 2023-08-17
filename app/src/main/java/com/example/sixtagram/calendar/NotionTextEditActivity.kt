@@ -21,7 +21,7 @@ class NotionTextEditActivity : AppCompatActivity() {
             resultIntent.putExtra("notion",inputNotion)
             setResult(RESULT_OK,resultIntent)
             finish()
-        }
+        }  // 오케이 버튼 클릭시
 
 
 
@@ -29,7 +29,7 @@ class NotionTextEditActivity : AppCompatActivity() {
 
 
 
-        val backbtn : Button = findViewById(R.id.backBtn)
+        val backbtn : Button = findViewById(R.id.backBtn)   //뒤로가기 버튼
         backbtn.setOnClickListener{
             finish()
         }
