@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Sixtagram"
         tools:targetApi="31">
         <activity
+            android:name=".login.MemberFindActivity"
+            android:exported="false" />
+        <activity
             android:name=".game.GameEndActivity"
             android:exported="false" />
         <activity
@@ -26,19 +29,12 @@
             android:exported="false" />
         <activity
             android:name=".community.CommunityDetailActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".community.CommunityActivity"
-            android:exported="false" />
-        <activity
-            android:name=".calendar.CalendarActivity"
-            android:exported="false" />
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".calendar.CalendarActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".member.MemberModifyActivity"
             android:exported="false" />
@@ -48,16 +44,22 @@
         <activity
             android:name=".member.MemberActivity"
             android:exported="false" />
-
         <activity
             android:name=".login.SignUpActivity"
             android:exported="false" />
-
         <activity android:name=".calendar.NotionTextEditActivity" />
-
         <activity
             android:name=".login.LoginActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".calendar.CalendarActivity"
+            android:exported="false"></activity>
         <activity
             android:name=".SplashActivity"
             android:exported="false" />
