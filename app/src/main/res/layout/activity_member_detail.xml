@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -59,7 +58,7 @@
                 android:clickable="true"
                 android:gravity="right|center_vertical"
                 android:text="Modify"
-                android:textSize="8dp"/>
+                android:textSize="8dp" />
 
             <Button
                 android:id="@+id/delete_button"
@@ -68,10 +67,10 @@
                 android:layout_gravity="right|center_vertical"
                 android:layout_marginEnd="24dp"
                 android:clickable="true"
-                android:onClick="onDialogBtnClicked"
                 android:gravity="right|center_vertical"
+                android:onClick="onDialogBtnClicked"
                 android:text="Delete"
-                android:textSize="8dp"/>
+                android:textSize="8dp" />
         </FrameLayout>
 
         <TextView
@@ -131,8 +130,8 @@
             android:id="@+id/tv_mbti"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="비밀"
             android:layout_marginStart="30dp"
+            android:text="비밀"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
@@ -191,8 +190,8 @@
             android:id="@+id/tv_blog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ㅁㄴㅇㅁㄴㅇㅁㄴㅇ"
             android:layout_marginStart="30dp"
+            android:text="ㅁㄴㅇㅁㄴㅇㅁㄴㅇ"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -211,8 +210,8 @@
             android:id="@+id/tv_github"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ㅁㄴㅇㅁㄴㅇㅁㄴㅇ"
             android:layout_marginStart="30dp"
+            android:text="ㅁㄴㅇㅁㄴㅇㅁㄴㅇ"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
@@ -231,8 +230,8 @@
             android:id="@+id/tv_saying"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="잘부탁드립니다"
             android:layout_marginStart="30dp"
+            android:text="잘부탁드립니다"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView23" />
 

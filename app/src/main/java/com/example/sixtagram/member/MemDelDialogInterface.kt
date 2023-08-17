@@ -1,10 +1,11 @@
 package com.example.sixtagram.member
+
 //
 interface MemDelDialogInterface {
 
-  fun ondelYesMemBtnClicked()
+    fun ondelYesMemBtnClicked()
 
-  fun ondelNoMemBtnClicked()
+    fun ondelNoMemBtnClicked()
 
 }
 

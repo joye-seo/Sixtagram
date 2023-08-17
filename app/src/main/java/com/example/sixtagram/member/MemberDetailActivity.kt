@@ -1,20 +1,16 @@
 package com.example.sixtagram.member
 
 import android.content.Intent
-import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 
-class MemberDetailActivity : AppCompatActivity(),MemDelDialogInterface {
+class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
     val TAG: String = "로그"
     lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
@@ -23,7 +19,7 @@ class MemberDetailActivity : AppCompatActivity(),MemDelDialogInterface {
         setContentView(R.layout.activity_member_detail)
 
         val modify = findViewById<Button>(R.id.modify_button)
-        modify.setOnClickListener{
+        modify.setOnClickListener {
             val intent = Intent(this, MemberModifyActivity::class.java)
             activityResultLauncher.launch(intent)
         }
@@ -33,7 +29,8 @@ class MemberDetailActivity : AppCompatActivity(),MemDelDialogInterface {
             activityResultLauncher.launch(intent)
         }
     }
-    fun onDialogBtnClicked(view: View){
+
+    fun onDialogBtnClicked(view: View) {
         Log.d(TAG, "MemberDetailActivity - onDialogBtnClicked() called")
 
         val memDelDialog = MemDelDialogActivity(this, this)

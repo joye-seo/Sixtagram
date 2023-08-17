@@ -10,7 +10,8 @@ import android.view.View
 import android.widget.Button
 import com.example.sixtagram.R
 
-class MemDelDialogActivity(context: Context, delDialogInterface: MemDelDialogInterface) : Dialog(context), View.OnClickListener {
+class MemDelDialogActivity(context: Context, delDialogInterface: MemDelDialogInterface) :
+    Dialog(context), View.OnClickListener {
 
 
     val TAG: String = "로그"
