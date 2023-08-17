@@ -431,6 +431,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility ="gone"
+        android:text="버튼이 찌그러져 죽었어요"
+        app:layout_constraintBottom_toBottomOf="@+id/button26"
+        app:layout_constraintEnd_toEndOf="@+id/button27"
+        app:layout_constraintStart_toStartOf="@+id/button27"
+        app:layout_constraintTop_toTopOf="@+id/button26" />
+
         <Chronometer
             android:id="@+id/chronometer"
             android:layout_width="wrap_content"

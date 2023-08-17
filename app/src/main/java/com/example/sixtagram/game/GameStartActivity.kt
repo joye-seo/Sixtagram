@@ -53,6 +53,9 @@ class GameStartActivity : AppCompatActivity() {
                 }
 
                 "하드 모드" -> {
+                    mode = "지옥 모드"
+                }
+                "지옥 모드" -> {
                     mode = "이지 모드"
                 }
             }

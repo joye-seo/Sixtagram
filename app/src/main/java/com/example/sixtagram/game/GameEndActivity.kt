@@ -18,10 +18,11 @@ class GameEndActivity : AppCompatActivity() {
         val score = intent.getLongExtra("score",0L)
         val finalTime = intent.getLongExtra("finalTime",0L)
         val mode = intent.getStringExtra("mode")
+        val numsize = intent.getStringExtra("numsize")
         val tv1 = findViewById<TextView>(R.id.textView1)
         val tv2 = findViewById<TextView>(R.id.textView2)
         val btdd = findViewById<Button>(R.id.button1)
-        saveGameData(score, finalTime, mode)
+        saveGameData(score, finalTime, mode, numsize)
         displayGameData()
         btdd.setOnClickListener {
             val sharedPref = getSharedPreferences("game_records", Context.MODE_PRIVATE)
@@ -33,7 +34,7 @@ class GameEndActivity : AppCompatActivity() {
     }
 
 
-    private fun saveGameData(score: Long, finalTime: Long, mode:String?) {
+    private fun saveGameData(score: Long, finalTime: Long, mode:String?,numsize:String?) {
         val sharedPref = getSharedPreferences("game_records", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
 
@@ -51,15 +52,22 @@ class GameEndActivity : AppCompatActivity() {
         val existingmodes = sharedPref.getString("modes", "[]")
         val typeTokenmode = object : TypeToken<List<String?>>() {}.type
         val modeList = Gson().fromJson<List<String?>>(existingmodes, typeTokenmode).toMutableList()
+
+        // 기존의 numsizes 데이터 리스트를 가져옵니다.
+        val existingnumsizes = sharedPref.getString("numsizes", "[]")
+        val typeTokennumsize = object : TypeToken<List<String?>>() {}.type
+        val numsizeList = Gson().fromJson<List<String?>>(existingnumsizes, typeTokennumsize).toMutableList()
         // 새로운 데이터를 리스트에 추가합니다.
 
         scoreList.add(score)
         finalTimeList.add(finalTime)
         modeList.add(mode)
+        numsizeList.add(numsize)
         if((scoreList[scoreList.size-1]==0L)){
             scoreList.remove(score)
             finalTimeList.remove(finalTime)
             modeList.remove(mode)
+            numsizeList.remove(numsize)
         }
         else if(scoreList.size>=2)
         {
@@ -68,6 +76,7 @@ class GameEndActivity : AppCompatActivity() {
                 scoreList.remove(score)
                 finalTimeList.remove(finalTime)
                 modeList.remove(mode)
+                numsizeList.remove(numsize)
             }
         }
 
@@ -75,6 +84,7 @@ class GameEndActivity : AppCompatActivity() {
         editor.putString("scores", Gson().toJson(scoreList))
         editor.putString("finalTimes", Gson().toJson(finalTimeList))
         editor.putString("modes", Gson().toJson(modeList))
+        editor.putString("numsizes", Gson().toJson(numsizeList))
         editor.apply()
     }
 
@@ -90,19 +100,20 @@ class GameEndActivity : AppCompatActivity() {
         val existingmodes = sharedPref.getString("modes", "[]")
         val modeList = Gson().fromJson<List<String?>>(existingmodes, object : TypeToken<List<String?>>() {}.type)
 
+        val existingnumsizes = sharedPref.getString("numsizes", "[]")
+        val numsizeList = Gson().fromJson<List<String?>>(existingnumsizes, object : TypeToken<List<String?>>() {}.type)
+
         val recordsLayout = findViewById<LinearLayout>(R.id.recordsLayout)
         recordsLayout.removeAllViews() // 기존에 추가된 뷰 제거
 
         for (i in scoreList.indices) {
             val textView = TextView(this)
-            textView.text = "${scoreList[i]} & ${finalTimeList[i]/1000}.${finalTimeList[i]%1000} & ${modeList[i]}"
+            textView.text = "${String.format("%06d", scoreList[i])} & ${String.format("%03d", finalTimeList[i]/1000)}.${finalTimeList[i]%1000} & ${modeList[i]} & ${numsizeList[i]}"
             recordsLayout.addView(textView)
         }
     }
 
-
 }
-
 
 // 1. 스코어 화면
 // 2. 다시하기
@@ -112,3 +123,4 @@ class GameEndActivity : AppCompatActivity() {
 // 6. 점수 시간 모드 등등 해보기
 // 7. 넘버사이즈도 넣기
 // 8. 나중에 현재 로그인 사용자 이름도 받아서 넣기
+// 9. 백그라운드틴트를 적용해야함 버튼
