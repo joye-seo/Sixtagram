@@ -25,4 +25,7 @@
     <string name="sign_up_email_check">Please enter your email</string>
     <string name="sign_up_password_check">Please enter a password</string>
     <string name="sign_up_password_check2">6 or more characters with a combination of English, numbers and special characters</string>
+    <string name="daily">daily</string>
+    <string name="post_topic">post_topic ⋁</string>
+    <string name="information">information</string>
 </resources>
