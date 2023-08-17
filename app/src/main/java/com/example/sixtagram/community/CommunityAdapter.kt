@@ -8,7 +8,13 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.MultiTransformation
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.FitCenter
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.sixtagram.R
+import java.text.SimpleDateFormat
+import java.util.Date
 
 class CommunityAdapter(
     val mContext: Context,
@@ -42,8 +48,11 @@ class CommunityAdapter(
 
         val community = mList[position]
 
+        val format = SimpleDateFormat("MM월 dd일")
+
         Glide.with(mContext)
-            .load(community.picture).fitCenter()
+            .load(community.picture) .transform(MultiTransformation(FitCenter(), RoundedCorners(10)))
+
             .into(image)
 
         title.text = community.title
