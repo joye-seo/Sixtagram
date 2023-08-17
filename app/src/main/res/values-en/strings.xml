@@ -28,4 +28,8 @@
     <string name="daily">daily</string>
     <string name="post_topic">post_topic ⋁</string>
     <string name="information">information</string>
+    <string name="member_find_email">Find Email, Password</string>
+    <string name="member_email_view">show email</string>
+    <string name="member_password_view">show password</string>
+    <string name="member_find_close">close</string>
 </resources>

@@ -5,12 +5,15 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 import com.example.sixtagram.member.MemberActivity
 import com.example.sixtagram.memberData.Member
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -21,8 +24,16 @@ class LoginActivity : AppCompatActivity() {
         val password = findViewById<EditText>(R.id.password2)
         val btn1 = findViewById<Button>(R.id.login)
         val btn2 = findViewById<Button>(R.id.memberShip)
+        val btn3 = findViewById<Button>(R.id.memberFind)
 
-//        password.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
+        activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
+            if(it. resultCode == RESULT_OK){
+                val email2 = it.data?.getStringExtra("email2") ?: ""
+                val password2 = it.data?.getStringExtra("password2") ?: ""
+                email.setText(email2)
+                password.setText(password2)
+            }
+        }
 
 
         btn1.setOnClickListener {
@@ -51,6 +62,10 @@ class LoginActivity : AppCompatActivity() {
         btn2.setOnClickListener {
             val memberShipIntent = Intent(this, SignUpActivity::class.java)
             startActivity(memberShipIntent)
+        }
+        btn3.setOnClickListener {
+            val memberFindIntent = Intent(this, MemberFindActivity::class.java)
+            activityResultLauncher.launch(memberFindIntent)
         }
     }
 
