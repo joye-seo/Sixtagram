@@ -9,6 +9,8 @@
         <!--상단 스테이터스바 + 아이콘 색상 지정-->
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar" >true</item>
+
+        <item name="background">@color/white</item>
     </style>
 
     <style name="Theme.Sixtagram" parent="Base.Theme.Sixtagram" />
