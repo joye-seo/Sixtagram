@@ -50,6 +50,9 @@
             android:exported="false" />
 
         <activity
+            android:name=".member.MemDelDialogActivity"
+            android:exported="false"></activity>
+        <activity
             android:name=".login.SignUpActivity"
             android:exported="false" />
 
