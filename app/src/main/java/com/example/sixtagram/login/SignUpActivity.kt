@@ -37,6 +37,7 @@ class SignUpActivity : AppCompatActivity() {
             "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[@#\$%^&*()_+])[A-Za-z\\d@#\$%^&*()_+]+$".toRegex()
         var i = 0
         var k = false
+        var j = false
         val minLength = 6
 
         password.addTextChangedListener(object : TextWatcher {
@@ -71,8 +72,10 @@ class SignUpActivity : AppCompatActivity() {
                 if (inputText.matches(pattern) && (s?.length ?: 0) > minLength) {
                     // Valid input: Contains a combination of letters, digits, and special characters
                     passwordText.text = "사용 가능한 비밀 번호 입니다."
+                    j = true
                 } else {
                     passwordText.text = "영문자, 숫자, 특수문자로 6자리 이상 입력해주세요"
+                    j = false
                 }
             }
 
@@ -96,7 +99,7 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         addMember.setOnClickListener {
-            if (email.text.isNullOrEmpty() || password.text.isNullOrEmpty() || password2.text.isNullOrEmpty() || name.text.isNullOrEmpty() || i < memberList.size || !k) {
+            if (email.text.isNullOrEmpty() || password.text.isNullOrEmpty() || password2.text.isNullOrEmpty() || name.text.isNullOrEmpty() || i < memberList.size || !k || !j) {
                 toast("필수 정보 또는 id 체크와 비밀 번호를 확인해 주세요")
             } else run {
                 Member.createMember(
