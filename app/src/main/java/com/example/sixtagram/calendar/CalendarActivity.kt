@@ -1,8 +1,10 @@
 package com.example.sixtagram.calendar
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.CalendarView
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
@@ -11,6 +13,7 @@ import com.example.sixtagram.game.GameStartActivity
 import com.example.sixtagram.member.MemberActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import org.w3c.dom.Text
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -19,10 +22,11 @@ import java.util.Locale
 
 class CalendarActivity : AppCompatActivity() {
 
+    val REQUEST_FOR_NOTION = 1005
+
     private val bottomNav: BottomNavigationView by lazy {
         findViewById(R.id.bottom_nav)
     }
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -34,11 +38,7 @@ class CalendarActivity : AppCompatActivity() {
 
         val dayText : TextView = findViewById(R.id.dayText)                  //객체 생성
         val calendarView : CalendarView = findViewById(R.id.calendarView)    //객체 생성
-
         val dateFormat : DateFormat = SimpleDateFormat("yyyy년 MM월 dd일 EEEE", Locale.getDefault())//날짜 형태
-
-
-
         val date : Date = Date(calendarView.date)      //오늘 날짜
 
         dayText.text = dateFormat.format(date) //날짜 텍스트뷰에 담기
@@ -73,10 +73,41 @@ class CalendarActivity : AppCompatActivity() {
 
 
 
-        val btnBlueWrite: FloatingActionButton = findViewById(R.id.btn_blue_write)
-        btnBlueWrite.setOnClickListener {
+        val writebtn: FloatingActionButton = findViewById(R.id.writeBtn)
+        writebtn.setOnClickListener {
+
+        }
 
 
+
+
+        val notionbtn : ImageView = findViewById(R.id.notionBtn)
+        notionbtn.setOnClickListener{
+
+            val myIntent = Intent(this , NotionTextEditActivity::class.java)
+            startActivityForResult(myIntent , REQUEST_FOR_NOTION)
+
+
+
+        }
+
+
+
+
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_FOR_NOTION){
+            if (resultCode == Activity.RESULT_OK){
+                val newNotionTxt =data?.getStringExtra("notion")
+                val notionTxt : TextView= findViewById(R.id.notionTxt)
+                notionTxt.text = newNotionTxt
+
+
+
+            }
         }
     }
 
