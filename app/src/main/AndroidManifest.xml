@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Sixtagram"
         tools:targetApi="31">
         <activity
-            android:name=".login.MemberFindActivity"
+            android:name=".calendar.MemoActivity"
             android:exported="false" />
         <activity
             android:name=".game.GameEndActivity"

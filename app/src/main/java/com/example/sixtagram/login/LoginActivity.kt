@@ -14,14 +14,23 @@ import com.example.sixtagram.memberData.Member
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var email: EditText
+    private lateinit var password: EditText
+    override fun onRestart() {
+        super.onRestart()
+
+        email.text.clear()
+        password.text.clear()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         val memberList = Member.retrieveMembers()
         var i: Int
-        val email = findViewById<EditText>(R.id.email2)
-        val password = findViewById<EditText>(R.id.password2)
+
+        email = findViewById(R.id.email2)
+        password = findViewById(R.id.password2)
         val btn1 = findViewById<Button>(R.id.login)
         val btn2 = findViewById<Button>(R.id.memberShip)
         val btn3 = findViewById<Button>(R.id.memberFind)
