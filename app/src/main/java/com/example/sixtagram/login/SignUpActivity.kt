@@ -1,6 +1,8 @@
 package com.example.sixtagram.login
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -27,13 +29,56 @@ class SignUpActivity : AppCompatActivity() {
         val github = findViewById<EditText>(R.id.github)
         val text = findViewById<EditText>(R.id.editText)
         val idCheck = findViewById<Button>(R.id.emailOverlap2)
-        val passwordCheck = findViewById<Button>(R.id.passOverlap)
         val idText = findViewById<TextView>(R.id.emailCheck)
-        var passwordText = findViewById<TextView>(R.id.passwordCheck)
+        val passwordText = findViewById<TextView>(R.id.passwordCheck)
         val passwordText2 = findViewById<TextView>(R.id.passwordCheck2)
         val addMember = findViewById<Button>(R.id.createMember)
-        var i: Int = 0
-        var k: Boolean = false
+        val pattern =
+            "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[@#\$%^&*()_+])[A-Za-z\\d@#\$%^&*()_+]+$".toRegex()
+        var i = 0
+        var k = false
+        val minLength = 6
+
+        password.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (password.text.toString() == password2.text.toString()) {
+                    passwordText2.text = "비밀 번호가 일치 합니다."
+                    k = true
+                } else {
+                    passwordText2.text = "비밀 번호가 불일치 합니다."
+                    k = false
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
+        password2.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                val inputText = password.text.toString()
+
+                if (password.text.toString() == password2.text.toString()) {
+                    passwordText2.text = "비밀 번호가 일치 합니다."
+                    k = true
+                } else {
+                    passwordText2.text = "비밀 번호가 불일치 합니다."
+                    k = false
+                }
+                if (inputText.matches(pattern) && (s?.length ?: 0) > minLength) {
+                    // Valid input: Contains a combination of letters, digits, and special characters
+                    passwordText.text = "사용 가능한 비밀 번호 입니다."
+                } else {
+                    passwordText.text = "영문자, 숫자, 특수문자로 6자리 이상 입력해주세요"
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
+
 
         idCheck.setOnClickListener {
             i = 0
@@ -49,18 +94,6 @@ class SignUpActivity : AppCompatActivity() {
             }
 
         }
-
-        passwordCheck.setOnClickListener {
-            if (password.text.toString() == password2.text.toString()) {
-                passwordText2.text = "비밀 번호가 일치 합니다."
-                k = true
-            } else {
-                passwordText2.text = "비밀 번호가 불일치 합니다."
-                k = false
-            }
-        }
-
-
 
         addMember.setOnClickListener {
             if (email.text.isNullOrEmpty() || password.text.isNullOrEmpty() || password2.text.isNullOrEmpty() || name.text.isNullOrEmpty() || i < memberList.size || !k) {
