@@ -1,9 +1,11 @@
 package com.example.sixtagram.community
 
+import android.media.Image
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.sixtagram.R
 
 class CommunityDetailActivity : AppCompatActivity() {
@@ -18,6 +20,7 @@ class CommunityDetailActivity : AppCompatActivity() {
 
         val tvTitleDetail = findViewById<TextView>(R.id.tv_community_detail_title)
         val tvContentDetail = findViewById<TextView>(R.id.tv_community_detail_content)
+        val imageContentDetail = findViewById<ImageView>(R.id.iv_community_detail_image)
 
         btnBackDetail.setOnClickListener {
 //            val intent = Intent(this,CommunityActivity::class.java)
@@ -28,6 +31,7 @@ class CommunityDetailActivity : AppCompatActivity() {
         val communityData = intent.getSerializableExtra("communityData") as CommunityData
         tvTitleDetail.text = communityData.title
         tvContentDetail.text = communityData.content
+        Glide.with(this).load(communityData.picture).into(imageContentDetail)
 
 
     }

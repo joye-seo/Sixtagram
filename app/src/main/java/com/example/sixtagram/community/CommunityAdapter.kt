@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
 import com.example.sixtagram.R
 
 class CommunityAdapter(
@@ -36,16 +37,21 @@ class CommunityAdapter(
 
         val title = view.findViewById<TextView>(R.id.tv_community_title)
         val content = view.findViewById<TextView>(R.id.tv_community_content)
-        val like = view.findViewById<TextView>(R.id.tv_communuty_like_count)
+        val like = view.findViewById<TextView>(R.id.tv_community_like_count)
         val image = view.findViewById<ImageView>(R.id.iv_community_image)
 
         val community = mList[position]
+
+        Glide.with(mContext)
+            .load(community.picture).fitCenter()
+            .into(image)
 
         title.text = community.title
         content.text = community.content
         like.text = community.like.toString()
 
         return view
+
     }
 
 
