@@ -27,4 +27,8 @@
     <string name="daily">일상</string>
     <string name="post_topic">게시글 주제 ⋁</string>
     <string name="information">정보</string>
+    <string name="member_find_email">이메일, 비밀 번호 찾기</string>
+    <string name="member_email_view">이메일 표시</string>
+    <string name="member_password_view">비밀번호 표시</string>
+    <string name="member_find_close">닫기</string>
 </resources>
