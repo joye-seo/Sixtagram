@@ -2,9 +2,17 @@ package com.example.sixtagram.member
 
 import java.io.Serializable
 
-class MemUser(
-
+data class MemUser(
     val profile: Int,
-    val name: String
-): Serializable
+    val name: String,
+    val email: String,
+    val regidence: String,
+    val mbti: String,
+    val hobby: String,
+    val interest: String,
+    val blog: String,
+    val github: String,
+    val comment: String
+    // 추가 필드들...
+) : Serializable
 //클래스 모델 객체
