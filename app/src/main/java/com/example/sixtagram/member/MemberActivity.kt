@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.provider.ContactsContract.Profile
 import android.widget.AdapterView
+import android.widget.LinearLayout
 import android.widget.ListView
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
@@ -16,7 +17,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MemberActivity : AppCompatActivity() {
 
-//    lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
+    lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
     private val bottomNav: BottomNavigationView by lazy {
         findViewById(R.id.bottom_nav)
@@ -26,6 +27,12 @@ class MemberActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member)
 
+        val linearLayout4 = findViewById<LinearLayout>(R.id.linearLayout4)
+        linearLayout4.setOnClickListener {
+            val intent = Intent(this, MemberDetailActivity::class.java) //멤버디테일페이지로 이동
+            startActivity(intent)
+        }
+
         val listView1 = findViewById<ListView>(R.id.listView1)
         val Adapter = MemUserAdap(this, UserList)
 
@@ -33,7 +40,7 @@ class MemberActivity : AppCompatActivity() {
 
         listView1.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
-            val selectItem = parent.getItemAtPosition(position) as MemUser
+//            val selectItem = parent.getItemAtPosition(position) as MemUser
             val intent = Intent(this, MemberDetailActivity::class.java)
 //            selectItem.putExtra("MemUser", UserList[position])
             startActivity(intent)
