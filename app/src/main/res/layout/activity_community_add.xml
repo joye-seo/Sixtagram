@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/btn_community_add_backk"
+            android:id="@+id/btn_community_add_back"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
