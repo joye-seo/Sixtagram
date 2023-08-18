@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.MultiTransformation
+import com.bumptech.glide.load.resource.bitmap.FitCenter
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.sixtagram.R
 
 class MemUserAdap(val context: Context, val UserList: ArrayList<MemUser>) : BaseAdapter() {
@@ -34,12 +38,12 @@ class MemUserAdap(val context: Context, val UserList: ArrayList<MemUser>) : Base
         val name = view.findViewById<TextView>(R.id.tv_name)
 
         val user = UserList[position]
+//val user = intent.getserializableExtra("user") as MemUser
+        Glide.with(context)
+            .load(user.profile) .transform(MultiTransformation(FitCenter(), RoundedCorners(500)))
+            .into(profile)
 
-//        Glide.with(context)
-//            .load(user.profile) .transform(MultiTransformation(FitCenter(), RoundedCorners(10)))
-//            .into(profile)
-
-        profile.setImageResource(user.profile)
+//        profile.setImageResource(user.profile)
         name.text = user.name
 
         return view

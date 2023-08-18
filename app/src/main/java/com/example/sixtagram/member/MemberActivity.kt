@@ -2,8 +2,11 @@ package com.example.sixtagram.member
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
+import android.provider.ContactsContract.Profile
 import android.widget.AdapterView
 import android.widget.ListView
+import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 import com.example.sixtagram.calendar.CalendarActivity
@@ -13,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MemberActivity : AppCompatActivity() {
 
+//    lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 
     private val bottomNav: BottomNavigationView by lazy {
         findViewById(R.id.bottom_nav)
@@ -29,10 +33,10 @@ class MemberActivity : AppCompatActivity() {
 
         listView1.onItemClickListener =
             AdapterView.OnItemClickListener { parent, view, position, id ->
-
-//            val intent = Intent(this, MemberDetailActivity::class.java)
-//            intent.putExtra("Member", UserList[position])
-//            startActivity(intent)
+            val selectItem = parent.getItemAtPosition(position) as MemUser
+            val intent = Intent(this, MemberDetailActivity::class.java)
+            selectItem.putExtra("MemUser", UserList[position])
+            startActivity(intent)
 
             }
         initNavigation()
@@ -64,17 +68,16 @@ class MemberActivity : AppCompatActivity() {
     }
 
     var UserList = arrayListOf<MemUser>(
-        MemUser(R.drawable.member_profile_msk, name = "kms"),
-        MemUser(R.drawable.member_profile_dkl, name = "ldk"),
-        MemUser(R.drawable.member_profile_sjl, name = "lsj"),
-        MemUser(R.drawable.member_profile_shs, name = "ssh"),
-        MemUser(R.drawable.member_profile_wjc, name = "cwj"),
-        MemUser(R.drawable.ic_heart, name = "cwj"),
-        MemUser(R.drawable.member_profile_wjc, name = "heart"),
+        MemUser(R.drawable.member_profile_msk, name = "권민석"),
+        MemUser(R.drawable.member_profile_shs, name = "서수현"),
+        MemUser(R.drawable.member_profile_wjc, name = "조원준"),
+        MemUser(R.drawable.member_profile_dkl, name = "이동규"),
+        MemUser(R.drawable.member_profile_sjl, name = "이성진"),
+        MemUser(R.drawable.ic_member_rainbow, name = "김르탄"),
+        MemUser(R.drawable.ic_heart, name = "김하트"),
         MemUser(R.drawable.ic_member_test, name = "asd")
     )
 
-    //        lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
 //    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
 //        super.onCreate(savedInstanceState, persistentState)
 //        setContentView(R.layout.activity_member)

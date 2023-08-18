@@ -30,7 +30,8 @@
             android:id="@+id/imageView14"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:layout_weight="1"
+            android:layout_marginStart="24dp"
+
             android:src="@drawable/ic_member_test" />
 
         <TextView
@@ -38,15 +39,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="가입한 사람" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_weight="1" />
+            android:layout_marginStart="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="가입한 사람"
+            android:textAlignment="textStart"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
