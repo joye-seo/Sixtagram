@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.ListView
-import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
@@ -37,10 +35,12 @@ class CommunityDetailActivity : AppCompatActivity() {
         val scroll = findViewById<NestedScrollView>(R.id.community_detail_scroll)
         val container = findViewById<LinearLayout>(R.id.commend_container)
 
+
+        //댓글 관련 구현한 로직 추가적으로 공부해봐야 함!!
         commentList.forEach {
-           val view =  LayoutInflater.from(this).inflate(R.layout.item_community_comment, null, false)
-            val textView =view.findViewById<TextView>(R.id.tv_community_comment_content)
-           textView.text = it.comment
+            val view = LayoutInflater.from(this).inflate(R.layout.item_community_comment, null, false)
+            val textView = view.findViewById<TextView>(R.id.tv_community_comment_content)
+            textView.text = it.comment
             container.addView(view)
         }
 

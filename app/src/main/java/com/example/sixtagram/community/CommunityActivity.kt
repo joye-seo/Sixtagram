@@ -4,11 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ListView
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 import com.example.sixtagram.adapter.CommunityAdapter
 import com.example.sixtagram.calendar.CalendarActivity
 import com.example.sixtagram.data.Community
+import com.example.sixtagram.data.CommunityData
 import com.example.sixtagram.game.GameStartActivity
 import com.example.sixtagram.member.MemberActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -20,6 +23,7 @@ class CommunityActivity : AppCompatActivity() {
         findViewById(R.id.bottom_nav)
     }
     lateinit var communityAdapter: CommunityAdapter
+    private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,8 +44,7 @@ class CommunityActivity : AppCompatActivity() {
         btnAdd.setOnClickListener {
             val intent = Intent(this, CommunityAddActivity::class.java)
             startActivity(intent)
-            communityArrayList.add(0, communityArrayList[0])
-//            communityAdapter.notifyDataSetChanged()
+
         }
 
         //아이템 클릭 시 나오는 결과 값
@@ -51,6 +54,23 @@ class CommunityActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+
+    }
+
+    private fun setResultSignUp() {
+        resultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+
+//            if (result.resultCode == RESULT_OK) {
+//                val result = result.data?.getStringExtra("addData")
+//                Community.communityArrayList.add (result)
+//                Community.communityArrayList.add(0, result)
+//                communityArrayList.add(0, communityArrayList[0])
+////            communityAdapter.notifyDataSetChanged()
+//
+//            }
+        }
     }
 
 
