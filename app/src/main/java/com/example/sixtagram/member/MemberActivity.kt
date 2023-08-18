@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
@@ -24,16 +25,13 @@ class MemberActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member)
 
-//        val linearLayout4 = findViewById<LinearLayout>(R.id.linearLayout4)
-//        linearLayout4.setOnClickListener {
-//            val intent = Intent(this, MemberDetailActivity::class.java) //멤버디테일페이지로 이동
-//            startActivity(intent)
-//        }
-        val test = findViewById<Button>(R.id.btn_test)
-        test.setOnClickListener {
+        val linearLayout4 = findViewById<LinearLayout>(R.id.linearLayout4)
+        linearLayout4.setOnClickListener {
             val intent = Intent(this, MemberDetailActivity::class.java)
             startActivity(intent)
         }
+
+
 
         val listView1 = findViewById<ListView>(R.id.listView1)
         val Adapter = MemUserAdap(this, UserList)
@@ -89,55 +87,55 @@ class MemberActivity : AppCompatActivity() {
             interest = "식물 돌보기",
             blog = "https://coding-martinkwon.tistory.com/",
             github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."
+            comment = "우리조에서 나만 못하는듯 ㅠ_ㅠ"
         ),
         MemUser(
             R.drawable.member_profile_shs,
             name = "서수현",
-            email = "mindori9097@gmail.com",
-            regidence = "경기",
-            mbti = "ISFP",
-            hobby = "식물 키우기",
-            interest = "식물 돌보기",
-            blog = "https://coding-martinkwon.tistory.com/",
-            github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."
+            email = "ssu1019@naver.com",
+            regidence = "서울",
+            mbti = "INFP",
+            hobby = "롤경기 보기",
+            interest = "티원우승..ㅠㅠ",
+            blog = "https://joye.tistory.com/",
+            github = "https://github.com/joye-seo",
+            comment = "우리조가 프로젝트 제일 잘한 듯 ㅎ_ㅎ"
         ),
         MemUser(
             R.drawable.member_profile_sjl,
             name = "이성진",
-            email = "mindori9097@gmail.com",
-            regidence = "경기",
-            mbti = "ISFP",
-            hobby = "식물 키우기",
-            interest = "식물 돌보기",
-            blog = "https://coding-martinkwon.tistory.com/",
-            github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."
+            email = "asdsad86642@gmail.com",
+            regidence = "서울",
+            mbti = "INFP",
+            hobby = "핸드폰게임 CoC",
+            interest = "티원이 kt잡는지가 관심사 최근",
+            blog = "https://velog.io/@asdsad8664",
+            github = "https://github.com/asdsad86642/",
+            comment = "열심히할게요!"
         ),
         MemUser(
             R.drawable.member_profile_wjc,
             name = "조원준",
-            email = "mindori9097@gmail.com",
-            regidence = "경기",
-            mbti = "ISFP",
-            hobby = "식물 키우기",
-            interest = "식물 돌보기",
-            blog = "https://coding-martinkwon.tistory.com/",
-            github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."
+            email = "wonjun3026@naver.com",
+            regidence = "인천",
+            mbti = "ISTJ",
+            hobby = "게임과 독서",
+            interest = "여행",
+            blog = "https://wonjun3026.tistory.com/",
+            github = "https://github.com/wonjun3026",
+            comment = "아직 코딩 실력이 많이 부족하지만 열심히 실력을 쌓아서 다 같이 가고 싶은 회사에 취업합시다. ㅎㅎ."
         ),
         MemUser(
             R.drawable.member_profile_dkl,
             name = "이동규",
-            email = "mindori9097@gmail.com",
+            email = "dklee1619@naver.com",
             regidence = "경기",
-            mbti = "ISFP",
-            hobby = "식물 키우기",
-            interest = "식물 돌보기",
-            blog = "https://coding-martinkwon.tistory.com/",
-            github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."
+            mbti = "INFP",
+            hobby = "산책, 롤,  짤방수집",
+            interest = "롤 솔랭",
+            blog = "https://velog.io/@dklee1619",
+            github = "https://github.com/dklee1619",
+            comment = "육캔두잇 화이팅!!!!!"
         ),
         MemUser(
             R.drawable.member_profile_msk,

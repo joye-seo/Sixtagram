@@ -2,7 +2,9 @@ package com.example.sixtagram.member
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
@@ -16,6 +18,14 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member_detail)
+
+
+        val imgMemBack = findViewById<ImageView>(R.id.btn_mem_back)
+        imgMemBack.setOnClickListener {
+            val intent = Intent(this, MemberActivity::class.java)
+            startActivity(intent)
+        }
+
 
         val memberEmail = findViewById<EditText>(R.id.et_email)
         val memberRegidence = findViewById<TextView>(R.id.tv_regidence)
