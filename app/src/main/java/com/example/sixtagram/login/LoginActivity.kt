@@ -11,11 +11,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 import com.example.sixtagram.member.MemberActivity
 import com.example.sixtagram.memberData.Member
+import com.example.sixtagram.memberData.MemberHashmap
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
     private lateinit var email: EditText
     private lateinit var password: EditText
+
     override fun onRestart() {
         super.onRestart()
 
@@ -27,8 +29,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val memberList = Member.retrieveMembers()
-        var i: Int
-
+        var i: Int?
+        MemberHashmap.memberHash()
         email = findViewById(R.id.email2)
         password = findViewById(R.id.password2)
         val btn1 = findViewById<Button>(R.id.login)
@@ -50,14 +52,15 @@ class LoginActivity : AppCompatActivity() {
                 toast("아이디와 비번을 입력 하여 주세요")
             } else {
                 i = 0
-                for ((index, member2) in memberList.withIndex()) {
-                    if (member2.email == email.text.toString()) {
-                        i = index
-                        break
-                    }
-                }
+//                for ((index, member2) in memberList.withIndex()) {
+//                    if (member2.email == email.text.toString()) {
+//                        i = index
+//                        break
+//                    }
+//                }
+                i = MemberHashmap.retrieveMemberByEmail(email.text.toString())
 
-                if (memberList[i].password == password.text.toString()) {
+                if (memberList[i!!].password == password.text.toString()) {
                     toast("로그인 완료")
                     val loginIntent = Intent(this, MemberActivity::class.java)
                     loginIntent.putExtra("index", i)

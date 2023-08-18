@@ -10,13 +10,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 import com.example.sixtagram.memberData.Member
+import com.example.sixtagram.memberData.MemberHashmap
 
 class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
-        val memberList = Member.retrieveMembers()
         val email = findViewById<EditText>(R.id.email2)
         val password = findViewById<EditText>(R.id.password)
         val password2 = findViewById<EditText>(R.id.password2)
@@ -33,12 +33,16 @@ class SignUpActivity : AppCompatActivity() {
         val passwordText = findViewById<TextView>(R.id.passwordCheck)
         val passwordText2 = findViewById<TextView>(R.id.passwordCheck2)
         val addMember = findViewById<Button>(R.id.createMember)
+        val memberHashMap = MemberHashmap.retrieveAllMembers()
+        val memberList = Member.retrieveMembers()
+
         val pattern =
             "^(?=.*[a-zA-Z])(?=.*\\d)(?=.*[@#\$%^&*()_+])[A-Za-z\\d@#\$%^&*()_+]+$".toRegex()
-        var i = 0
         var k = false
         var j = false
         val minLength = 6
+        val i = memberList.size
+
 
         password.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
@@ -84,26 +88,30 @@ class SignUpActivity : AppCompatActivity() {
 
 
         idCheck.setOnClickListener {
-            i = 0
-            for (member in memberList) {
-                if (member.email == email.text.toString()) {
-                    idText.text = "중복된 아이디가 존재 합니다!!"
-                    break
-                }
-                i++
-            }
-            if (i == memberList.size) {
+            val key = email.text.toString()
+//            for (member in memberList) {
+//                if (member.email == email.text.toString()) {
+//                    idText.text = "중복된 아이디가 존재 합니다!!"
+//                    break
+//                }
+//                i++
+//            }
+//            if (i == memberList.size) {
+//                idText.text = "사용 가능한 아이디 입니다."
+//            }
+            if (memberHashMap.containsKey(key)) {
+                idText.text = "중복된 아이디가 존재 합니다!!"
+            } else {
                 idText.text = "사용 가능한 아이디 입니다."
             }
 
         }
 
         addMember.setOnClickListener {
-            if (email.text.isNullOrEmpty() || password.text.isNullOrEmpty() || password2.text.isNullOrEmpty() || name.text.isNullOrEmpty() || i < memberList.size || !k || !j) {
+            if (email.text.isNullOrEmpty() || password.text.isNullOrEmpty() || password2.text.isNullOrEmpty() || name.text.isNullOrEmpty() || !k || !j) {
                 toast("필수 정보 또는 id 체크와 비밀 번호를 확인해 주세요")
             } else run {
                 Member.createMember(
-                    email.text.toString(),
                     password2.text.toString(),
                     name.text.toString(),
                     residence.text.toString(),
@@ -114,7 +122,9 @@ class SignUpActivity : AppCompatActivity() {
                     github.text.toString(),
                     text.text.toString()
                 )
-                toast("회원 가입 완료")
+                MemberHashmap.memberHashAdd(email.text.toString(), i)
+                toast(i.toString())
+//                toast("회원 가입 완료")
                 finish()
             }
         }

@@ -1,7 +1,6 @@
 package com.example.sixtagram.memberData
 
 data class MemberData(
-    var email: String,
     var password: String,
     var name: String,
     var residence: String,
