@@ -3,7 +3,6 @@ package com.example.sixtagram.member
 import android.content.Intent
 import android.os.Bundle
 import android.widget.AdapterView
-import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +29,6 @@ class MemberActivity : AppCompatActivity() {
             val intent = Intent(this, MemberDetailActivity::class.java)
             startActivity(intent)
         }
-
 
 
         val listView1 = findViewById<ListView>(R.id.listView1)

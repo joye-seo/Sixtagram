@@ -40,10 +40,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="30dp"
+            android:layout_marginEnd="150dp"
             android:layout_weight="1"
             android:gravity="center"
             android:text="권민석"
-            android:layout_marginEnd="150dp"
             android:textSize="16sp"
             android:textStyle="bold" />
 
