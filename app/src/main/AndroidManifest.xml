@@ -44,6 +44,7 @@
         <activity
             android:name=".member.MemberDetailActivity"
             android:exported="false" />
+
         <activity
             android:name=".member.MemberActivity"
             android:exported="true">
