@@ -2,13 +2,9 @@ package com.example.sixtagram.member
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Parcelable
-import android.provider.ContactsContract.Profile
 import android.widget.AdapterView
 import android.widget.Button
-import android.widget.LinearLayout
 import android.widget.ListView
-import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 import com.example.sixtagram.calendar.CalendarActivity
@@ -95,7 +91,8 @@ class MemberActivity : AppCompatActivity() {
             github = "https://github.com/MartinKwon94",
             comment = "잘부탁드려요."
         ),
-        MemUser(R.drawable.member_profile_shs,
+        MemUser(
+            R.drawable.member_profile_shs,
             name = "서수현",
             email = "mindori9097@gmail.com",
             regidence = "경기",
@@ -104,8 +101,10 @@ class MemberActivity : AppCompatActivity() {
             interest = "식물 돌보기",
             blog = "https://coding-martinkwon.tistory.com/",
             github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."),
-        MemUser(R.drawable.member_profile_sjl,
+            comment = "잘부탁드려요."
+        ),
+        MemUser(
+            R.drawable.member_profile_sjl,
             name = "이성진",
             email = "mindori9097@gmail.com",
             regidence = "경기",
@@ -114,8 +113,10 @@ class MemberActivity : AppCompatActivity() {
             interest = "식물 돌보기",
             blog = "https://coding-martinkwon.tistory.com/",
             github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."),
-        MemUser(R.drawable.member_profile_wjc,
+            comment = "잘부탁드려요."
+        ),
+        MemUser(
+            R.drawable.member_profile_wjc,
             name = "조원준",
             email = "mindori9097@gmail.com",
             regidence = "경기",
@@ -124,8 +125,10 @@ class MemberActivity : AppCompatActivity() {
             interest = "식물 돌보기",
             blog = "https://coding-martinkwon.tistory.com/",
             github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."),
-        MemUser(R.drawable.member_profile_dkl,
+            comment = "잘부탁드려요."
+        ),
+        MemUser(
+            R.drawable.member_profile_dkl,
             name = "이동규",
             email = "mindori9097@gmail.com",
             regidence = "경기",
@@ -134,8 +137,10 @@ class MemberActivity : AppCompatActivity() {
             interest = "식물 돌보기",
             blog = "https://coding-martinkwon.tistory.com/",
             github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."),
-        MemUser(R.drawable.member_profile_msk,
+            comment = "잘부탁드려요."
+        ),
+        MemUser(
+            R.drawable.member_profile_msk,
             name = "권민석",
             email = "mindori9097@gmail.com",
             regidence = "경기",
@@ -144,8 +149,10 @@ class MemberActivity : AppCompatActivity() {
             interest = "식물 돌보기",
             blog = "https://coding-martinkwon.tistory.com/",
             github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."),
-        MemUser(R.drawable.member_profile_msk,
+            comment = "잘부탁드려요."
+        ),
+        MemUser(
+            R.drawable.member_profile_msk,
             name = "권민석",
             email = "mindori9097@gmail.com",
             regidence = "경기",
@@ -154,8 +161,10 @@ class MemberActivity : AppCompatActivity() {
             interest = "식물 돌보기",
             blog = "https://coding-martinkwon.tistory.com/",
             github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요."),
-        MemUser(R.drawable.member_profile_msk,
+            comment = "잘부탁드려요."
+        ),
+        MemUser(
+            R.drawable.member_profile_msk,
             name = "권민석",
             email = "mindori9097@gmail.com",
             regidence = "경기",
@@ -164,7 +173,8 @@ class MemberActivity : AppCompatActivity() {
             interest = "식물 돌보기",
             blog = "https://coding-martinkwon.tistory.com/",
             github = "https://github.com/MartinKwon94",
-            comment = "잘부탁드려요.")
+            comment = "잘부탁드려요."
+        )
     )
 
 //    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
