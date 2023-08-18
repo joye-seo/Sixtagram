@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sixtagram"
         tools:targetApi="31">
+        <activity
+            android:name=".game.GameDescriptionActivity"
+            android:exported="false" />
         <activity
             android:name=".calendar.MemoActivity"
             android:exported="false" />
@@ -54,16 +57,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".member.MemDelDialogActivity"
             android:exported="false"></activity>
         <activity
             android:name=".login.SignUpActivity"
             android:exported="false" />
-
         <activity android:name=".calendar.NotionTextEditActivity" />
-
         <activity
             android:name=".login.LoginActivity"
             android:exported="false" />
