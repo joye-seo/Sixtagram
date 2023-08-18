@@ -1,6 +1,7 @@
 package com.example.sixtagram.member
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.ImageView
@@ -23,6 +24,23 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
         imgMemBack.setOnClickListener {
             val intent = Intent(this, MemberActivity::class.java)
             startActivity(intent)
+        }
+
+        val linkBlog = findViewById<TextView>(R.id.tv_blog)
+        linkBlog.setOnClickListener {
+            val blogLink = linkBlog.text.toString() // 또는 링크 정보를 가져오는 방식에 맞게 수정
+            if (blogLink.isNotEmpty()) {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(blogLink))
+                startActivity(intent)
+            }
+        }
+        val linkGithub = findViewById<TextView>(R.id.tv_github)
+        linkGithub.setOnClickListener {
+            val githubLink = linkGithub.text.toString() // 또는 링크 정보를 가져오는 방식에 맞게 수정
+            if (githubLink.isNotEmpty()) {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(githubLink))
+                startActivity(intent)
+            }
         }
 
 

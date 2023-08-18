@@ -39,8 +39,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:paddingVertical="8dp"
-                android:src="@drawable/ic_modify"
-                android:text="@string/member_modify" />
+                android:src="@drawable/ic_modify"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/delete_button"
@@ -49,8 +48,7 @@
                 android:layout_gravity="center"
                 android:onClick="onDialogBtnClicked"
                 android:paddingVertical="8dp"
-                android:src="@drawable/ic_delete"
-                android:text="@string/member_delete" />
+                android:src="@drawable/ic_delete" />
 
         </LinearLayout>
 
@@ -206,6 +204,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="https://coding-martinkwon.tistory.com/"
+                android:autoLink="web"
                 app:layout_constraintStart_toStartOf="@+id/textView19"
                 app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
@@ -224,6 +223,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="https://github.com/MartinKwon94"
+                android:autoLink="web"
                 app:layout_constraintStart_toStartOf="@+id/textView21"
                 app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
