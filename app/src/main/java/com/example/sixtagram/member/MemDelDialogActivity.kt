@@ -47,7 +47,7 @@ class MemDelDialogActivity(context: Context, delDialogInterface: MemDelDialogInt
         }       //삭제 취소 버튼
     }
 
-    override fun onClick(p0: View?) {
+    override fun onClick(position: View?) {
         TODO("Not yet implemented")
     }
 }

@@ -28,29 +28,30 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
         val memberInterest = findViewById<TextView>(R.id.tv_interest)
         val memberBlog = findViewById<TextView>(R.id.tv_blog)
         val memberGithub = findViewById<TextView>(R.id.tv_github)
-        val memberSaying = findViewById<TextView>(R.id.tv_saying)
+        val memberComment = findViewById<TextView>(R.id.tv_saying)
 
-        activityResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
-            if (it.resultCode == RESULT_OK){
-                val mem_email = it.data?.getStringExtra("Email")?:""
-                val mem_regi = it.data?.getStringExtra("Regidence")?:""
-                val mem_mbti = it.data?.getStringExtra("MBTI")?:""
-                val mem_hob = it.data?.getStringExtra("Hobby")?:""
-                val mem_interst = it.data?.getStringExtra("Interest")?:""
-                val mem_blog = it.data?.getStringExtra("BlogLink")?:""
-                val mem_git = it.data?.getStringExtra("GithubLink")?:""
-                val mem_say = it.data?.getStringExtra("Saying")?:""
+        activityResultLauncher =
+            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+                if (it.resultCode == RESULT_OK) {
+                    val mem_email = it.data?.getStringExtra("Email") ?: ""
+                    val mem_regi = it.data?.getStringExtra("Regidence") ?: ""
+                    val mem_mbti = it.data?.getStringExtra("MBTI") ?: ""
+                    val mem_hob = it.data?.getStringExtra("Hobby") ?: ""
+                    val mem_interst = it.data?.getStringExtra("Interest") ?: ""
+                    val mem_blog = it.data?.getStringExtra("BlogLink") ?: ""
+                    val mem_git = it.data?.getStringExtra("GithubLink") ?: ""
+                    val mem_com = it.data?.getStringExtra("Comment") ?: ""
 
-                memberEmail.setText(mem_email)
-                memberRegidence.setText(mem_regi)
-                memberMbti.setText(mem_mbti)
-                memberHobby.setText(mem_hob)
-                memberInterest.setText(mem_interst)
-                memberBlog.setText(mem_blog)
-                memberGithub.setText(mem_git)
-                memberSaying.setText(mem_say)
+                    memberEmail.setText(mem_email)
+                    memberRegidence.setText(mem_regi)
+                    memberMbti.setText(mem_mbti)
+                    memberHobby.setText(mem_hob)
+                    memberInterest.setText(mem_interst)
+                    memberBlog.setText(mem_blog)
+                    memberGithub.setText(mem_git)
+                    memberComment.setText(mem_com)
+                }
             }
-        }
 
 
         val modify = findViewById<Button>(R.id.modify_button)
