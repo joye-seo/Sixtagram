@@ -63,10 +63,10 @@ class GameMainActivity : AppCompatActivity() {
         chronometer = findViewById(R.id.chronometer)
         var numbers = (1..25).toList().shuffled() // 버튼 숫자 랜덤배치
         var numbers2 = (26..50).toList().shuffled() // 버튼 숫자 랜덤배치
-        var numsize: String? = intent.getStringExtra("numsize") // "1~25" "1~50"
+        var numsize: String? = intent.getStringExtra("numsize") // "25" "50"
         var mode: String? = intent.getStringExtra("mode") // "이지 모드" "노멀 모드" 하드 모드" "지옥 모드"
 //        var name: String? = intent.getStringExtra("name") // "사용자 이름"
-        var gamestate = "정상" // "정상" "종료"
+        var gamestate = getString(R.string.game_gameStateRunning) // "정상" "종료"
 
         val originalBackgroundColor = buttons[0].backgroundTintList // 원래 버튼 색상 저장
         val originalTextColor = buttons[0].textColors // 원래 텍스트 색상 저장
@@ -86,29 +86,26 @@ class GameMainActivity : AppCompatActivity() {
         val originalBackgroundColor2 = buttons[0].backgroundTintList
         val updateColorRunnable = object : Runnable {
             override fun run() {
-                if((mode =="하드 모드")) {
-                    // 모든 버튼의 텍스트 변경
-                    for (button in buttons) {
-                        if (isTextHidden) {
-                            button.setTextColor(originalTextColor)
-                        } else {
-                            button.setTextColor(hideTextColor)
-                        }
-                    }
-                }
-                else if((mode =="지옥 모드")) {
+                if(mode == getString(R.string.game_mode_hard)||(mode == getString(R.string.game_mode_hell))) {
                     // 모든 버튼의 텍스트 변경
                     for (i in 0..24) {
-                        if (!isTextHidden) {
-                            text[i] = buttons[i].text.toString()
-                            buttons[i].setText("")
+                        if (isTextHidden) {
+                            buttons[i].setTextColor(originalTextColor)
+                            if(mode == getString(R.string.game_mode_hell)){
+
+                                buttons[i].isClickable = true
+                            }
                         } else {
-                            buttons[i].setText(text[i])
+                            buttons[i].setTextColor(hideTextColor)
+                            if(mode == getString(R.string.game_mode_hell)){
+
+                                buttons[i].isClickable = false
+                            }
                         }
                     }
                 }
                 count3++
-                if ((count3 == 8) && (mode == "지옥 모드")) {
+                if ((count3 == 6) && (mode == getString(R.string.game_mode_hell))) {
                     numbers = (findnumber..findnumber + count4 - 1).toList().shuffled()
                     count3 = 0
                     for (i in 0..24) {
@@ -121,7 +118,7 @@ class GameMainActivity : AppCompatActivity() {
                 }
                 isTextHidden = !isTextHidden
 
-                handler.postDelayed(this, 333)
+                handler.postDelayed(this, 400)
             }
         }
 
@@ -133,14 +130,14 @@ class GameMainActivity : AppCompatActivity() {
             val milliseconds = elapsedMillis % 1000
             it.text = String.format("%02d:%02d.%03d", minutes, seconds, milliseconds)
         }
-        tv1.setText("찾아야 되는 숫자 : ${findnumber}")
+        tv1.setText("${getString(R.string.game_targetNumber)}${findnumber}")
 
         btps.isEnabled = false
         btfn.isEnabled = false
         btrk.setOnClickListener {
             val intent2 = Intent(this, GameEndActivity::class.java)
 //            intent2.putExtra("name", name)
-            if ((gamestate == "종료")) {
+            if ((gamestate == getString(R.string.game_gameStateFinished))) {
                 score = score(finalTime, numsize, mode, countfn)
                 intent2.putExtra("score", score)
                 intent2.putExtra("finalTime", finalTime)
@@ -151,16 +148,16 @@ class GameMainActivity : AppCompatActivity() {
             startActivity(intent2)
         }
         btps.setOnClickListener {
-            if ((btps.text == "일시정지") && (gamestate == "정상")) {
+            if ((btps.text == getString(R.string.game_gameStatePaused)) && (gamestate == (getString(R.string.game_gameStateRunning)))) {
                 if (findnumber != 1) {
                     for (i in 0..24) {
                         buttons[i].textSize = 0f
                         buttons[i].isClickable = false
                     }
                     handler.removeCallbacks(updateRunnable)
-                    btps.text = "일시정지 해제"
+                    btps.text = getString(R.string.game_gameStateResumed)
                 }
-            } else if ((btps.text == "일시정지 해제") && (gamestate == "정상")) {
+            } else if ((btps.text == getString(R.string.game_gameStateResumed)) && (gamestate == (getString(R.string.game_gameStateRunning)))) {
                 if (findnumber != 1) {
                     for (i in 0..24) {
                         buttons[i].textSize = 20f
@@ -168,12 +165,12 @@ class GameMainActivity : AppCompatActivity() {
                     }
                     handler.postDelayed(updateRunnable, updateIntervalMillis)
                 }
-                btps.text = "일시정지"
+                btps.text = getString(R.string.game_gameStatePaused)
             }
         }
         btfn.setOnClickListener {
-            if(mode== "이지 모드"){
-                val toast = Toast.makeText(this, "이지모드는 힌트가 의미 없어요~", Toast.LENGTH_SHORT)
+            if(mode == getString(R.string.game_mode_easy) ){
+                val toast = Toast.makeText(this, getString(R.string.game_toggle_message_easy), Toast.LENGTH_SHORT)
                 toast.show()
                 Handler(Looper.getMainLooper()).postDelayed({
                     // Toast 숨기기
@@ -197,23 +194,23 @@ class GameMainActivity : AppCompatActivity() {
                 }
                 when (randommessagenumber) {
                     0 -> {
-                        randommessage = "${countfn}번이나 힌트를 누르셧군요?"
+                        randommessage = getString(R.string.game_toggle_message_0, countfn)
                     }
 
                     1 -> {
-                        randommessage = "${countfn}번 눌렀으면 힌트없이 해보자구요"
+                        randommessage = getString(R.string.game_toggle_message_1, countfn)
                     }
 
                     2 -> {
-                        randommessage = "힌트를 누르면 최종스코어가 낮아져요."
+                        randommessage = getString(R.string.game_toggle_message_2)
                     }
 
                     3 -> {
-                        randommessage = "그만!!!!!!! 버튼부서지겠다!!!"
+                        randommessage = getString(R.string.game_toggle_message_3)
                     }
 
                     4 -> {
-                        randommessage = "버튼을 죽이셨어요"
+                        randommessage = getString(R.string.game_toggle_message_4)
                     }
                 }
                 val toast = Toast.makeText(this, "${randommessage}", Toast.LENGTH_SHORT)
@@ -249,7 +246,7 @@ class GameMainActivity : AppCompatActivity() {
             buttons[i].setText("${numbers[i]}")
         }
 
-        if (mode == "이지 모드") {
+        if (mode == getString(R.string.game_mode_easy) ) {
             for (i in 0..24) {
                 if (buttons[i].text == "1") {
                     count2 = i
@@ -267,58 +264,58 @@ class GameMainActivity : AppCompatActivity() {
                             handler.post(updateRunnable)  // 타이머 시작
                             btps.isEnabled = true
                             btfn.isEnabled = true
-                            if ((mode == "하드 모드") || (mode == "지옥 모드")) {
+                            if ((mode == getString(R.string.game_mode_hard) ) || (mode == getString(R.string.game_mode_hell) )) {
                                 handler.post(updateColorRunnable)
                             }
-                            if (numsize == "1~25") {
+                            if (numsize == getString(R.string.game_numsize_25)) {
                                 buttons[i].visibility = Button.INVISIBLE
                                 count4--
-                            } else if (numsize == "1~50") {
+                            } else if (numsize == getString(R.string.game_numsize_50)) {
                                 buttons[i].text = numbers2[i].toString()
                             }
                         }
 
                         in 2..24 -> {
-                            if (numsize == "1~50") {
+                            if (numsize == getString(R.string.game_numsize_50)) {
                                 buttons[i].text = numbers2[i].toString()
-                            } else if (numsize == "1~25") {
+                            } else if (numsize == getString(R.string.game_numsize_25)) {
                                 buttons[i].visibility = Button.INVISIBLE
                                 count4--
                             }
                         }
 
                         25 -> {
-                            if (numsize == "1~50") {
+                            if (numsize == getString(R.string.game_numsize_50)) {
                                 buttons[i].text = numbers2[i].toString()
-                            } else if (numsize == "1~25") {
-                                gamestate = "종료"
+                            } else if (numsize == getString(R.string.game_numsize_25)) {
+                                gamestate = getString(R.string.game_gameStateFinished)
                             }
                         }
 
                         in 26..49 -> {
-                            if (numsize == "1~50") {
+                            if (numsize == getString(R.string.game_numsize_50)) {
                                 buttons[i].visibility = Button.INVISIBLE
                                 count4--
                             }
                         }
 
                         50 -> {
-                            gamestate = "종료"
+                            gamestate = getString(R.string.game_gameStateFinished)
                         }
                     }
-                    if (gamestate == "종료") {
+                    if (gamestate == getString(R.string.game_gameStateFinished)) {
                         buttons[i].visibility = Button.INVISIBLE
                         count4--
                         handler.removeCallbacks(updateRunnable)  // 타이머 정지
                         finalTime = elapsedTime
-                        tv1.setText("끝!!!! 축하드립니다!!!")
-                        tv2.setText("기록 : ${score(finalTime, numsize, mode, countfn)}")
+                        tv1.setText(getString(R.string.game_message_ending))
+                        tv2.setText("${getString(R.string.game_gamescore)}${score(finalTime, numsize, mode, countfn)}")
                         score = score(finalTime, numsize, mode, countfn)
                         btps.isEnabled = false
                         btfn.isEnabled = false
                     }
                     findnumber++
-                    if (mode == "이지 모드") {
+                    if (mode == getString(R.string.game_mode_easy)) {
                         for (j in 0..24) {
                             if ((findnumber).toString() == ((buttons[j].text).toString())) {
                                 buttons[j].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
@@ -330,8 +327,8 @@ class GameMainActivity : AppCompatActivity() {
                             }
                         }
                     }
-                    if (gamestate != "종료") {
-                        tv1.setText("찾아야 되는 숫자 : ${findnumber}")
+                    if (gamestate != getString(R.string.game_gameStateFinished)) {
+                        tv1.setText("${getString(R.string.game_targetNumber)}${findnumber}")
                     }
                 }
             }
@@ -342,15 +339,15 @@ class GameMainActivity : AppCompatActivity() {
         var score = 0L
         score = 100000000L / finaltime
         when (state3) {
-            "노멀 모드" -> {
+            getString(R.string.game_mode_normal) -> {
                 score = score * 5 / 2
             }
 
-            "하드 모드" -> {
+            getString(R.string.game_mode_hard) -> {
                 score = score * 5
             }
 
-            "지옥 모드" -> {
+            getString(R.string.game_mode_hell) -> {
                 score = score * 15
             }
         }
@@ -432,3 +429,9 @@ class GameMainActivity : AppCompatActivity() {
 // 31. countfn 힌트 찾으면 점수 깎이는 로직. (1 - 0.04 * (countfn-1))
 // 32. F2를 누르고 alt + enter 한다음 yellow메세지에 대해 수정하고 공부하면 좀 더 좋다.
 // 33. dp를 전부 sp로 수정하기(.xml)
+// 34. 간헐적으로 꺼지는건 메모리 이슈 때문 => 무시하라고함 중요한거아님
+// 34. 추가적으로 현업에서는 에뮬레이터 사용을 안하고 실제 디바이스에서 함.
+
+// 35. 버튼에 이미지 넣으면 뭔가 글씨 묻힐수도
+// 36. 아니면 버튼뒤에 이미지를 놔두는식으로(그럼 버튼사라지면 이미지 뙇)
+// 37.

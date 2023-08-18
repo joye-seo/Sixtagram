@@ -8,8 +8,8 @@
     <Button
         android:id="@+id/button1"
         android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:text="시작하기"
+        android:layout_height="40dp"
+        android:text= "@string/game_strat"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,8 +21,8 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:text="숫자 크기 : 1~25"
+        android:layout_height="40dp"
+        android:text="@string/game_numsize_button"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,8 @@
     <Button
         android:id="@+id/button3"
         android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:text="난이도 : 이지 모드"
+        android:layout_height="40dp"
+        android:text="@string/game_difficulty_button"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,8 +47,8 @@
     <Button
         android:id="@+id/button4"
         android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:text="게임 설명"
+        android:layout_height="40dp"
+        android:text="@string/game_Description_button"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
