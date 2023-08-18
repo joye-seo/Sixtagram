@@ -16,5 +16,6 @@ class CommunityAddActivity : AppCompatActivity() {
         btnBackAdd.setOnClickListener {
             finish()
         }
+
     }
 }
