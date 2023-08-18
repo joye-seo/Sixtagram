@@ -80,29 +80,43 @@ class GameMainActivity : AppCompatActivity() {
         var count4 = 25 // 남은 버튼 확인용
         var count5 = 0 // 헬모드 인덱스 추적용
         var score: Long = 0L
+        var text = Array<String>(25,{""}) // 지옥모드 텍스트 저장용
+        var randommessage: String = ""
+        var randommessagenumber = 0
         val originalBackgroundColor2 = buttons[0].backgroundTintList
         val updateColorRunnable = object : Runnable {
             override fun run() {
-                // 모든 버튼의 텍스트 변경
-                for (button in buttons) {
-                    if (isTextHidden) {
-                        button.setTextColor(originalTextColor)
-                    } else {
-                        button.setTextColor(hideTextColor)
+                if((mode =="하드 모드")) {
+                    // 모든 버튼의 텍스트 변경
+                    for (button in buttons) {
+                        if (isTextHidden) {
+                            button.setTextColor(originalTextColor)
+                        } else {
+                            button.setTextColor(hideTextColor)
+                        }
+                    }
+                }
+                else if((mode =="지옥 모드")) {
+                    // 모든 버튼의 텍스트 변경
+                    for (i in 0..24) {
+                        if (!isTextHidden) {
+                            text[i] = buttons[i].text.toString()
+                            buttons[i].setText("")
+                        } else {
+                            buttons[i].setText(text[i])
+                        }
                     }
                 }
                 count3++
-                if((count3==12)&&(mode=="지옥 모드")) {
+                if ((count3 == 8) && (mode == "지옥 모드")) {
                     numbers = (findnumber..findnumber + count4 - 1).toList().shuffled()
                     count3 = 0
-                for(i in 0..24 )
-                {
-                    if(buttons[i].visibility != Button.INVISIBLE)
-                    {
-                        buttons[i].setText("${numbers[count4 - 1 - count5]}")
-                        count5++
+                    for (i in 0..24) {
+                        if (buttons[i].visibility != Button.INVISIBLE) {
+                            buttons[i].setText("${numbers[count4 - 1 - count5]}")
+                            count5++
+                        }
                     }
-                }
                     count5 = 0
                 }
                 isTextHidden = !isTextHidden
@@ -141,6 +155,7 @@ class GameMainActivity : AppCompatActivity() {
                 if (findnumber != 1) {
                     for (i in 0..24) {
                         buttons[i].textSize = 0f
+                        buttons[i].isClickable = false
                     }
                     handler.removeCallbacks(updateRunnable)
                     btps.text = "일시정지 해제"
@@ -149,6 +164,7 @@ class GameMainActivity : AppCompatActivity() {
                 if (findnumber != 1) {
                     for (i in 0..24) {
                         buttons[i].textSize = 20f
+                        buttons[i].isClickable = true
                     }
                     handler.postDelayed(updateRunnable, updateIntervalMillis)
                 }
@@ -156,9 +172,15 @@ class GameMainActivity : AppCompatActivity() {
             }
         }
         btfn.setOnClickListener {
-            var randommessage: String = ""
-            var randommessagenumber = 0
-
+            if(mode== "이지 모드"){
+                val toast = Toast.makeText(this, "이지모드는 힌트가 의미 없어요~", Toast.LENGTH_SHORT)
+                toast.show()
+                Handler(Looper.getMainLooper()).postDelayed({
+                    // Toast 숨기기
+                    toast.cancel()
+                }, 2000)  // (delayMillis/2000)초 후에 토스트 메시지를 숨깁니다.
+                return@setOnClickListener
+            }
             val layoutParams = btfn.layoutParams
             layoutParams.height = dpToPx(this@GameMainActivity, 50f - countfn * 2).toInt()
             btfn.layoutParams = layoutParams
@@ -245,7 +267,7 @@ class GameMainActivity : AppCompatActivity() {
                             handler.post(updateRunnable)  // 타이머 시작
                             btps.isEnabled = true
                             btfn.isEnabled = true
-                            if ((mode == "하드 모드")||(mode == "지옥 모드")) {
+                            if ((mode == "하드 모드") || (mode == "지옥 모드")) {
                                 handler.post(updateColorRunnable)
                             }
                             if (numsize == "1~25") {
@@ -279,10 +301,12 @@ class GameMainActivity : AppCompatActivity() {
                                 count4--
                             }
                         }
+
                         50 -> {
-                            gamestate = "종료"}
+                            gamestate = "종료"
+                        }
                     }
-                    if(gamestate == "종료") {
+                    if (gamestate == "종료") {
                         buttons[i].visibility = Button.INVISIBLE
                         count4--
                         handler.removeCallbacks(updateRunnable)  // 타이머 정지
@@ -325,13 +349,14 @@ class GameMainActivity : AppCompatActivity() {
             "하드 모드" -> {
                 score = score * 5
             }
+
             "지옥 모드" -> {
-            score = score * 15
-        }
+                score = score * 15
+            }
         }
         when (state) {
             "1~50" -> {
-                score = score * 7 / 2
+                score = score * 4
             }
         }
         score = score * (100 - 4 * (countfn - 1)) / 100

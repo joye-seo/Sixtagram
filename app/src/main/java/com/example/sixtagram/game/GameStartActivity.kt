@@ -24,6 +24,7 @@ class GameStartActivity : AppCompatActivity() {
         val btSt = findViewById<Button>(R.id.button1)
         val btLv = findViewById<Button>(R.id.button2)
         val btm = findViewById<Button>(R.id.button3)
+        val btd = findViewById<Button>(R.id.button4)
         var numsize: String = "1~25" // "1~25" "1~50"
         var mode: String = "이지 모드" // "easy" "normal" "hard"
 
@@ -48,6 +49,7 @@ class GameStartActivity : AppCompatActivity() {
                 "이지 모드" -> {
                     mode = "노멀 모드"
                 }
+
                 "노멀 모드" -> {
                     mode = "하드 모드"
                 }
@@ -55,13 +57,19 @@ class GameStartActivity : AppCompatActivity() {
                 "하드 모드" -> {
                     mode = "지옥 모드"
                 }
+
                 "지옥 모드" -> {
                     mode = "이지 모드"
                 }
             }
-            btm.setText("${mode}")
+            btm.setText("난이도 : ${mode}")
+        }
+        btd.setOnClickListener {
+            val intent2 = Intent(this, GameDescriptionActivity::class.java)
+            startActivity(intent2)
         }
     }
+
 
     private fun initNavigation() = with(bottomNav) {
 
@@ -88,3 +96,5 @@ class GameStartActivity : AppCompatActivity() {
         finish()
     }
 }
+
+// 1. 게임 설명서, 난이도별 설명 페이지 만들기.
