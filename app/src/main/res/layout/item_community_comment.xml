@@ -2,36 +2,38 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/iv_community_comment_profile"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
         android:src="@drawable/ic_member_test"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_community_comment_id"
+        style="@style/FontSizeMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:text="이름"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/iv_community_comment_profile"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@id/iv_community_comment_profile"
         app:layout_constraintTop_toTopOf="@id/iv_community_comment_profile" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_community_comment_content"
+        style="@style/FontSizeMedium"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="20dp"
+        android:text="댓글내용입니다수정할거예요,..ㅠㅠ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/tv_community_comment_id"
-        app:layout_constraintTop_toBottomOf="@id/iv_community_comment_profile"
-        android:layout_marginTop="10dp"
-        android:text="댓글내용입니다수정할거예요,..ㅠㅠ"
-        />
+        app:layout_constraintTop_toBottomOf="@id/tv_community_comment_id" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

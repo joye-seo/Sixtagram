@@ -12,7 +12,7 @@
         android:background="@drawable/shape_list_subject_background"
         android:padding="2dp"
         android:text="@string/notice"
-        android:textSize="11sp"
+        style="@style/FontSizeSmall"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="테스트입니다"
-        android:textSize="16sp"
+        style="@style/FontSizeMedium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_community_topic" />
 
@@ -34,7 +34,7 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:text="가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하"
-        android:textSize="12sp"
+        style="@style/FontSizeSmall"
         app:layout_constraintEnd_toStartOf="@id/iv_community_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_community_title" />
@@ -70,7 +70,7 @@
         android:layout_marginStart="5dp"
         app:layout_constraintStart_toEndOf="@id/lottie_heart"
         android:text="1"
-        android:textSize="12sp"
+        style="@style/FontSizeSmall"
         app:layout_constraintBottom_toBottomOf="@id/lottie_heart"
         app:layout_constraintTop_toTopOf="@id/lottie_heart" />
 
@@ -81,7 +81,7 @@
         android:gravity="center"
         android:text="10일 전"
         android:layout_marginTop="10dp"
-        android:textSize="12sp"
+        style="@style/FontSizeSmall"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_community_content"/>
 

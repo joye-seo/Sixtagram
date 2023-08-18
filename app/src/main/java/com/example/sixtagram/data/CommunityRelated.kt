@@ -1,4 +1,4 @@
-package com.example.sixtagram.community
+package com.example.sixtagram.data
 
 import java.io.Serializable
 
@@ -9,3 +9,7 @@ data class CommunityData(
     val picture : String,
     val like : Int,
 ):Serializable
+
+data class CommentData(
+    val comment : String,
+)
