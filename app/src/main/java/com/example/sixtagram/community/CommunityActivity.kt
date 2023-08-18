@@ -35,11 +35,14 @@ class CommunityActivity : AppCompatActivity() {
         communityAdapter = CommunityAdapter(this, communityArrayList)
         initNavigation()
 
-        val communityListView = findViewById<ListView>(R.id.listview_community)
 
+
+
+        val communityListView = findViewById<ListView>(R.id.listview_community)
 
         val adapter = CommunityAdapter(this, communityArrayList)
         communityListView.adapter = adapter
+        adapter.notifyDataSetChanged()
 
         btnAdd.setOnClickListener {
             val intent = Intent(this, CommunityAddActivity::class.java)

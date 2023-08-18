@@ -34,6 +34,8 @@ class CommentAdapter(
 
         comment.text = commentList.comment
 
+
+
         return view
 
     }
