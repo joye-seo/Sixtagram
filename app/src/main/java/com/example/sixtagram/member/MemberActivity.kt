@@ -3,8 +3,6 @@ package com.example.sixtagram.member
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
-import android.text.Layout
-import android.widget.Button
 import android.widget.LinearLayout
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
