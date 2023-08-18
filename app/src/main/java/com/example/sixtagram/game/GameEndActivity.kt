@@ -201,6 +201,16 @@ class GameEndActivity : AppCompatActivity() {
             hourList2[i] = hourList[originalIndex]
             minuteList2[i] = minuteList[originalIndex]
         }
+        for(i in modeList2.indices)
+        {
+            when(modeList2[i])
+            {
+                "이지" -> {getString(R.string.game_mode_easy)}
+                "노말" -> {getString(R.string.game_mode_normal)}
+                "하드" -> {getString(R.string.game_mode_hard)}
+                "지옥" -> {getString(R.string.game_mode_hell)}
+            }
+        }
         for (i in scoreList.indices) {
             val textView = TextView(this)
             textView.text = "${i + 1}. ${String.format("%06d", scoreList2[i])}점 | ${
@@ -213,7 +223,7 @@ class GameEndActivity : AppCompatActivity() {
                     "%03d",
                     finalTimeList2[i] % 1000
                 )
-            }초 | ${modeList2[i]} | ${numsizeList2[i]} | ${monthList2[i]}.${dayList2[i]} ${hourList2[i]}:${minuteList2[i]}"
+            }초 | ${modeList2[i]} | ${numsizeList2[i]} | ${monthList2[i]}.${dayList2[i]} ${hourList2[i]}:${String.format("%02d",minuteList2[i])}"
             recordsLayout.addView(textView)
         }
     }
@@ -231,3 +241,4 @@ class GameEndActivity : AppCompatActivity() {
 // 9. 백그라운드틴트를 적용해야함 버튼
 // 4. 리스트 오름차순 정렬 어떻게?
 // 10. 같은 기록 처리방안 만들기
+// 11. 10위까지만 저장하기. index가 11이 넘어가면, 오름차순 정리후 11번째 삭제 추가하기

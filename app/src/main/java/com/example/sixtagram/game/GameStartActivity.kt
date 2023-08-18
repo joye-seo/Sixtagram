@@ -25,8 +25,8 @@ class GameStartActivity : AppCompatActivity() {
         val btLv = findViewById<Button>(R.id.button2)
         val btm = findViewById<Button>(R.id.button3)
         val btd = findViewById<Button>(R.id.button4)
-        var numsize: String = "1~25" // "1~25" "1~50"
-        var mode: String = "이지 모드" // "easy" "normal" "hard"
+        var numsize: String = getString(R.string.game_numsize_25) // "1~25" "1~50"
+        var mode: String = getString(R.string.game_mode_easy) // "이지" "노멀" "하드" "지옥" "Easy" "Normal" "Hard" "Hell"
 
         btSt.setOnClickListener {
             val intent2 = Intent(this, GameMainActivity::class.java)
@@ -36,33 +36,33 @@ class GameStartActivity : AppCompatActivity() {
         }
 
         btLv.setOnClickListener {
-            if (numsize == "1~25") {
-                numsize = "1~50"
-            } else if (numsize == "1~50") {
-                numsize = "1~25"
+            if (numsize == getString(R.string.game_numsize_25)) {
+                numsize = getString(R.string.game_numsize_50)
+            } else if (numsize == getString(R.string.game_numsize_50)) {
+                numsize = getString(R.string.game_numsize_25)
             }
-            btLv.setText("숫자 크기 : ${numsize}")
+            btLv.setText("${getString(R.string.game_numsize)}${numsize}")
         }
 
         btm.setOnClickListener {
             when (mode) {
-                "이지 모드" -> {
-                    mode = "노멀 모드"
+                getString(R.string.game_mode_easy) -> {
+                    mode = getString(R.string.game_mode_normal)
                 }
 
-                "노멀 모드" -> {
-                    mode = "하드 모드"
+                getString(R.string.game_mode_normal) -> {
+                    mode = getString(R.string.game_mode_hard)
                 }
 
-                "하드 모드" -> {
-                    mode = "지옥 모드"
+                getString(R.string.game_mode_hard) -> {
+                    mode = getString(R.string.game_mode_hell)
                 }
 
-                "지옥 모드" -> {
-                    mode = "이지 모드"
+                getString(R.string.game_mode_hell) -> {
+                    mode = getString(R.string.game_mode_easy)
                 }
             }
-            btm.setText("난이도 : ${mode}")
+            btm.setText("${getString(R.string.game_game_difficulty)} ${mode} ${getString(R.string.game_mode)}")
         }
         btd.setOnClickListener {
             val intent2 = Intent(this, GameDescriptionActivity::class.java)
