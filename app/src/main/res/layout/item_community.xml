@@ -2,17 +2,17 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:padding="16dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="16dp">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_community_subject"
+        android:id="@+id/tv_community_topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_list_subject_background"
-        android:padding="5dp"
+        android:padding="2dp"
         android:text="@string/notice"
-        android:textSize="12sp"
+        android:textSize="11sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,12 +20,11 @@
         android:id="@+id/tv_community_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:text="테스트입니다"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_community_subject" />
+        app:layout_constraintTop_toBottomOf="@id/tv_community_topic" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_community_content"
@@ -35,40 +34,55 @@
         android:ellipsize="end"
         android:maxLines="2"
         android:text="가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하"
-        android:textSize="18sp"
+        android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@id/iv_community_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_community_title" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/iv_community_image"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:layout_marginStart="10dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         android:src="@mipmap/ic_launcher_round"
         app:layout_constraintBottom_toBottomOf="@id/tv_community_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tv_community_content"
         app:layout_constraintTop_toTopOf="@id/tv_community_title" />
 
-    <com.airbnb.lottie.LottieAnimationView
+    <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/lottie_heart"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toStartOf="@id/tv_communuty_like_count"
-        app:layout_constraintTop_toBottomOf="@id/tv_community_content"
-        app:lottie_rawRes="@raw/lottie_heart" />
+        android:layout_width="20dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toEndOf="@id/tv_time"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_time"
+        app:layout_constraintTop_toTopOf="@id/tv_time"
+        app:srcCompat="@drawable/ic_heart" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tv_communuty_like_count"
+        android:id="@+id/tv_community_like_count"
         android:layout_width="wrap_content"
-        android:textSize="17sp"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/lottie_heart"
+        android:gravity="center"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/lottie_heart"
         android:text="1"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/lottie_heart"
         app:layout_constraintTop_toTopOf="@id/lottie_heart" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="10일 전"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_community_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

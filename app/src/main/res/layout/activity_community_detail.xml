@@ -58,34 +58,57 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_community_detail_profile"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/ic_member_test"
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_community_detail_topic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_list_subject_background"
+                android:padding="2dp"
+                android:text="@string/notice"
+                android:textSize="11sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_community_detail_profile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_member_test"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_community_detail_topic" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_community_detail_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="이름"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="@id/iv_community_detail_profile"
+                android:layout_marginStart="10dp"
+                android:text="id"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/tv_write_time"
                 app:layout_constraintStart_toEndOf="@id/iv_community_detail_profile"
                 app:layout_constraintTop_toTopOf="@id/iv_community_detail_profile" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_write_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="13일 전"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/iv_community_detail_profile"
+                app:layout_constraintStart_toEndOf="@id/iv_community_detail_profile"
+                app:layout_constraintTop_toBottomOf="@id/tv_community_detail_id" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/iv_community_detail_image"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@color/pantone_189"
                 app:layout_constraintTop_toBottomOf="@id/iv_community_detail_profile"
-                app:srcCompat="@drawable/ic_image_add" />
+                app:srcCompat="@drawable/ic_login_sparta"
+                tools:layout_editor_absoluteX="27dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tv_community_detail_title"
@@ -93,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="테스트입니다"
-                android:textSize="28sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/iv_community_detail_image" />
@@ -104,67 +127,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:text="가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하가나다라마바사아자차카타파하"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_community_detail_title" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_write_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="10dp"
-                android:text="작성일자"
-                app:layout_constraintEnd_toStartOf="@id/tv_write_time"
-                app:layout_constraintTop_toBottomOf="@id/tv_community_detail_content" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_write_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="11.22.33"
-                app:layout_constraintBottom_toBottomOf="@id/tv_write_title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_write_title" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_modify_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="10dp"
-                android:text="수정일자"
-                app:layout_constraintEnd_toStartOf="@id/tv_modify_time"
-                app:layout_constraintTop_toBottomOf="@id/tv_write_title" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tv_modify_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="11.22.33"
-                app:layout_constraintBottom_toBottomOf="@id/tv_modify_title"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_modify_title" />
 
             <LinearLayout
                 android:id="@+id/layout_heart_click"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:background="@drawable/shape_comment_like_background"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:paddingHorizontal="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_modify_title">
+                app:layout_constraintTop_toBottomOf="@id/tv_community_detail_content">
 
                 <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="좋아요" />
-
 
                 <com.airbnb.lottie.LottieAnimationView
                     android:id="@+id/lottie_heart"
@@ -172,15 +152,14 @@
                     android:layout_height="50dp"
                     app:lottie_rawRes="@raw/lottie_heart" />
 
-
             </LinearLayout>
 
             <View
                 android:id="@+id/line"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/gray"
+                android:layout_marginTop="10dp"
+                android:background="#C1BFBF"
                 app:layout_constraintTop_toBottomOf="@id/layout_heart_click" />
 
 
@@ -190,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="댓글 1개"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/line" />
@@ -207,27 +186,33 @@
 
     </ScrollView>
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/edt_comment"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/shape_comment_background"
-        android:padding="4dp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btn_click"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_click"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="click"
-        app:layout_constraintBottom_toBottomOf="@id/edt_comment"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/edt_comment" />
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_comment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/shape_comment_background"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="5dp"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_click"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="click"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
