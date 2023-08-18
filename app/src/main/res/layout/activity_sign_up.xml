@@ -19,7 +19,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -31,31 +30,34 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_login_email" />
-
-
-            <EditText
-                android:id="@+id/email2"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="@string/login_edit_email"
-                android:inputType="text"
+                app:srcCompat="@drawable/ic_login_person2" />
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toTopOf="parent" />
+                >
 
-
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/email2"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/login_edit_email"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,7 +66,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="50dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -76,15 +77,15 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_login_password" />
+                app:srcCompat="@drawable/ic_login_password5" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -93,6 +94,8 @@
                 app:passwordToggleEnabled="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:counterMaxLength="8"
@@ -116,7 +119,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="40dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -128,21 +130,23 @@
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_login_password" />
+                app:srcCompat="@drawable/ic_login_password5" />
 
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:passwordToggleEnabled="true">
@@ -164,7 +168,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -176,30 +179,35 @@
 
             <ImageView
                 android:id="@+id/imageView6"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_people" />
+                app:srcCompat="@drawable/ic_login_person2" />
 
-
-            <EditText
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="@string/login_edit_name"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView6"
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/login_edit_name"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -209,7 +217,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -221,30 +228,35 @@
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_people" />
+                app:srcCompat="@drawable/ic_sign_up_home" />
 
-
-            <EditText
-                android:id="@+id/residence"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="@string/sign_up_residence"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView7"
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/residence"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/sign_up_residence"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -254,7 +266,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -266,30 +277,35 @@
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_people" />
+                app:srcCompat="@drawable/ic_sign_up_mbti" />
 
-
-            <EditText
-                android:id="@+id/mbti"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="@string/sign_up_mbti"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView8"
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mbti"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/sign_up_mbti"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -299,7 +315,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -311,30 +326,35 @@
 
             <ImageView
                 android:id="@+id/imageView9"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_people" />
+                app:srcCompat="@drawable/ic_sign_up_hobby" />
 
-
-            <EditText
-                android:id="@+id/hobby"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="@string/sign_up_hobby"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView9"
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/hobby"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/sign_up_hobby"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -344,7 +364,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -358,28 +377,34 @@
                 android:id="@+id/imageView10"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_people" />
+                app:srcCompat="@drawable/ic_sign_up_concern" />
 
 
-            <EditText
-                android:id="@+id/concern"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="@string/sign_up_concern"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView10"
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/concern"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/sign_up_concern"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -389,7 +414,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -403,28 +427,34 @@
                 android:id="@+id/imageView11"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_people" />
+                app:srcCompat="@drawable/ic_sign_up_blog" />
 
 
-            <EditText
-                android:id="@+id/blog"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="@string/sign_up_blog"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView11"
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/blog"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/sign_up_blog"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -434,7 +464,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -446,30 +475,36 @@
 
             <ImageView
                 android:id="@+id/imageView12"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_people" />
+                app:srcCompat="@drawable/ic_sign_up_github" />
 
 
-            <EditText
-                android:id="@+id/github"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="@string/sign_up_github"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView12"
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/github"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/sign_up_github"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -479,7 +514,6 @@
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:background="@color/pantone_lightGreen"
             android:gravity="center"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -491,10 +525,10 @@
 
             <ImageView
                 android:id="@+id/imageView13"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -502,19 +536,25 @@
                 app:srcCompat="@drawable/ic_people" />
 
 
-            <EditText
-                android:id="@+id/editText"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:ems="10"
-                android:hint="하고 싶은 말을 작성 하세요"
-                android:inputType="text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView13"
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editText"
+                    android:layout_width="230dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:hint="@string/sign_up_editText"
+                    android:inputType="text"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -538,13 +578,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/emailOverlap2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="1dp"
             android:layout_marginEnd="20dp"
             android:text="@string/sign_up_email_overlap"
+            android:background="@drawable/shape_comment_like_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -570,13 +611,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordText2" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/createMember"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp"
             android:text="@string/sign_up_member"
+            android:background="@drawable/shape_comment_like_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

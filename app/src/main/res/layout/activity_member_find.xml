@@ -14,8 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_login_sparta"
-        android:background="@color/yellow"
+        android:src="@drawable/ic_login_sparta2"
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +22,6 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
-        android:background="@color/pantone_lightGreen"
         android:gravity="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,55 +30,55 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.0">
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imageView2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:src="@drawable/ic_people"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
 
-        <EditText
-            android:id="@+id/residence"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="@string/sign_up_residence"
-            android:inputType="text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
+        <com.google.android.material.textfield.TextInputLayout
+            style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeWidth="2dp"
+            app:boxStrokeColor="#000000"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/residence"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:hint="@string/sign_up_residence"
+                android:inputType="text"
+                android:drawableStart="@drawable/ic_sign_up_home2"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/memberFind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/shape_comment_like_background"
         android:text="@string/member_find_email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordView" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/shape_comment_like_background"
         android:text="@string/member_find_close"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/memberFind" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordView" />
 
     <TextView
         android:id="@+id/emailView"
@@ -88,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="@string/member_email_view"
-        android:textSize="25sp"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email" />
@@ -99,7 +97,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/member_password_view"
-        android:textSize="25sp"
+        android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"

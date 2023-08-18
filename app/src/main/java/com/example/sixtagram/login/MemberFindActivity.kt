@@ -9,12 +9,14 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.sixtagram.R
 import com.example.sixtagram.memberData.Member
+import com.example.sixtagram.memberData.MemberHashmap
 
 class MemberFindActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member_find)
 
+        val memberHashMap = MemberHashmap.retrieveAllMembers()
         val residence = findViewById<EditText>(R.id.residence)
         val btn1 = findViewById<Button>(R.id.memberFind)
         val btn2 = findViewById<Button>(R.id.close)
@@ -22,6 +24,7 @@ class MemberFindActivity : AppCompatActivity() {
         val passwordView = findViewById<TextView>(R.id.passwordView)
 
         val memberList = Member.retrieveMembers()
+        val keys: Set<String> = memberHashMap.keys
         var i: Int
         btn1.setOnClickListener {
             if (residence.text.isNullOrEmpty()) {
@@ -30,7 +33,7 @@ class MemberFindActivity : AppCompatActivity() {
                 i = 0
                 for ((index, member) in memberList.withIndex()) {
                     if (member.residence == residence.text.toString()) {
-                        emailView.text = memberList[index].email
+                        emailView.text = keys.toString()
                         passwordView.text = memberList[index].password
                         break
                     }

@@ -14,8 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/ic_login_sparta"
-        android:background="@color/yellow"
+        android:src="@drawable/ic_login_sparta2"
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,7 +22,6 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
-        android:background="@color/pantone_lightGreen"
         android:gravity="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,31 +30,36 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.0">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_login_person2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_people" />
-
-
-        <EditText
-            android:id="@+id/email2"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:ems="10"
-            android:hint="@string/login_email"
-            android:inputType="text"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.textfield.TextInputLayout
+            style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeWidth="2dp"
+            app:boxStrokeColor="#000000"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email2"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_gravity="end"
+                android:hint="@string/login_email"
+                android:inputType="text"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,7 +67,6 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="100dp"
-        android:background="@color/pantone_lightGreen"
         android:gravity="center"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,17 +75,17 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.0">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_login_password5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_login_password" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -91,6 +93,8 @@
             app:passwordToggleEnabled="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:boxStrokeWidth="2dp"
+            app:boxStrokeColor="#000000"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             >
@@ -106,12 +110,13 @@
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/login_login_button"
+        android:background="@drawable/shape_comment_like_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
