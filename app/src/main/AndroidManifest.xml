@@ -41,9 +41,9 @@
         <activity
             android:name=".community.CommunityActivity"
             android:exported="false" />
-        <activity
-            android:name=".calendar.CalendarActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".calendar.CalendarActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".member.MemberModifyActivity"
             android:exported="false" />
@@ -51,7 +51,7 @@
             android:name=".member.MemberDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".member.MemberActivity"
+            android:name=".calendar.CalendarActivity"
             android:exported="false"/>
 
         <activity

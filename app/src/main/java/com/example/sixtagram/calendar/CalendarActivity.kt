@@ -58,10 +58,12 @@ class CalendarActivity : AppCompatActivity() {
 
             dayText.text = dateFormat.format(selectedDate)
 
+
             when (dayOfWeek) {
                 Calendar.SATURDAY -> dayText.setTextColor(Color.parseColor("#0000FF"))
                 Calendar.SUNDAY -> dayText.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark))
-                else -> dayText.setTextColor(ContextCompat.getColor(this, android.R.color.black))
+                else -> dayText.setTextColor(ContextCompat.getColor(this, android.R.color.white))
+
             }
 
         }   //캘린더의 날짜가 변경될때마다 실행되는 리스너
@@ -87,6 +89,8 @@ class CalendarActivity : AppCompatActivity() {
                 calendar.get(Calendar.MONTH) + 1,
                 calendar.get(Calendar.DAY_OF_MONTH),
                 dayOfWeek)
+
+            dayText.setTextColor(Color.WHITE)  //홈버튼에서 원래 날짜로 돌아올때 텍스트 색상 흰색으로 변경
 
 
 
