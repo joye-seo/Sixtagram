@@ -35,7 +35,7 @@ class MemberActivity : AppCompatActivity() {
             AdapterView.OnItemClickListener { parent, view, position, id ->
             val selectItem = parent.getItemAtPosition(position) as MemUser
             val intent = Intent(this, MemberDetailActivity::class.java)
-            selectItem.putExtra("MemUser", UserList[position])
+//            selectItem.putExtra("MemUser", UserList[position])
             startActivity(intent)
 
             }

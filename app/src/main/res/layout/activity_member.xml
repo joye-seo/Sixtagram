@@ -43,7 +43,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="가입한 사람"
-            android:textAlignment="textStart"
+            android:layout_marginEnd="150dp"
             android:textSize="16sp"
             android:textStyle="bold" />
 
