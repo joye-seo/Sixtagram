@@ -206,7 +206,7 @@ class GameEndActivity : AppCompatActivity() {
             when(modeList2[i])
             {
                 "이지" -> {getString(R.string.game_mode_easy)}
-                "노말" -> {getString(R.string.game_mode_normal)}
+                "기본" -> {getString(R.string.game_mode_base)}
                 "하드" -> {getString(R.string.game_mode_hard)}
                 "지옥" -> {getString(R.string.game_mode_hell)}
             }

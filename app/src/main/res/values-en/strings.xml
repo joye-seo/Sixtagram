@@ -34,7 +34,7 @@
     <string name="member_find_close">close</string>
     <string name="sign_up_editText">write what you want to say</string>
     <string name="game_mode_easy">Easy</string>
-    <string name="game_mode_normal">Normal</string>
+    <string name="game_mode_base">Base</string>
     <string name="game_mode_hard">Hard</string>
     <string name="game_mode_hell">Hell</string>
     <string name="game_mode">Mode</string>

@@ -224,12 +224,12 @@ class GameMainActivity : AppCompatActivity() {
             for (i in 0..49) {
                 if (buttons[i].text == findnumber.toString()) {
                     // 클릭 효과 적용
-                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
-                    buttons[i].setTextColor(Color.BLACK)
+//                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
+                    buttons[i].setTextColor(Color.BLUE)
 
                     // 짧은 시간 후 원래의 색상으로 복구
                     Handler(Looper.getMainLooper()).postDelayed({
-                        buttons[i].backgroundTintList = originalBackgroundColor
+//                        buttons[i].backgroundTintList = originalBackgroundColor
                         buttons[i].setTextColor(originalTextColor)
                     }, 400)
                     break
@@ -250,8 +250,8 @@ class GameMainActivity : AppCompatActivity() {
             for (i in 0..24) {
                 if (buttons[i].text == "1") {
                     count2 = i
-                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
-                    buttons[i].setTextColor(Color.BLACK)
+//                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
+                    buttons[i].setTextColor(Color.BLUE)
                 }
             }
         }
@@ -278,6 +278,7 @@ class GameMainActivity : AppCompatActivity() {
                         in 2..24 -> {
                             if (numsize == getString(R.string.game_numsize_50)) {
                                 buttons[i].text = numbers2[i].toString()
+
                             } else if (numsize == getString(R.string.game_numsize_25)) {
                                 buttons[i].visibility = Button.INVISIBLE
                                 count4--
@@ -318,9 +319,9 @@ class GameMainActivity : AppCompatActivity() {
                     if (mode == getString(R.string.game_mode_easy)) {
                         for (j in 0..24) {
                             if ((findnumber).toString() == ((buttons[j].text).toString())) {
-                                buttons[j].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
-                                buttons[j].setTextColor(Color.BLACK)
-                                buttons[count2].backgroundTintList = originalBackgroundColor2
+//                                buttons[j].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
+                                buttons[j].setTextColor(Color.BLUE)
+//                                buttons[count2].backgroundTintList = originalBackgroundColor2
                                 buttons[count2].setTextColor(Color.WHITE)
                                 count2 = j
                                 break
@@ -339,7 +340,7 @@ class GameMainActivity : AppCompatActivity() {
         var score = 0L
         score = 100000000L / finaltime
         when (state3) {
-            getString(R.string.game_mode_normal) -> {
+            getString(R.string.game_mode_base) -> {
                 score = score * 5 / 2
             }
 

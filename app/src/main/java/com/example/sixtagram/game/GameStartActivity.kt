@@ -47,10 +47,10 @@ class GameStartActivity : AppCompatActivity() {
         btm.setOnClickListener {
             when (mode) {
                 getString(R.string.game_mode_easy) -> {
-                    mode = getString(R.string.game_mode_normal)
+                    mode = getString(R.string.game_mode_base)
                 }
 
-                getString(R.string.game_mode_normal) -> {
+                getString(R.string.game_mode_base) -> {
                     mode = getString(R.string.game_mode_hard)
                 }
 

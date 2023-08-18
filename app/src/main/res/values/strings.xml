@@ -33,7 +33,7 @@
     <string name="member_find_close">닫기</string>
     <string name="sign_up_editText">하고 싶은 말을 작성 하세요</string>
     <string name="game_mode_easy">이지</string>
-    <string name="game_mode_normal">노말</string>
+    <string name="game_mode_base">기본</string>
     <string name="game_mode_hard">하드</string>
     <string name="game_mode_hell">지옥</string>
     <string name="game_mode">모드</string>
