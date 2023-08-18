@@ -1,16 +1,11 @@
 package com.example.sixtagram.member
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 
@@ -53,7 +48,8 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
     }
 
     override fun ondelYesMemBtnClicked() {
-        Toast.makeText(this, "삭제버튼 클릭", Toast.LENGTH_SHORT).show()    }
+        Toast.makeText(this, "삭제버튼 클릭", Toast.LENGTH_SHORT).show()
+    }
 
     override fun ondelNoMemBtnClicked() {
         Toast.makeText(this, "삭제취소 클릭", Toast.LENGTH_SHORT).show()
@@ -94,7 +90,7 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
 //            val intent = Intent(this, MemberModifyActivity::class.java)
 //            activityResultLauncher.launch(intent)
 //        }
-    }
+}
 
 //    fun onDialogBtnClicked(view: View) {
 //        Log.d(TAG, "MemberDetailActivity - onDialogBtnClicked() called")
