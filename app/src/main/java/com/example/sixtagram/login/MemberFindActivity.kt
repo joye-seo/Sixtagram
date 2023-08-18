@@ -33,7 +33,7 @@ class MemberFindActivity : AppCompatActivity() {
                 i = 0
                 for ((index, member) in memberList.withIndex()) {
                     if (member.residence == residence.text.toString()) {
-                        emailView.text = keys.toString()
+                        emailView.text = keys.elementAt(index)
                         passwordView.text = memberList[index].password
                         break
                     }

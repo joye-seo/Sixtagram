@@ -16,7 +16,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/email"
             android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:layout_height="55dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
@@ -42,7 +42,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email2"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/login_edit_email"
                     android:inputType="text"
@@ -86,7 +86,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/login_edit_password"
                     android:inputType="textPassword"
@@ -128,7 +128,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password2"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/login_edit_password"
                     android:inputType="textPassword"
@@ -167,7 +167,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/name"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/login_edit_name"
                     android:inputType="text"
@@ -206,7 +206,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/residence"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="end"
                     android:hint="@string/sign_up_residence"
                     android:inputType="text"
@@ -245,7 +245,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/mbti"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_mbti"
                     android:inputType="text"
@@ -284,7 +284,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/hobby"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_hobby"
                     android:inputType="text"
@@ -323,7 +323,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/concern"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_concern"
                     android:inputType="text"
@@ -362,7 +362,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/blog"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_blog"
                     android:inputType="text"
@@ -401,7 +401,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/github"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_github"
                     android:inputType="text"
@@ -440,7 +440,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editText"
                     android:layout_width="300dp"
-                    android:layout_height="50dp"
+                    android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_editText"
                     android:inputType="text"

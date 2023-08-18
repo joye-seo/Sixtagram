@@ -45,7 +45,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/residence"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:hint="@string/sign_up_residence"
                 android:inputType="text"
