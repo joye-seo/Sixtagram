@@ -175,7 +175,7 @@
                 style="@style/FontSizeMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="댓글 1개"
+                android:text="댓글 7개"
                 android:layout_marginTop="30dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"

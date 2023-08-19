@@ -27,7 +27,7 @@ class CommunityAddActivity : AppCompatActivity() {
 
         btnSaveAdd.setOnClickListener {
             val intent = Intent(this, CommunityActivity::class.java)
-            val test = CommunityData("", edtTitle.toString(), edtContent.toString(), "", 0)
+            val test = CommunityData("", edtTitle.toString(), edtContent.toString(), "", 0,"1분 전")
             intent.putExtra("addData", test)
             setResult(RESULT_OK, intent)
             finish()

@@ -129,4 +129,6 @@
     <string name="game_end_title">스코어 보드</string>
     <string name="game_description_title">게임 설명</string>
     <string name="game_main_start_message">위쪽의 1버튼을 누르면 게임이 시작됩니다.</string>
+    <string name="input_title">제목을 입력하세요</string>
+    <string name="input_content">이야기를 적어주세요</string>
 </resources>

@@ -8,6 +8,7 @@ data class CommunityData(
     val content : String,
     val picture : String,
     val like : Int,
+    val date : String,
 ):Serializable
 
 data class CommentData(
