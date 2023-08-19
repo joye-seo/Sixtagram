@@ -12,8 +12,10 @@ import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.sixtagram.R
+import com.example.sixtagram.memberData.Member.members
+import com.example.sixtagram.memberData.MemberData
 
-class MemUserAdap(val context: Context, val UserList: ArrayList<MemUser>) : BaseAdapter() {
+class MemUserAdap(val context: Context, val UserList: MutableList<MemberData>) : BaseAdapter() {
 
     override fun getCount(): Int {
         return UserList.size
@@ -36,11 +38,19 @@ class MemUserAdap(val context: Context, val UserList: ArrayList<MemUser>) : Base
 
         val profile = view.findViewById<ImageView>(R.id.iv_profile_kms)
         val name = view.findViewById<TextView>(R.id.tv_name)
+//        val password = view.findViewById<TextView>(R.id.tv_name)
+//        val residence = view.findViewById<TextView>(R.id.tv_name)
+//        val mbti = view.findViewById<TextView>(R.id.tv_name)
+//        val hobby = view.findViewById<TextView>(R.id.tv_name)
+//        val concern = view.findViewById<TextView>(R.id.tv_name)
+//        val blog = view.findViewById<TextView>(R.id.tv_name)
+//        val github = view.findViewById<TextView>(R.id.tv_name)
+//        val text = view.findViewById<TextView>(R.id.tv_comment)
 
-        val user = UserList[position]
-//val user = intent.getserializableExtra("user") as MemUser
+        val user = members[position]
+//        val user = intent.getserializableExtra("user") as Member
         Glide.with(context)
-            .load(user.profile) .transform(MultiTransformation(FitCenter(), RoundedCorners(500)))
+            .load(user.imageEdit) .transform(MultiTransformation(FitCenter(), RoundedCorners(500)))
             .into(profile)
 
 //        profile.setImageResource(user.profile)

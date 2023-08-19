@@ -1,5 +1,7 @@
 package com.example.sixtagram.memberData
 
+import java.io.Serializable
+
 data class MemberData(
     var password: String,
     var name: String,
@@ -11,4 +13,4 @@ data class MemberData(
     var github: String,
     var text: String,
     var imageEdit: String
-)
+): Serializable

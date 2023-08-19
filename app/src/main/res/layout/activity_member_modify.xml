@@ -37,7 +37,7 @@
                 android:layout_marginStart="24dp"
                 android:src="@drawable/ic_member_test" />
 
-            <TextView
+            <EditText
                 android:id="@+id/textView9"
                 style="@style/FontSizeLarge"
                 android:layout_width="wrap_content"
@@ -85,7 +85,7 @@
                 app:layout_constraintStart_toStartOf="@+id/et_email"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
+            <TextView
                 android:id="@+id/et_email"
                 style="@style/FontSizeSmall"
                 android:layout_width="219dp"
@@ -98,7 +98,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_mod_email" />
 
             <TextView
-                android:id="@+id/tv_mod_regidene"
+                android:id="@+id/tv_mod_regidence"
                 style="@style/FontSizeMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -107,14 +107,14 @@
                 app:layout_constraintStart_toStartOf="@+id/et_email"
                 app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tv_regidence"
                 style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="경기"
-                app:layout_constraintStart_toStartOf="@+id/tv_mod_regidene"
-                app:layout_constraintTop_toBottomOf="@+id/tv_mod_regidene" />
+                app:layout_constraintStart_toStartOf="@+id/tv_mod_regidence"
+                app:layout_constraintTop_toBottomOf="@+id/tv_mod_regidence" />
 
             <TextView
                 android:id="@+id/tv_mod_mbti"
@@ -128,7 +128,7 @@
                 app:layout_constraintStart_toStartOf="@+id/tv_regidence"
                 app:layout_constraintTop_toBottomOf="@+id/tv_regidence" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tv_mbti"
                 style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tv_hobby"
                 style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
@@ -167,7 +167,7 @@
                 app:layout_constraintStart_toStartOf="@+id/tv_hobby"
                 app:layout_constraintTop_toBottomOf="@+id/tv_hobby" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tv_interest"
                 style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
@@ -186,7 +186,7 @@
                 app:layout_constraintStart_toStartOf="@+id/tv_mbti"
                 app:layout_constraintTop_toBottomOf="@+id/tv_mbti" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tv_blog"
                 style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
@@ -206,7 +206,7 @@
                 app:layout_constraintStart_toStartOf="@+id/tv_blog"
                 app:layout_constraintTop_toBottomOf="@+id/tv_blog" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tv_github"
                 style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
@@ -226,7 +226,7 @@
                 app:layout_constraintStart_toStartOf="@+id/tv_github"
                 app:layout_constraintTop_toBottomOf="@+id/tv_github" />
 
-            <TextView
+            <EditText
                 android:id="@+id/tv_comment"
                 style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"

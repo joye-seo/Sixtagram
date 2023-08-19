@@ -102,7 +102,7 @@
                 app:layout_constraintStart_toStartOf="@+id/et_email"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
+            <TextView
                 android:id="@+id/et_email"
                 style="@style/FontSizeSmall"
                 android:layout_width="219dp"
@@ -116,131 +116,138 @@
 
             <TextView
                 android:id="@+id/textView11"
+                style="@style/FontSizeMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/member_regidence"
-                style="@style/FontSizeMedium"                app:layout_constraintStart_toStartOf="@+id/et_email"
+                app:layout_constraintStart_toStartOf="@+id/et_email"
                 app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
             <TextView
                 android:id="@+id/tv_regidence"
+                style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="경기"
-                style="@style/FontSizeSmall"
                 app:layout_constraintStart_toStartOf="@+id/textView11"
                 app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
             <TextView
                 android:id="@+id/textView13"
+                style="@style/FontSizeMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/member_mbti"
-                style="@style/FontSizeMedium"                app:layout_constraintBottom_toTopOf="@+id/tv_mbti"
+                app:layout_constraintBottom_toTopOf="@+id/tv_mbti"
                 app:layout_constraintStart_toStartOf="@+id/tv_regidence"
                 app:layout_constraintTop_toBottomOf="@+id/tv_regidence" />
 
             <TextView
                 android:id="@+id/tv_mbti"
+                style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ISFP"
-                style="@style/FontSizeSmall"
                 app:layout_constraintStart_toStartOf="@+id/textView13"
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
             <TextView
                 android:id="@+id/textView15"
+                style="@style/FontSizeMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="135dp"
                 android:text="@string/member_hobby"
-                style="@style/FontSizeMedium"                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/et_email" />
 
             <TextView
                 android:id="@+id/tv_hobby"
+                style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="식물키우기입니다"
-                style="@style/FontSizeSmall"
                 app:layout_constraintStart_toStartOf="@+id/textView15"
                 app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
             <TextView
                 android:id="@+id/textView17"
+                style="@style/FontSizeMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/member_interest"
-                style="@style/FontSizeMedium"                app:layout_constraintStart_toStartOf="@+id/tv_hobby"
+                app:layout_constraintStart_toStartOf="@+id/tv_hobby"
                 app:layout_constraintTop_toBottomOf="@+id/tv_hobby" />
 
             <TextView
                 android:id="@+id/tv_interest"
+                style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="식물 번식시키기"
-                style="@style/FontSizeSmall"
                 app:layout_constraintStart_toStartOf="@+id/textView17"
                 app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
             <TextView
                 android:id="@+id/textView19"
+                style="@style/FontSizeMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/member_blog_address"
-                style="@style/FontSizeMedium"                app:layout_constraintStart_toStartOf="@+id/tv_mbti"
+                app:layout_constraintStart_toStartOf="@+id/tv_mbti"
                 app:layout_constraintTop_toBottomOf="@+id/tv_mbti" />
 
             <TextView
                 android:id="@+id/tv_blog"
+                style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
-                style="@style/FontSizeSmall"
                 android:text="https://coding-martinkwon.tistory.com/"
                 app:layout_constraintStart_toStartOf="@+id/textView19"
                 app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
             <TextView
                 android:id="@+id/textView21"
+                style="@style/FontSizeMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/member_github_address"
-                style="@style/FontSizeMedium"                app:layout_constraintStart_toStartOf="@+id/tv_blog"
+                app:layout_constraintStart_toStartOf="@+id/tv_blog"
                 app:layout_constraintTop_toBottomOf="@+id/tv_blog" />
 
             <TextView
                 android:id="@+id/tv_github"
+                style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:autoLink="web"
-                style="@style/FontSizeSmall"
                 android:text="https://github.com/MartinKwon94"
                 app:layout_constraintStart_toStartOf="@+id/textView21"
                 app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
             <TextView
                 android:id="@+id/textView23"
+                style="@style/FontSizeMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="@string/member_comment"
-                style="@style/FontSizeMedium"                app:layout_constraintStart_toStartOf="@+id/tv_github"
+                app:layout_constraintStart_toStartOf="@+id/tv_github"
                 app:layout_constraintTop_toBottomOf="@+id/tv_github" />
 
             <TextView
                 android:id="@+id/tv_saying"
+                style="@style/FontSizeSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/FontSizeSmall"
                 android:text="우리조에서 나만 못하는듯 ㅠ_ㅠ"
                 app:layout_constraintStart_toStartOf="@+id/textView23"
                 app:layout_constraintTop_toBottomOf="@+id/textView23" />

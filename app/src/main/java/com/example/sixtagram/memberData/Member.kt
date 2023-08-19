@@ -1,7 +1,7 @@
 package com.example.sixtagram.memberData
 
 object Member {
-    private var members = mutableListOf<MemberData> (
+    internal var members = mutableListOf<MemberData> (
         MemberData(
             "1",
             "권민석",

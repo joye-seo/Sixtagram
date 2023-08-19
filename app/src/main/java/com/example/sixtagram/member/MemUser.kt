@@ -13,6 +13,6 @@ data class MemUser(
     val blog: String,
     val github: String,
     val comment: String
-    // 추가 필드들...
+    // 추가 가능
 ) : Serializable
 //클래스 모델 객체

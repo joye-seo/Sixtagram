@@ -11,14 +11,17 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
+import com.example.sixtagram.memberData.MemberData
 
 class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
     val TAG: String = "로그"
     lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
+//    lateinit var MemDetailAdap: MemDetailAdap//멤버디테일액티 셀렉터할거
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member_detail)
+
 
 
 
@@ -53,7 +56,7 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
         }
 
 
-        val memberEmail = findViewById<EditText>(R.id.et_email)
+        val memberEmail = findViewById<TextView>(R.id.et_email)
         val memberRegidence = findViewById<TextView>(R.id.tv_regidence)
         val memberMbti = findViewById<TextView>(R.id.tv_mbti)
         val memberHobby = findViewById<TextView>(R.id.tv_hobby)
@@ -63,24 +66,20 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
         val memberComment = findViewById<TextView>(R.id.tv_saying)
 
         val intent = intent
-        val selectedUser = intent.getSerializableExtra("MemUser") as? MemUser // null-safe
+        val selectedUser = intent.getSerializableExtra("MemberData") as? MemberData
 
-        // 선택한 사용자 정보가 null이 아닌 경우에만 데이터를 표시하도록 처리
         if (selectedUser != null) {
-            // 데이터를 해당 뷰에 표시하는 코드
-            memberEmail.setText(selectedUser.email)
-            memberRegidence.text = selectedUser.regidence
+            // 선택한 사용자 정보를 화면에 표시하는 코드
+            memberRegidence.setText(selectedUser.residence)
             memberMbti.text = selectedUser.mbti
             memberHobby.text = selectedUser.hobby
-            memberInterest.text = selectedUser.interest
+            memberInterest.text = selectedUser.concern
             memberBlog.text = selectedUser.blog
             memberGithub.text = selectedUser.github
-            memberComment.text = selectedUser.comment
+            memberComment.text = selectedUser.text
         } else {
-            // 선택한 사용자 정보가 null인 경우, 에러 처리 등을 수행
+            // 선택한 사용자 정보가 없을 때의 처리
         }
-
-        // 나머지 코드...
 
     }
 
