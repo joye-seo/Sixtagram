@@ -21,7 +21,7 @@ class NotionTextEditActivity : AppCompatActivity() {
         okbtn.setOnClickListener {
             val inputNotion = notionEdt.text.toString()
             if (inputNotion.isNullOrEmpty()){
-                Toast.makeText(this, "공지사항을 입력해주세요.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.input_notion_message), Toast.LENGTH_SHORT).show()
             }
             else {
                 val resultIntent = Intent()
@@ -37,7 +37,7 @@ class NotionTextEditActivity : AppCompatActivity() {
         val promiseTxt : TextView = findViewById(R.id.promiseTxt)
 
         addBtn.setOnClickListener {
-            promiseTxt.setText("텍스트 수정 업데이트 중입니다.")
+            promiseTxt.setText(getString(R.string.text_update_message))
         }
 
 

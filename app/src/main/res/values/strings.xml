@@ -63,6 +63,34 @@
     <string name="game_GameRestart_button">게임 재시작</string>
     <string name="game_ScoreBoard_View">스코어 보드</string>
     <string name="game_ResetRankings_Button">랭킹 초기화</string>
+    <string name="home_button">SixTagram 입니다.</string>
+    <string name="memo_button">메모장 글쓰기</string>
+    <string name="notion_button">공지사항 수정</string>
+    <string name="home_text">홈</string>
+    <string name="calendar_date_format">yyyy년 MM월 dd일 EEEE</string>
+    <string name="day_display_format">%04d년 %02d월 %02d일 %s요일</string>
+    <string name="save_message">저장했습니다.</string>
+    <string name="choose_category">카테고리를 골라주세요</string>
+    <string name="daily_life">daily life</string>
+    <string name="thing_to_do">a thing to do</string>
+    <string name="notion">notion</string>
+    <string name="input_notion_message">공지사항을 입력해주세요.</string>
+    <string name="text_update_message">텍스트 수정 업데이트 중입니다.</string>
+    <string name="white_notion">공지사항 : </string>
+    <string name="notion_input">공지사항을 변경해주세요.</string>
+    <string name="memoTxt">메모장 입니다.</string>
+    <string name="toastCapture">저장했습니다.</string>
+    <string name="titleEdt">제목을 입력해주세요.</string>
+    <string name="memoEdt">메모를 입력해주세요.</string>
+    <string name="capturelist">캡쳐 리스트</string>
+    <string name="noticeEdt">공지사항 변경</string>
+    <string name="sixtagramnotice">Sixtagram 공지사항</string>
+    <string name="time_promise">우리팀 시간 약속</string>
+    <string name="text_schedule">-오전 : 09:00 ~ 10:00 \n 데일리 스크럼 -> 노션 페이지에 오늘 계획 정리 \n-오전 : 10:00 ~ 11:00
+\n 알고리즘 학습 1일 1문제 목표! \n -집중 코딩 시간 \n -오후 : 14:00 ~ 18:00 \n
+-일반적인 학습과 달리 강의를 듣는 것만으로는 개발 실력이 상승하지 않습니다. \n
+-개발은 고민하고 스스로 시도하고 생각하는 시간이 그 무엇보다도 중요합니다. \n
+-집중 코딩 시간을 통해 팀원들과 함께 문제에 맞닥뜨리고 , 정리해보세요 \n</string>
     <string name="member_modify">수정</string>
     <string name="member_delete">삭제</string>
     <string name="member_email_address">이메일 주소</string>
@@ -75,4 +103,6 @@
     <string name="member_comment">한마디</string>
     <string name="member_delete_alarm">정말 삭제하시겠습니까?</string>
     <string name="member_cancel">취소</string>
+
+
 </resources>

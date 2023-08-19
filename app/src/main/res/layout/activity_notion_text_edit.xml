@@ -36,7 +36,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="공지사항 변경"
+                android:text="@string/noticeEdt"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/white"
@@ -69,7 +69,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sixtagram 공지사항"
+            android:text="@string/sixtagramnotice"
             android:textSize="24sp"
             android:textColor="#ef3340"
             android:textStyle="bold"
@@ -98,7 +98,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:hint="공지사항을 입력해주세요."
+            android:hint="@string/input_notion_message"
             android:layout_margin="10dp"
             android:singleLine="true"
             android:textColor="@color/white"
@@ -122,7 +122,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="우리팀 시간 약속"
+        android:text="@string/time_promise"
         android:textSize="24sp"
         android:gravity="center"
         android:layout_marginTop="20dp"
@@ -152,12 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/addBtn"
             android:layout_toStartOf="@+id/addBtn"
-            android:text="-오전 : 09:00 ~ 10:00 \n 데일리 스크럼 -> 노션 페이지에 오늘 계획 정리 \n-오전 : 10:00 ~ 11:00
-\n 알고리즘 학습 1일 1문제 목표! \n -집중 코딩 시간 \n -오후 : 14:00 ~ 18:00 \n
--일반적인 학습과 달리 강의를 듣는 것만으로는 개발 실력이 상승하지 않습니다. \n
--개발은 고민하고 스스로 시도하고 생각하는 시간이 그 무엇보다도 중요합니다. \n
--집중 코딩 시간을 통해 팀원들과 함께 문제에 맞닥뜨리고 , 정리해보세요 \n
-"
+            android:text="@string/text_schedule"
 
             android:textColor="@color/white"
             android:textStyle="bold" />
