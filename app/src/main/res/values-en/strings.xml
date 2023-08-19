@@ -126,4 +126,6 @@
     <string name="game_end_title">Score Board</string>
     <string name="game_description_title">Game Description</string>
     <string name="game_main_start_message">Press the button labeled 1 above to start the game.</string>
+    <string name="input_title">Enter a title</string>
+    <string name="input_content">Enter a story</string>
 </resources>
