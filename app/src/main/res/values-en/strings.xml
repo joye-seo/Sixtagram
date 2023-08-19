@@ -34,7 +34,7 @@
     <string name="member_find_close">close</string>
     <string name="sign_up_editText">write what you want to say</string>
     <string name="game_mode_easy">Easy</string>
-    <string name="game_mode_normal">Normal</string>
+    <string name="game_mode_base">Base</string>
     <string name="game_mode_hard">Hard</string>
     <string name="game_mode_hell">Hell</string>
     <string name="game_mode">Mode</string>
@@ -44,60 +44,46 @@
     <string name="game_game_difficulty">Difficulty : </string>
     <string name="game_gameStateRunning">Running</string>
     <string name="game_gameStateFinished">Finished</string>
+    <string name="game_gameStatePlayed">Played</string>
     <string name="game_gameStatePaused">Paused</string>
-    <string name="game_gameStateResumed">Resumed</string>
-    <string name="game_targetNumber">TargetNumber : </string>
+    <string name="game_targetNumber">Next Number : </string>
     <string name="game_toggle_message_easy">Hints are pointless in easy mode~</string>
     <string name="game_toggle_message_0">You\'ve pressed the hint %d times, huh?</string>
     <string name="game_toggle_message_1">After pressing %d times, try without the hint!</string>
     <string name="game_toggle_message_2">Pressing the hint will lower your final score.</string>
     <string name="game_toggle_message_3">Stop!!!!!!! You\'re going to break the button!!!</string>
     <string name="game_toggle_message_4">You\'ve killed the button.</string>
-    <string name="game_message_ending">Done!!!! Congratulations!!!</string>
+    <string name="game_toggle_message2_0">You\'ve pressed the pause %d times, huh?</string>
+    <string name="game_toggle_message2_1">After pressing %d times, try without the pause!</string>
+    <string name="game_toggle_message2_2">Pausing does not affect the final score.</string>
+    <string name="game_toggle_message2_3">Stop!!!!!!! You\'re going to break the button!!!</string>
+    <string name="game_toggle_message2_4">You\'ve killed the button.</string>
+    <string name="game_message_ending"> </string>
     <string name="game_gamescore">Score : </string>
-    <string name="game_strat">Start</string>
-    <string name="game_numsize_button">Num Size : 1~25</string>
+    <string name="game_strat">Playing Game</string>
+    <string name="game_numsize_button">Num Range : 1~25</string>
     <string name="game_difficulty_button">Difficulty : Easy Mode</string>
     <string name="game_Description_button">Game Description</string>
-    <string name="game_Hint_button">Hint (Find Next Number)</string>
-    <string name="game_Ranking_button">View Rankings</string>
-    <string name="game_GameRestart_button">Game Restart</string>
+    <string name="game_Hint_button">Hint</string>
+    <string name="game_Ranking_button">Rankings</string>
     <string name="game_ScoreBoard_View">ScoreBoard</string>
-    <string name="game_ResetRankings_Button">ResetRankings</string>
-    <string name="home_button">Sixtagram</string>
-    <string name="memo_button">notepad writing</string>
-    <string name="notion_button">Edit notice</string>
-    <string name="home_text">Home</string>
-    <string name="calendar_date_format">yyyy-MM-dd, EEEE</string>
-    <string name="day_display_format">%04d-%02d-%02d, %s</string>
-    <string name="save_message">saved</string>
-    <string name="choose_category">please select a category</string>
-    <string name="daily_life">daily life</string>
-    <string name="thing_to_do">a thing to do</string>
-    <string name="notion">notion</string>
-    <string name="input_notion_message">Please enter notice</string>
-    <string name="text_update_message">Text correction is being updated</string>
-    <string name="white_notion">"aunouncement : "</string>
-    <string name="notion_input">Please change notion</string>
-    <string name="memoTxt">It`s notepad</string>
-    <string name="toastCapture">saved</string>
-    <string name="titleEdt">Please enter the subject</string>
-    <string name="memoEdt">Please enter a note</string>
-    <string name="capturelist">captuer list</string>
-    <string name="noticeEdt">" Notice change"</string>
-    <string name="sixtagramnotice">Sixtagram Notice</string>
-    <string name="time_promise">Our team time commitment</string>
-    <string name="text_schedule">-AM: 09:00 ~ 10:00 \\n Daily Scrum -> Organize today\'s plan on the Notion page \\n -AM: 10:00 ~ 11:00 \\n Algorithm learning goal of 1 problem per day! \\n - Intensive Coding Time \\n - Afternoon: 14:00 ~ 18:00 \\n -Unlike general learning, listening to lectures does not increase development skills. \\n -When it comes to development, time to think, try and think on your own is more important than anything else. \\n - Face problems with your teammates through intensive coding time, and organize \\n</string>
-    <string name="member_modify">Modify</string>
-    <string name="member_delete">Delete</string>
-    <string name="member_email_address">Email Address</string>
-    <string name="member_regidence">Residence</string>
-    <string name="member_mbti">MBTI</string>
-    <string name="member_hobby">Hobby</string>
-    <string name="member_interest">Interest</string>
-    <string name="member_blog_address">Blog Address</string>
-    <string name="member_github_address">Github Address</string>
-    <string name="member_comment">Comment</string>
-    <string name="member_delete_alarm">Are you sure?</string>
-    <string name="member_cancel">Cancel</string>
+    <string name="game_ResetRankings_Button">Reset Rankings</string>
+    <string name="game_ResetRankings_toggle_message">Rankings have been reset.</string>
+    <string name="game_ResetRankings_score">pts</string>
+    <string name="game_ResetRankings_second">sec</string>
+    <string name="game_ScoreBoard_Text">Top 15 records.</string>
+    <string name="game_button_killing">The button has been\n pressed to death.</string>
+    <string name="game_setting">Setting</string>
+    <string name="game_information">Information</string>
+    <string name="game_support">Support</string>
+    <string name="game_Description">Game Description</string>
+    <string name="game_description_message">
+        Game Objective: Press the numbers in order to eliminate all buttons.\n\n\n
+        Game Modes: Easy, Base, Hard, Hell\n\n\n
+        Easy: The next number is highlighted in a different color.\n\n
+        Base: The default mode.\n\n
+        Hard: Numbers periodically become obscured, but clicking is still possible.\n\n
+        Hell: Numbers periodically become obscured and cannot be clicked when hidden.
+</string>
+
 </resources>

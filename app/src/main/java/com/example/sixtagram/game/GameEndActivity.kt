@@ -2,9 +2,12 @@ package com.example.sixtagram.game
 
 import android.content.Context
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 import com.google.gson.Gson
@@ -27,10 +30,30 @@ class GameEndActivity : AppCompatActivity() {
         val minute = calendar.get(Calendar.MINUTE)
         val tv1 = findViewById<TextView>(R.id.textView1)
         val tv2 = findViewById<TextView>(R.id.textView2)
+        val tv3 = findViewById<TextView>(R.id.textView3)
         val btdd = findViewById<Button>(R.id.button1)
-        saveGameData(score, finalTime, mode, numsize,month,day,hour,minute)
+
+        if(score!= 0L){
+            tv3.setText("이번판 기록 : ${String.format("%06d", score)}${getString(R.string.game_ResetRankings_score)} | ${
+                String.format(
+                    "%03d",
+                    finalTime / 1000
+                )
+            }.${
+                String.format(
+                    "%02d",
+                    (finalTime % 1000) / 10
+                )
+            }${getString(R.string.game_ResetRankings_second)} | ${mode} | ${numsize}")
+        saveGameData(score, finalTime, mode, numsize,month,day,hour,minute)}
         displayGameData()
         btdd.setOnClickListener {
+            val toast = Toast.makeText(this, getString(R.string.game_ResetRankings_toggle_message), Toast.LENGTH_SHORT)
+            toast.show()
+            Handler(Looper.getMainLooper()).postDelayed({
+                // Toast 숨기기
+                toast.cancel()
+            }, 2000)  // (delayMillis/2000)초 후에 토스트 메시지를 숨깁니다.
             val sharedPref = getSharedPreferences("game_records", Context.MODE_PRIVATE)
             val editor = sharedPref.edit()
             editor.clear()
@@ -96,28 +119,6 @@ class GameEndActivity : AppCompatActivity() {
         dayList.add(day)
         hourList.add(hour)
         minuteList.add(minute)
-        if ((scoreList[scoreList.size - 1] == 0L)) { // 게임 끝나기 전에 데이터 추가하면 바로 삭제해주기
-            scoreList.remove(score)
-            finalTimeList.remove(finalTime)
-            modeList.remove(mode)
-            numsizeList.remove(numsize)
-            monthList.remove(month)
-            dayList.remove(day)
-            hourList.remove(hour)
-            minuteList.remove(minute)
-        } else if (scoreList.size >= 2) {
-            if ((scoreList[scoreList.size - 1] == scoreList[scoreList.size - 2])) // 이전 데이터랑 같은 데이터 추가되면 바로 삭제해주기
-            {
-                scoreList.remove(score)
-                finalTimeList.remove(finalTime)
-                modeList.remove(mode)
-                numsizeList.remove(numsize)
-                monthList.remove(month)
-                dayList.remove(day)
-                hourList.remove(hour)
-                minuteList.remove(minute)
-            }
-        }
 
         // 리스트를 다시 JSON 문자열로 변환하여 저장합니다.
         editor.putString("scores", Gson().toJson(scoreList))
@@ -205,25 +206,27 @@ class GameEndActivity : AppCompatActivity() {
         {
             when(modeList2[i])
             {
-                "이지" -> {getString(R.string.game_mode_easy)}
-                "노말" -> {getString(R.string.game_mode_normal)}
-                "하드" -> {getString(R.string.game_mode_hard)}
-                "지옥" -> {getString(R.string.game_mode_hell)}
+                "이지","Easy" -> {modeList2[i] = getString(R.string.game_mode_easy)}
+                "기본","Base" -> {modeList2[i] = getString(R.string.game_mode_base)}
+                "하드","Hard" -> {modeList2[i] = getString(R.string.game_mode_hard)}
+                "지옥","Hell" -> {modeList2[i] = getString(R.string.game_mode_hell)}
             }
         }
         for (i in scoreList.indices) {
+            if(i==15)
+            {break}
             val textView = TextView(this)
-            textView.text = "${i + 1}. ${String.format("%06d", scoreList2[i])}점 | ${
+            textView.text = "${i + 1}. ${String.format("%06d", scoreList2[i])}${getString(R.string.game_ResetRankings_score)} | ${
                 String.format(
                     "%03d",
                     finalTimeList2[i] / 1000
                 )
             }.${
                 String.format(
-                    "%03d",
-                    finalTimeList2[i] % 1000
+                    "%02d",
+                    (finalTimeList2[i] % 1000) / 10
                 )
-            }초 | ${modeList2[i]} | ${numsizeList2[i]} | ${monthList2[i]}.${dayList2[i]} ${hourList2[i]}:${String.format("%02d",minuteList2[i])}"
+            }${getString(R.string.game_ResetRankings_second)} | ${modeList2[i]} | ${numsizeList2[i]} | ${monthList2[i]}.${dayList2[i]} ${hourList2[i]}:${String.format("%02d",minuteList2[i])}"
             recordsLayout.addView(textView)
         }
     }
@@ -242,3 +245,6 @@ class GameEndActivity : AppCompatActivity() {
 // 4. 리스트 오름차순 정렬 어떻게?
 // 10. 같은 기록 처리방안 만들기
 // 11. 10위까지만 저장하기. index가 11이 넘어가면, 오름차순 정리후 11번째 삭제 추가하기
+// 12. 시간 ms 둘째자리까지만 / 머리말 / 10~15번째까지만 해서 자르기(index 16번째부터는 표시안하는식으로 하면 될듯)
+
+
