@@ -20,7 +20,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -42,9 +41,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email2"
                     android:layout_width="300dp"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:hint="@string/login_edit_email"
+                    style="@style/FontSizeMedium"
                     android:inputType="text"
                     android:drawableStart="@drawable/ic_login_person3"
                     android:drawablePadding="8dp"
@@ -59,16 +59,12 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="50dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email"
             app:layout_constraintVertical_bias="0.0">
-
-
-
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passwordLayout"
@@ -89,6 +85,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/login_edit_password"
+                    style="@style/FontSizeMedium"
                     android:inputType="textPassword"
                     android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&amp;*()_+"
                     android:drawableStart="@drawable/ic_login_password6"
@@ -105,7 +102,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="40dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -131,6 +127,7 @@
                     android:layout_height="55dp"
                     android:layout_gravity="center"
                     android:hint="@string/login_edit_password"
+                    style="@style/FontSizeMedium"
                     android:inputType="textPassword"
                     android:drawableStart="@drawable/ic_login_password6"
                     android:drawablePadding="8dp"
@@ -146,7 +143,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -171,6 +167,7 @@
                     android:layout_gravity="center"
                     android:hint="@string/login_edit_name"
                     android:inputType="text"
+                    style="@style/FontSizeMedium"
                     android:drawableStart="@drawable/ic_login_person3"
                     android:drawablePadding="8dp"
                     />
@@ -185,7 +182,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -210,6 +206,7 @@
                     android:layout_gravity="end"
                     android:hint="@string/sign_up_residence"
                     android:inputType="text"
+                    style="@style/FontSizeMedium"
                     android:drawableStart="@drawable/ic_sign_up_home2"
                     android:drawablePadding="8dp"
                     />
@@ -224,7 +221,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -249,6 +245,7 @@
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_mbti"
                     android:inputType="text"
+                    style="@style/FontSizeMedium"
                     android:drawableStart="@drawable/ic_sign_up_mbti2"
                     android:drawablePadding="8dp"
                     />
@@ -263,7 +260,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -288,6 +284,7 @@
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_hobby"
                     android:inputType="text"
+                    style="@style/FontSizeMedium"
                     android:drawableStart="@drawable/ic_sign_up_hobby2"
                     android:drawablePadding="8dp"
                     />
@@ -302,7 +299,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -327,6 +323,7 @@
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_concern"
                     android:inputType="text"
+                    style="@style/FontSizeMedium"
                     android:drawableStart="@drawable/ic_sign_up_home2"
                     android:drawablePadding="8dp"
                     />
@@ -341,7 +338,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -366,6 +362,7 @@
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_blog"
                     android:inputType="text"
+                    style="@style/FontSizeMedium"
                     android:drawableStart="@drawable/ic_sign_up_blog2"
                     android:drawablePadding="8dp"
                     />
@@ -380,7 +377,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -405,6 +401,7 @@
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_github"
                     android:inputType="text"
+                    style="@style/FontSizeMedium"
                     android:drawableStart="@drawable/ic_sign_up_home2"
                     android:drawablePadding="8dp"
                     />
@@ -419,7 +416,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
             android:gravity="center"
-            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -444,6 +440,46 @@
                     android:layout_gravity="center"
                     android:hint="@string/sign_up_editText"
                     android:inputType="text"
+                    style="@style/FontSizeMedium"
+                    android:drawableStart="@drawable/ic_login_person3"
+                    android:drawablePadding="8dp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/imageUrl"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Text"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.google.android.material.textfield.TextInputLayout
+                style= "@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                app:boxStrokeColor="#000000"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editImageUrl"
+                    android:layout_width="300dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
+                    android:hint="@string/sign_up_image"
+                    android:inputType="text"
+                    style="@style/FontSizeMedium"
                     android:drawableStart="@drawable/ic_login_person3"
                     android:drawablePadding="8dp"
                     />
@@ -468,20 +504,20 @@
             android:layout_marginStart="35dp"
             android:layout_marginTop="15dp"
             android:text="@string/sign_up_email_check"
+            style="@style/FontSizeSmall"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/email" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/emailOverlap2"
+            style="@style/FontSizeMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="1dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/sign_up_email_overlap"
             android:background="@drawable/shape_comment_like_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/sign_up_email_overlap"
+            app:layout_constraintStart_toEndOf="@+id/emailCheck"
             app:layout_constraintTop_toBottomOf="@+id/email" />
 
         <TextView
@@ -491,6 +527,7 @@
             android:layout_marginStart="35dp"
             android:layout_marginTop="5dp"
             android:text="@string/sign_up_password_check2"
+            style="@style/FontSizeSmall"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordText" />
 
@@ -501,21 +538,23 @@
             android:layout_marginStart="35dp"
             android:layout_marginTop="5dp"
             android:text="@string/sign_up_password_check"
+            style="@style/FontSizeSmall"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordText2" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/createMember"
+            style="@style/FontSizeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp"
-            android:text="@string/sign_up_member"
             android:background="@drawable/shape_comment_like_background"
+            android:text="@string/sign_up_member"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Text"
+            app:layout_constraintStart_toStartOf="@+id/imageUrl"
+            app:layout_constraintTop_toBottomOf="@+id/imageUrl"
             app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

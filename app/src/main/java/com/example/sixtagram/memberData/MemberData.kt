@@ -9,5 +9,6 @@ data class MemberData(
     var concern: String,
     var blog: String,
     var github: String,
-    var text: String
+    var text: String,
+    var imageEdit: String
 )

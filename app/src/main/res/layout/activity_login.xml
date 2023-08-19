@@ -19,7 +19,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/email"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="30dp"
         android:gravity="center"
@@ -46,6 +46,7 @@
                 android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:hint="@string/login_email"
+                style="@style/FontSizeMedium"
                 android:inputType="text"
                 android:drawableStart="@drawable/ic_login_person3"
                 android:drawablePadding="8dp"
@@ -55,7 +56,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/password"
-        android:layout_width="300dp"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_marginTop="100dp"
         android:gravity="center"
@@ -83,6 +84,7 @@
                 android:layout_height="55dp"
                 android:layout_gravity="center"
                 android:hint="@string/login_edit_password"
+                style="@style/FontSizeMedium"
                 android:inputType="textPassword"
                 android:drawableStart="@drawable/ic_login_password6"
                 android:drawablePadding="8dp"
@@ -96,6 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="@string/login_login_button"
+        style="@style/FontSizeLarge"
         android:background="@drawable/shape_comment_like_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,25 +106,29 @@
 
     <Button
         android:id="@+id/memberShip"
+        style="@style/FontSizeMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="-20dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="30dp"
         android:background="@android:color/transparent"
         android:text="@string/login_membership"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/memberFind"
+        app:layout_constraintStart_toStartOf="@+id/login"
         app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <Button
         android:id="@+id/memberFind"
+        style="@style/FontSizeMedium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
         android:background="@android:color/transparent"
         android:text="@string/login_member_search"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/memberShip"
         app:layout_constraintTop_toBottomOf="@+id/login" />
 </androidx.constraintlayout.widget.ConstraintLayout>
