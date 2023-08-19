@@ -3,6 +3,7 @@ package com.example.sixtagram.member
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
@@ -20,11 +21,19 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
         setContentView(R.layout.activity_member_detail)
 
 
+
         val imgMemBack = findViewById<ImageView>(R.id.btn_mem_back)
         imgMemBack.setOnClickListener {
             val intent = Intent(this, MemberActivity::class.java)
             startActivity(intent)
         }
+
+        val modifyButton = findViewById<ImageView>(R.id.modify_button)
+        modifyButton.setOnClickListener {
+            val intent = Intent(this, MemberModifyActivity::class.java)
+            startActivity(intent)
+        }
+
 
         val linkBlog = findViewById<TextView>(R.id.tv_blog)
         linkBlog.setOnClickListener {
@@ -54,7 +63,7 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
         val memberComment = findViewById<TextView>(R.id.tv_saying)
 
         val intent = intent
-        val selectedUser = intent.getSerializableExtra("MemUser") as? MemUser // null-safe cast
+        val selectedUser = intent.getSerializableExtra("MemUser") as? MemUser // null-safe
 
         // 선택한 사용자 정보가 null이 아닌 경우에만 데이터를 표시하도록 처리
         if (selectedUser != null) {
@@ -72,67 +81,29 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
         }
 
         // 나머지 코드...
+
     }
 
+    // 삭제 확인 다이얼로그를 띄우는 함수
+    override fun showDeleteConfirmationDialog() {
+        val deleteDialog = MemDelDialogActivity(this, this)
+        deleteDialog.show()
+    }
+
+    // MemDelDialogInterface의 콜백 메서드 구현
     override fun ondelYesMemBtnClicked() {
-        Toast.makeText(this, "삭제버튼 클릭", Toast.LENGTH_SHORT).show()
+//        adapter.remove(selectedUser) // 어댑터에서 해당 항목 제거
+//        adapter.notifyDataSetChanged() // 리스트뷰 갱신
+        // 여기에 삭제 작업 수행
+        // 예를 들어 데이터베이스에서 해당 멤버를 삭제하는 등의 작업
+        // 삭제 작업 후 MemberActivity로 돌아가도록 Intent 등으로 처리
+        // 삭제 작업 후 MemberActivity로 돌아가는 코드가 필요합니다.
     }
 
     override fun ondelNoMemBtnClicked() {
-        Toast.makeText(this, "삭제취소 클릭", Toast.LENGTH_SHORT).show()
+        // 삭제 취소 버튼 클릭 시 동작
+        // 여기에 취소 시 동작을 구현합니다.
     }
 
 
-//        activityResultLauncher =
-//            registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-//                if (it.resultCode == RESULT_OK) {
-//                    val mem_email = it.data?.getStringExtra("Email") ?: ""
-//                    val mem_regi = it.data?.getStringExtra("Regidence") ?: ""
-//                    val mem_mbti = it.data?.getStringExtra("MBTI") ?: ""
-//                    val mem_hob = it.data?.getStringExtra("Hobby") ?: ""
-//                    val mem_interst = it.data?.getStringExtra("Interest") ?: ""
-//                    val mem_blog = it.data?.getStringExtra("BlogLink") ?: ""
-//                    val mem_git = it.data?.getStringExtra("GithubLink") ?: ""
-//                    val mem_com = it.data?.getStringExtra("Comment") ?: ""
-//
-//                    memberEmail.setText(mem_email)
-//                    memberRegidence.setText(mem_regi)
-//                    memberMbti.setText(mem_mbti)
-//                    memberHobby.setText(mem_hob)
-//                    memberInterest.setText(mem_interst)
-//                    memberBlog.setText(mem_blog)
-//                    memberGithub.setText(mem_git)
-//                    memberComment.setText(mem_com)
-//                }
-//            }
-
-
-//        val modify = findViewById<Button>(R.id.modify_button)
-//        modify.setOnClickListener {
-//            val intent = Intent(this, MemberModifyActivity::class.java)
-//            activityResultLauncher.launch(intent)
-//        }
-//        val delete = findViewById<Button>(R.id.delete_button)
-//        delete.setOnClickListener {
-//            val intent = Intent(this, MemberModifyActivity::class.java)
-//            activityResultLauncher.launch(intent)
-//        }
 }
-
-//    fun onDialogBtnClicked(view: View) {
-//        Log.d(TAG, "MemberDetailActivity - onDialogBtnClicked() called")
-//
-//        val memDelDialog = MemDelDialogActivity(this, this)
-//        memDelDialog.show()
-//
-//    }
-//
-//    override fun ondelYesMemBtnClicked() {
-//        Toast.makeText(this, "삭제버튼 클릭", Toast.LENGTH_SHORT).show()
-//
-//    }//삭제 버튼 클릭
-//
-//    override fun ondelNoMemBtnClicked() {
-//        Toast.makeText(this, "삭제취소 클릭", Toast.LENGTH_SHORT).show()
-//
-//    }//삭제 취소 클릭
