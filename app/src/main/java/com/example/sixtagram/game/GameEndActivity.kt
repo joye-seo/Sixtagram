@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.sixtagram.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -190,7 +191,10 @@ class GameEndActivity : AppCompatActivity() {
         val minuteList2 = MutableList<Int>(scoreListSize) { 0 }
 //
         val sortedIndices = scoreList.indices.sortedByDescending { scoreList[it] } // 점수기준으로 내림차순 정렬
-
+        Glide.with(this)
+            .asGif()
+            .load(R.drawable.ic_game_rankbackground)
+            .into(findViewById(R.id.background_gif))
         for (i in scoreList.indices) { // 원래 점수의 인덱스
             val originalIndex = sortedIndices[i] // 내림차순한 점수의 인덱스
             scoreList2[i] = scoreList[originalIndex] // 내림차순한 점수의 인덱스에 맞게 배열 새로 정렬
@@ -232,19 +236,4 @@ class GameEndActivity : AppCompatActivity() {
     }
 
 }
-
-// 1. 스코어 화면
-// 2. 다시하기
-// 3. 종료하기 등등
-// 4. 오름차순 정렬
-// 5. 데이터 길이 맞추기
-// 6. 점수 시간 모드 등등 해보기
-// 7. 넘버사이즈도 넣기
-// 8. 나중에 현재 로그인 사용자 이름도 받아서 넣기
-// 9. 백그라운드틴트를 적용해야함 버튼
-// 4. 리스트 오름차순 정렬 어떻게?
-// 10. 같은 기록 처리방안 만들기
-// 11. 10위까지만 저장하기. index가 11이 넘어가면, 오름차순 정리후 11번째 삭제 추가하기
-// 12. 시간 ms 둘째자리까지만 / 머리말 / 10~15번째까지만 해서 자르기(index 16번째부터는 표시안하는식으로 하면 될듯)
-
 
