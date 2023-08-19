@@ -12,69 +12,156 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="#FFCBDA">
+
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_notifications"/>
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back_button"
+            android:layout_marginLeft="20dp"/>
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/noticeEdt"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:layout_marginRight="40dp"/>
+
+        </LinearLayout>
+
+
 
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="공지사항"
-        android:textSize="20dp"
-        android:textColor="#ef3340"
-        android:layout_margin="10dp"/>
-
-    <EditText
-        android:id="@+id/notionEdt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="공지사항을 입력해주세요."
-        android:layout_margin="10dp"
-        android:singleLine="true"/>
-
-    <Button
-        android:id="@+id/okBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="확인"
-        android:layout_margin="10dp"/>
-
-    <Button
-        android:id="@+id/backBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="뒤로 가기"
-        android:layout_margin="10dp"/>
-
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="#CCCCCC"
-        android:layout_margin="10dp">
+        android:background="@color/white"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="지난 공지사항 :"
-            android:textSize="20dp"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_warning_sign"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="아침 7시에일어나기"
-            android:textSize="20dp"/>
+            android:text="@string/sixtagramnotice"
+            android:textSize="24sp"
+            android:textColor="#ef3340"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_warning_sign"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/notionEdt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/input_notion_message"
+            android:layout_margin="10dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:background="#FFCBDA"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/okBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_check"
+            android:layout_gravity="center_vertical"/>
 
 
     </LinearLayout>
 
 
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/time_promise"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#FFCBDA"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:background="#FFCBDA">
+
+        <ImageView
+            android:id="@+id/addBtn"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_add" />
+
+        <TextView
+            android:id="@+id/promiseTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/addBtn"
+            android:layout_toStartOf="@+id/addBtn"
+            android:text="@string/text_schedule"
+
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+
+
 </LinearLayout>
+
+
+

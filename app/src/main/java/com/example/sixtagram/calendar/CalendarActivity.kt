@@ -39,7 +39,7 @@ class CalendarActivity : AppCompatActivity() {
 
         val dayText : TextView = findViewById(R.id.dayText)
         val calendarView : CalendarView = findViewById(R.id.calendarView)
-        val dateFormat : DateFormat = SimpleDateFormat("yyyy년 MM월 dd일 EEEE", Locale.getDefault())
+        val dateFormat : DateFormat = SimpleDateFormat(getString(R.string.calendar_date_format), Locale.getDefault())
         val date : Date = Date(calendarView.date)
 
 
@@ -58,10 +58,12 @@ class CalendarActivity : AppCompatActivity() {
 
             dayText.text = dateFormat.format(selectedDate)
 
+
             when (dayOfWeek) {
                 Calendar.SATURDAY -> dayText.setTextColor(Color.parseColor("#0000FF"))
                 Calendar.SUNDAY -> dayText.setTextColor(ContextCompat.getColor(this, android.R.color.holo_red_dark))
-                else -> dayText.setTextColor(ContextCompat.getColor(this, android.R.color.black))
+                else -> dayText.setTextColor(ContextCompat.getColor(this, android.R.color.white))
+
             }
 
         }   //캘린더의 날짜가 변경될때마다 실행되는 리스너
@@ -74,7 +76,7 @@ class CalendarActivity : AppCompatActivity() {
 
 
 
-        val homeBtn : TextView = findViewById(R.id.homeBtn)
+        val homeBtn: TextView = findViewById(R.id.homeBtn)
         homeBtn.setOnClickListener {
 
             val calendar = Calendar.getInstance()
@@ -82,16 +84,16 @@ class CalendarActivity : AppCompatActivity() {
             calendarView.date = todayMillis
 
             val dayOfWeek = calendar.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, Locale.getDefault())
-            dayText.text = String.format("%04d년 %02d월 %02d일 %s요일",
+            val formattedDate = getString(R.string.day_display_format,
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH) + 1,
                 calendar.get(Calendar.DAY_OF_MONTH),
-                dayOfWeek)
+                dayOfWeek
+            )
 
-
-
-
-        } // 홈 버튼 누를시 오늘 날짜로 돌아옴!
+            dayText.text = formattedDate
+            dayText.setTextColor(Color.WHITE)
+        }  //홈버튼 클릭시 이벤트
 
 
 

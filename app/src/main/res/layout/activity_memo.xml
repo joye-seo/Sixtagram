@@ -1,74 +1,107 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".calendar.MemoActivity">
-
+    tools:context=".calendar.MemoActivity"
+    android:padding="20dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center">
+        android:orientation="horizontal"
+        android:background="#FFCBDA">
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/ic_document"/>
+            android:id="@+id/returnBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back_button"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Memo"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginRight="8dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_add_button"
+                android:layout_marginLeft="20dp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_copywriting"
+                android:layout_marginLeft="20dp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_trash2"
+                android:layout_marginLeft="20dp" />
+
+        </LinearLayout>
 
 
     </LinearLayout>
 
-    <TextView
+
+    <Spinner
+        android:id="@+id/titleSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="메모장"
-        android:gravity="center"
-        android:textSize="24sp"/>
+        android:layout_marginTop="20dp"
+        android:background="#FFCBDA"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/titleEdt"
+        android:textColor="@color/white"
+        android:background="#FFCBDA"
+        android:textStyle="bold"/>
+
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:hint="메모를 입력해주세요."/>
+        android:layout_marginTop="20dp"
+        android:hint="@string/memoEdt"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="start"
+        android:background="#FFCBDA"/>
 
-
-    <LinearLayout
+    <TextView
+        android:id="@+id/captureBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_diskette" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_trash" />
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_document" />
-
-        <ImageView
-            android:id="@+id/returnBtn"
-            android:layout_width="0dp"
-            android:layout_height="80dp"
-            android:layout_weight="1"
-            android:src="@drawable/ic_back2" />
-
-
-    </LinearLayout>
+        android:text="@string/capturelist"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:background="#FFCBDA"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"/>
 
 
 </LinearLayout>
-
-

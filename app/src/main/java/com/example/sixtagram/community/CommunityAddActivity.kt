@@ -2,6 +2,7 @@ package com.example.sixtagram.community
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -28,8 +29,10 @@ class CommunityAddActivity : AppCompatActivity() {
             val intent = Intent(this, CommunityActivity::class.java)
             val test = CommunityData("", edtTitle.toString(), edtContent.toString(), "", 0)
             intent.putExtra("addData", test)
-            setResult(RESULT_OK,intent)
+            setResult(RESULT_OK, intent)
             finish()
+
+            Log.d("test", test.title)
         }
 
 
