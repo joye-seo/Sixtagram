@@ -16,10 +16,11 @@ class MemoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_memo)
 
 
-        val capturebtn : TextView = findViewById(R.id.captureBtn)
-        capturebtn.setOnClickListener {
-            Toast.makeText(this, "저장했습니다.", Toast.LENGTH_SHORT).show()
-        }    //스크린샷 버튼
+        val captureBtn : TextView = findViewById(R.id.captureBtn)
+        captureBtn.setOnClickListener {
+            val toastMessage = getString(R.string.toastCapture)
+            Toast.makeText(this, toastMessage, Toast.LENGTH_SHORT).show()
+        }     //캡쳐 버튼
 
 
 
@@ -29,9 +30,9 @@ class MemoActivity : AppCompatActivity() {
         }
 
 
-        val categories = arrayOf("카테고리를 골라주세요" ,"daily life", "a thing to do" ,"notion")
+        val categories = arrayOf(getString(R.string.choose_category), "daily life", "a thing to do", "notion")
         val titleSpinner = findViewById<Spinner>(R.id.titleSpinner)
         val adapter = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item,categories)
-        titleSpinner.setAdapter(adapter)
+        titleSpinner.setAdapter(adapter)        //카테고리
     }
 }

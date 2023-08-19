@@ -33,7 +33,7 @@
                 android:id="@+id/homeBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sixtagram 입니다."
+                android:text="@string/home_button"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"/>
@@ -57,7 +57,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="공지사항 : "
+                android:text="@string/white_notion"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -67,7 +67,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="공지사항을 변경해주세요."
+                android:text="@string/notion_input"
                 android:textColor="@color/pantone_red"
                 android:textStyle="bold"/>
 
@@ -108,7 +108,7 @@
             android:id="@+id/memoTxt"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="메모장 입니다."
+            android:text="@string/memoTxt"
             android:background="#FFCBDA"
             android:textColor="@color/white"
             android:textStyle="bold"
