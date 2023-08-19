@@ -103,7 +103,6 @@
     <string name="game_Description_button">Game Description</string>
     <string name="game_Hint_button">Hint</string>
     <string name="game_Ranking_button">Rankings</string>
-    <string name="game_ScoreBoard_View">ScoreBoard</string>
     <string name="game_ResetRankings_Button">Reset Rankings</string>
     <string name="game_ResetRankings_toggle_message">Rankings have been reset.</string>
     <string name="game_ResetRankings_score">pts</string>
@@ -119,8 +118,12 @@
         Game Modes: Easy, Base, Hard, Hell\n\n\n
         Easy: The next number is highlighted in a different color.\n\n
         Base: The default mode.\n\n
-        Hard: Numbers periodically become obscured, but clicking is still possible.\n\n
-        Hell: Numbers periodically become obscured and cannot be clicked when hidden.
+        Hard: Numbers periodically become obscured, \nbut clicking is still possible.\n\n
+        Hell: Numbers periodically become obscured \nand cannot be clicked when hidden.
 </string>
-
+    <string name="game_start_title">Game</string>
+    <string name="game_main_title">게임</string>
+    <string name="game_end_title">Score Board</string>
+    <string name="game_description_title">Game Description</string>
+    <string name="game_main_start_message">Press the button labeled 1 above to start the game.</string>
 </resources>

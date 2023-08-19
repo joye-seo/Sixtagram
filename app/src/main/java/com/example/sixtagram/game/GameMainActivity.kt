@@ -62,6 +62,7 @@ class GameMainActivity : AppCompatActivity() {
         val tv3 = findViewById<TextView>(R.id.textView3)
         val tv5 = findViewById<TextView>(R.id.textView5)
         val tv6 = findViewById<TextView>(R.id.textView6)
+        val tv7 = findViewById<TextView>(R.id.textView7)
         val iv7 = findViewById<ImageView>(R.id.imageView7)
         val iv8 = findViewById<ImageView>(R.id.imageView8)
         val iv9 = findViewById<ImageView>(R.id.imageView9)
@@ -75,15 +76,15 @@ class GameMainActivity : AppCompatActivity() {
 //        var name: String? = intent.getStringExtra("name") // "사용자 이름"
         var gamestate = getString(R.string.game_gameStateRunning) // "정상" "종료"
 
-        val originalBackgroundColor = ColorStateList.valueOf(Color.parseColor("#f8a3bc"))
+        val originalBackgroundColor = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.pantone_189))
         val originalTextColor = buttons[0].textColors // 원래 텍스트 색상 저장
-        val color22 = ContextCompat.getColor(this, R.color.pantone_red)
+        val hintcolor = ContextCompat.getColor(this, R.color.pantone_red) // 힌트 받은 색깔
         val hideTextColor = Color.TRANSPARENT // 텍스트를 숨기기 위해 투명한 색상 지정
         var isTextHidden = false // 텍스트 숨기기 위한 논리 변수
 
-        var findnumber = 1
-        var countfn = 1
-        var countfn2 = 1
+        var findnumber = 1 // 다음숫자
+        var countfn = 1 // 힌트버튼 카운트
+        var countfn2 = 1 // 일시정지 카운트
         var count2 = 0 // 이지 모드 이전 인덱스 추적용
         var count3 = 0 // 지옥 모드 카운트
         var count4 = 25 // 남은 버튼 확인용
@@ -308,7 +309,7 @@ class GameMainActivity : AppCompatActivity() {
             for (i in 0..49) {
                 if (buttons[i].text == findnumber.toString()) {
                     // 클릭 효과 적용
-                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#228c22"))
+                    buttons[i].backgroundTintList = ColorStateList.valueOf(hintcolor)
 
                     // 짧은 시간 후 원래의 색상으로 복구
                     Handler(Looper.getMainLooper()).postDelayed({
@@ -332,7 +333,7 @@ class GameMainActivity : AppCompatActivity() {
             for (i in 0..24) {
                 if (buttons[i].text == "1") {
                     count2 = i
-                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#228c22"))
+                    buttons[i].backgroundTintList = ColorStateList.valueOf(hintcolor)
                 }
             }
         }
@@ -348,6 +349,7 @@ class GameMainActivity : AppCompatActivity() {
                             btfn.isEnabled = true
                             iv7.visibility = View.VISIBLE
                             btps.setText(getString(R.string.game_gameStatePlayed))
+                            tv7.visibility = View.INVISIBLE
                             if ((mode == getString(R.string.game_mode_hard) ) || (mode == getString(R.string.game_mode_hell) )) {
                                 handler.post(updateColorRunnable)
                             }
@@ -404,7 +406,7 @@ class GameMainActivity : AppCompatActivity() {
                     if (mode == getString(R.string.game_mode_easy)) {
                         for (j in 0..24) {
                             if ((findnumber).toString() == ((buttons[j].text).toString())) {
-                                buttons[j].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#228c22"))
+                                buttons[j].backgroundTintList = ColorStateList.valueOf(hintcolor)
                                 buttons[count2].backgroundTintList = originalBackgroundColor
                                 count2 = j
                                 break
@@ -422,6 +424,7 @@ class GameMainActivity : AppCompatActivity() {
                         intent2.putExtra("mode", mode)
                         intent2.putExtra("numsize", numsize)
                         startActivity(intent2)
+                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     }
                 }
             }
@@ -480,58 +483,3 @@ class GameMainActivity : AppCompatActivity() {
     }
 }
 
-// 추가하고자 하는 기능
-// 1. 난이도별 구현하기(1~25 / 1~50 / 1~75) 1~25면 STATE1 1~50이면
-// STATE2 이런식으로 STATE 변수 만들면 쉬울거같음. IF에서 STATE 까지 검사하도록 해서.
-// 2. 1~25 , 26~50 , X 3가지 경우에 대해 색깔 다르게 하기
-// 3. 버튼에 이모티콘같은거 넣기
-// 4. 기록을 받아서 랭킹에 저장하기.
-// 5. 랭킹에 따라 바로 메인화면에서 랭킹 표시해주기
-// 6. 분이 00이면 가려주기. 1 이상일때 띄워주기
-// 7. 시간초 0.001초단위 지워보기.
-// 8. 버튼들 인접한 버튼이랑 연결하고 패딩과 마진주는식으로 수정하기
-// 9. 아래쪽에는 난이도설정, 랭킹, 뒤로가기 등등 ??
-// 10. 추가할꺼 : 다음 숫자 찾기 ( 추가함)
-// 11. 추가할꺼 : Easy모드(다음 숫자의 버튼이 색깔이 바뀌어서 그 버튼을 누르면 됨
-// 11. 추가할꺼 : 근데 Easy모드의 경우 다시 for문돌려서 buttons[i]와 count+1이 같은걸 찾아야할거같은데.
-// 12. 추가할꺼 : 난이도 설정 : 이란 TexTvIEW 만들기
-// 13. 해야할꺼 : 버튼 모양, 이미지 수정하기
-// 14. 추가할꺼 : 완료하면 버튼 전부 없어지면서 폭죽 터지는 .gif같은거 추가?
-// 15. 추가할꺼 : 데이터 저장 되면 랭킹 보기
-// 16. 추가할꺼 : 게임 일시정지
-// 17. 추가할꺼 : 다 쓴 버튼은 사라지게 하기.
-// 18. 추가할꺼 : 점수 만들기.
-// 18. 추가할꺼 : 이지 , 1~25가 기본
-// 18. 추가할꺼 : 노멀 : 2.5배 하드 5배 , 1~50 : 4배
-// 18. 추가할꺼 : 다음숫자 찾기 횟수에 따라 점수 차감
-// 19. 클릭했을때 select
-// 20. 1 클릭했을떄 시작을 알려주는 뭔가를 추가해주기
-// 21. 버튼을 누르면 잠깐 이미지 바뀌고 사라지게끔 select 이용
-// 22. 다음 화면 3 2 1 하고 화면이 뜨게끔.
-// 23. 랜덤으로 뜨게해보자 토글메세지.
-// 24. 버튼 어느한도 이상으로 누르면 버튼 부서지는 모양도 추가해보자.
-// 25. 그리고 버튼 부서지겟다는 어느한도이상일때만 나오도록(0~2까지만 구현하고 count
-// 26. 하드모드(숫자가 잠시동안 나타낫다 사라졋다를 반복하게끔)
-// 26. 지옥모드(숫자가 잠시동안 나타낫다 사라졋다를 반복하게끔 + 5번 깜빡할때마다 숫자가 바뀜)
-// 27. 점수 만들기
-// 28. 게임 일시정지(일시 정지때는 숫자 전부 가리기)
-// 29. 게임 설명서?
-// 30. 플레이스토어에 1to50 비슷한 게임들 찾아보면서 비교해가면서 추가할만한거 찾아보기
-// 31. 점수 : 100,000,0 / 흐른 밀리초
-// 31. 점수 : 노멀은 2.5배, 하드 5배 1~5은 3.5배 곱하기
-// 31. score = ( 100,000,000 / finalTime )
-// 31. when(state3) { "노멀 모드" -> {score = score * 2.5 "하드 모드" -> {score = score * 5}}
-// 31. when(state) {"1~50" -> {score = score * 3.5 }}
-// 31. countfn 힌트 찾으면 점수 깎이는 로직. (1 - 0.04 * (countfn-1))
-// 32. F2를 누르고 alt + enter 한다음 yellow메세지에 대해 수정하고 공부하면 좀 더 좋다.
-// 33. dp를 전부 sp로 수정하기(.xml)
-// 34. 간헐적으로 꺼지는건 메모리 이슈 때문 => 무시하라고함 중요한거아님
-// 34. 추가적으로 현업에서는 에뮬레이터 사용을 안하고 실제 디바이스에서 함.
-
-// 35. 버튼에 이미지 넣으면 뭔가 글씨 묻힐수도
-// 36. 아니면 버튼뒤에 이미지를 놔두는식으로(그럼 버튼사라지면 이미지 뙇)
-// 37. 시간초 2개까지만
-// 38.
-
-// 39. 버튼을 눌럿을때 빨간색으로 바꾸는 식 color.xml 에서 가져오는식으로
-// 40.

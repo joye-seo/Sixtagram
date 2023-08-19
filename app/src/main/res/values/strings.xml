@@ -106,7 +106,6 @@
     <string name="game_Description_button">게임 설명</string>
     <string name="game_Hint_button">힌트</string>
     <string name="game_Ranking_button">랭킹 보기</string>
-    <string name="game_ScoreBoard_View">스코어 보드</string>
     <string name="game_ResetRankings_Button">랭킹 초기화</string>
     <string name="game_ResetRankings_toggle_message">랭킹이 초기화 되었어요.</string>
     <string name="game_ResetRankings_score">점</string>
@@ -122,7 +121,12 @@
         게임 모드 : 이지, 기본, 하드, 지옥\n\n\n
         이지 : 다음 숫자를 다른색으로 표시합니다.\n\n
         기본 : 기본이 되는 모드\n\n
-        하드 : 숫자가 주기적으로 가려집니다. 클릭은 가능합니다.\n\n
-        지옥 : 숫자가 주기적으로 가려집니다. 가려지면 클릭도 안됩니다.
+        하드 : 숫자가 주기적으로 가려집니다. \n가려져도 클릭은 가능합니다.\n\n
+        지옥 : 숫자가 주기적으로 가려집니다. \n가려지면 클릭도 안됩니다.
 </string>
+    <string name="game_start_title">게임</string>
+    <string name="game_main_title">게임</string>
+    <string name="game_end_title">스코어 보드</string>
+    <string name="game_description_title">게임 설명</string>
+    <string name="game_main_start_message">위쪽의 1버튼을 누르면 게임이 시작됩니다.</string>
 </resources>

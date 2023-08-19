@@ -9,22 +9,30 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.Toolbar>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/game_Description"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_description_title"
+            style="@style/FontSizeTitle"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:elevation="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintEnd_toStartOf="@+id/textView1"
+            app:layout_constraintTop_toTopOf="@+id/textView3"
+            app:srcCompat="@drawable/ic_game_rule" />
+    </androidx.appcompat.widget.Toolbar>
+
 
     <TextView
         android:id="@+id/textView2"
@@ -33,20 +41,11 @@
         android:gravity="start"
         android:padding="16dp"
         android:text="@string/game_description_message"
-        android:textSize="16sp"
+        style="@style/FontSizeMedium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:elevation="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView1"
-        app:layout_constraintEnd_toStartOf="@+id/textView1"
-        app:layout_constraintTop_toTopOf="@+id/textView1"
-        app:srcCompat="@drawable/ic_game_rule" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
