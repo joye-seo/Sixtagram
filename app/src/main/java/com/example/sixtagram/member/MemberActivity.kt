@@ -32,8 +32,8 @@ class MemberActivity : AppCompatActivity() {
             startActivity(intent)
         }
         val members = Member.members
-        memUserAdap = MemUserAdap(this, members)
 
+        memUserAdap = MemUserAdap(this,members)
 
         val listView1 = findViewById<ListView>(R.id.listView1)
         val Adapter = MemUserAdap(this, members)
@@ -41,9 +41,9 @@ class MemberActivity : AppCompatActivity() {
         listView1.adapter = Adapter
 
         listView1.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            val selectedUser = members[position] // Get the selected user from the list
+            val selectedUser = members[position]
             val intent = Intent(this, MemberDetailActivity::class.java)
-            intent.putExtra("MemberData", selectedUser) // Add the selected user information to the intent
+            intent.putExtra("MemberData", selectedUser)
             startActivity(intent)
         }
 

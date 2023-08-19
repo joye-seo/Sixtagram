@@ -16,6 +16,7 @@ import com.example.sixtagram.memberData.MemberData
 class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
     val TAG: String = "로그"
     lateinit var activityResultLauncher: ActivityResultLauncher<Intent>
+//    lateinit var MemDetailAdap: MemDetailAdap//멤버디테일액티 셀렉터할거
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +56,7 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
         }
 
 
-        val memberEmail = findViewById<EditText>(R.id.et_email)
+        val memberEmail = findViewById<TextView>(R.id.et_email)
         val memberRegidence = findViewById<TextView>(R.id.tv_regidence)
         val memberMbti = findViewById<TextView>(R.id.tv_mbti)
         val memberHobby = findViewById<TextView>(R.id.tv_hobby)
@@ -69,7 +70,7 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
 
         if (selectedUser != null) {
             // 선택한 사용자 정보를 화면에 표시하는 코드
-            memberEmail.setText(selectedUser.residence)
+            memberRegidence.setText(selectedUser.residence)
             memberMbti.text = selectedUser.mbti
             memberHobby.text = selectedUser.hobby
             memberInterest.text = selectedUser.concern
