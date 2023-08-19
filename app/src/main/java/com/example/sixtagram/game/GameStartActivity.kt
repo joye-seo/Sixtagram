@@ -42,6 +42,7 @@ class GameStartActivity : AppCompatActivity() {
             intent2.putExtra("numsize", numsize)
             intent2.putExtra("mode", mode)
             startActivity(intent2)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 
         btLv.setOnClickListener {
@@ -86,10 +87,11 @@ class GameStartActivity : AppCompatActivity() {
         btd.setOnClickListener {
             val intent2 = Intent(this, GameDescriptionActivity::class.java)
             startActivity(intent2)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
         btrk.setOnClickListener {val intent2 = Intent(this, GameEndActivity::class.java)
-
             startActivity(intent2)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
     }
 
@@ -118,20 +120,3 @@ class GameStartActivity : AppCompatActivity() {
         finish()
     }
 }
-// 0.
-// 1. 게임 설명서, 난이도별 설명 페이지 만들기.
-// 2. 아이콘 너무왼쪽이니까 오른쪽으로 5dp정도보내기, 텍스트도 좀 오른쪽으로
-// 3. 텍스트 위치를 좀더 오른쪾으로
-// 4. 뭔가 아이콘 보노보노ppt같은느낌 왼쪽에 하나의 이미지로 1,2,3,4단계 표시하기 ex) 드래곤볼 성구 같은거처럼
-// 5. 정보, 설정 글자크기 줄이기 . 우리가 하기로했던 font사이즈중 스몰같은거로
-// 6. 아이콘에 눈이 가야지 텍스트에 눈이가면 안좋음 아이콘, 텍스트 다 줄여서 버튼에 눈이가도록
-// 7. 게임하러왓는데 게임하기 버튼이 젤 중요하지. 면적 4배정도가지 늘려도 ㄱㅊ
-// 8. 중요도에 따라 배치를, 크기도?
-// 9. 텍스트는 어떤 게임인지 적고
-// 10. 상단바에 게임제목
-// 11. 왼쪾 상단바 위에 게임 적기.(다른사람 한거처럼. 커뮤니티 이거처럼)
-// 12. ㅂ보라색도 뺴기
-// 13. 게임 1to50 이런식으로 상단바에 왼쪽정렬해서
-// 14. 게임설명 아이콘은 텍스트의 오른쪾으로 보내고 게임설명 왼쪽으로 보내고
-// 15. 보라색 빼고
-// 16.

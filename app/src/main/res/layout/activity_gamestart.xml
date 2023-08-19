@@ -9,34 +9,44 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.Toolbar>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/game_start_title"
+            style="@style/FontSizeTitle"
+             android:layout_marginStart="16dp"
+            android:layout_marginBottom="10dp"/>
+
+    </androidx.appcompat.widget.Toolbar>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button1"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
         android:background="@drawable/shape_comment_like_background"
         android:gravity="start|center_vertical"
-        android:paddingLeft="30dp"
+        android:paddingLeft="60dp"
         android:text="@string/game_strat"
         android:textAllCaps="false"
         android:textColor="@drawable/selector_game_text"
-        android:textSize="12sp"
+        style="@style/FontSizeTitle"
         app:layout_constraintBottom_toTopOf="@+id/textView26"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="30dp"
         />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button2"
         android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:text="@string/game_numsize_button"
-        android:textSize="12sp"
+        style="@style/FontSizeSmall"
         android:background="@drawable/shape_comment_like_background"
         android:textColor="@drawable/selector_game_text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +54,7 @@
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"
+        app:layout_constraintVertical_bias="0.75"
         android:textAllCaps="false"
         android:paddingLeft="30dp"
         android:gravity="start|center_vertical" />
@@ -52,9 +62,9 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button3"
         android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:text="@string/game_difficulty_button"
-        android:textSize="12sp"
+        style="@style/FontSizeSmall"
         android:background="@drawable/shape_comment_like_background"
         android:textColor="@drawable/selector_game_text"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +72,7 @@
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85"
+        app:layout_constraintVertical_bias="0.75"
         android:textAllCaps="false"
         android:paddingLeft="30dp"
         android:gravity="start|center_vertical"/>
@@ -70,7 +80,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button4"
         android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/shape_comment_like_background"
         android:gravity="start|center_vertical"
@@ -78,7 +88,7 @@
         android:text="@string/game_Description_button"
         android:textAllCaps="false"
         android:textColor="@drawable/selector_game_text"
-        android:textSize="12sp"
+        style="@style/FontSizeSmall"
         app:layout_constraintBottom_toTopOf="@+id/textView25"
         app:layout_constraintEnd_toEndOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/button2" />
@@ -86,14 +96,14 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button5"
         android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:background="@drawable/shape_comment_like_background"
         android:gravity="start|center_vertical"
         android:paddingLeft="30dp"
         android:text="@string/game_Ranking_button"
         android:textAllCaps="false"
         android:textColor="@drawable/selector_game_text"
-        android:textSize="12sp"
+        style="@style/FontSizeSmall"
         app:layout_constraintBottom_toTopOf="@+id/textView25"
         app:layout_constraintEnd_toEndOf="@+id/button3"
         app:layout_constraintStart_toStartOf="@+id/button3"
@@ -101,8 +111,8 @@
 
     <ImageView
         android:id="@+id/imageView10"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toStartOf="@+id/button2"
         app:srcCompat="@drawable/ic_game_settings"
@@ -110,8 +120,8 @@
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintStart_toStartOf="@+id/button4"
         app:srcCompat="@drawable/ic_game_infomation"
@@ -119,8 +129,8 @@
 
     <ImageView
         android:id="@+id/imageView12"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         app:srcCompat="@drawable/ic_game"
         app:layout_constraintBottom_toBottomOf="@+id/button1"
         app:layout_constraintEnd_toEndOf="@+id/button1"
@@ -235,7 +245,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/game_setting"
-        android:textSize="24sp"
+        style="@style/FontSizeMedium"
         app:layout_constraintBottom_toBottomOf="@+id/imageView10"
         app:layout_constraintStart_toEndOf="@+id/imageView10"
         app:layout_constraintTop_toTopOf="@+id/imageView10"
@@ -246,7 +256,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/game_information"
-        android:textSize="24sp"
+        style="@style/FontSizeMedium"
         app:layout_constraintBottom_toBottomOf="@+id/imageView11"
         app:layout_constraintStart_toEndOf="@+id/imageView11"
         app:layout_constraintTop_toTopOf="@+id/imageView11"
