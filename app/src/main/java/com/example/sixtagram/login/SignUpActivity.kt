@@ -28,7 +28,7 @@ class SignUpActivity : AppCompatActivity() {
         val blog = findViewById<EditText>(R.id.blog)
         val github = findViewById<EditText>(R.id.github)
         val text = findViewById<EditText>(R.id.editText)
-        val image = findViewById<EditText>(R.id.imageUrl)
+        val image = findViewById<EditText>(R.id.editImageUrl)
         val idCheck = findViewById<Button>(R.id.emailOverlap2)
         val idText = findViewById<TextView>(R.id.emailCheck)
         val passwordText = findViewById<TextView>(R.id.passwordCheck)
