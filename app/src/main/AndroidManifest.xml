@@ -56,9 +56,9 @@
         <activity
             android:name=".member.MemberDetailActivity"
             android:exported="false" />
-<!--        <activity-->
-<!--            android:name=".calendar.CalendarActivity"-->
-<!--            android:exported="false" />-->
+        <activity
+            android:name=".member.MemberActivity"
+            android:exported="false" />
         <activity
             android:name=".login.SignUpActivity"
             android:exported="false" />
