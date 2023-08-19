@@ -510,16 +510,14 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/emailOverlap2"
+            style="@style/FontSizeMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="1dp"
-            android:layout_marginEnd="20dp"
-            android:text="@string/sign_up_email_overlap"
-            style="@style/FontSizeMedium"
             android:background="@drawable/shape_comment_like_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            android:text="@string/sign_up_email_overlap"
+            app:layout_constraintStart_toEndOf="@+id/emailCheck"
             app:layout_constraintTop_toBottomOf="@+id/email" />
 
         <TextView
@@ -546,16 +544,16 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/createMember"
+            style="@style/FontSizeLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="90dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="50dp"
-            android:text="@string/sign_up_member"
-            style="@style/FontSizeLarge"
             android:background="@drawable/shape_comment_like_background"
+            android:text="@string/sign_up_member"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageUrl"
             app:layout_constraintTop_toBottomOf="@+id/imageUrl"
             app:layout_constraintVertical_bias="0.0" />
 

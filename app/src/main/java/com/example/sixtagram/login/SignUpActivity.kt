@@ -28,6 +28,7 @@ class SignUpActivity : AppCompatActivity() {
         val blog = findViewById<EditText>(R.id.blog)
         val github = findViewById<EditText>(R.id.github)
         val text = findViewById<EditText>(R.id.editText)
+        val image = findViewById<EditText>(R.id.imageUrl)
         val idCheck = findViewById<Button>(R.id.emailOverlap2)
         val idText = findViewById<TextView>(R.id.emailCheck)
         val passwordText = findViewById<TextView>(R.id.passwordCheck)
@@ -120,7 +121,9 @@ class SignUpActivity : AppCompatActivity() {
                     concern.text.toString(),
                     blog.text.toString(),
                     github.text.toString(),
-                    text.text.toString()
+                    text.text.toString(),
+                    image.text.toString()
+
                 )
                 MemberHashmap.memberHashAdd(email.text.toString(), i)
                 toast(i.toString())

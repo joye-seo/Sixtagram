@@ -6,6 +6,9 @@ object MemberHashmap {
     fun memberHash(){
         memberHashMap["a"] = 0
         memberHashMap["b"] = 1
+        memberHashMap["c"] = 2
+        memberHashMap["d"] = 3
+        memberHashMap["e"] = 4
     }
 
     fun memberHashAdd(add: String, index: Int){
