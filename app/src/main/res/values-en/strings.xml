@@ -44,24 +44,46 @@
     <string name="game_game_difficulty">Difficulty : </string>
     <string name="game_gameStateRunning">Running</string>
     <string name="game_gameStateFinished">Finished</string>
+    <string name="game_gameStatePlayed">Played</string>
     <string name="game_gameStatePaused">Paused</string>
-    <string name="game_gameStateResumed">Resumed</string>
-    <string name="game_targetNumber">TargetNumber : </string>
+    <string name="game_targetNumber">Next Number : </string>
     <string name="game_toggle_message_easy">Hints are pointless in easy mode~</string>
     <string name="game_toggle_message_0">You\'ve pressed the hint %d times, huh?</string>
     <string name="game_toggle_message_1">After pressing %d times, try without the hint!</string>
     <string name="game_toggle_message_2">Pressing the hint will lower your final score.</string>
     <string name="game_toggle_message_3">Stop!!!!!!! You\'re going to break the button!!!</string>
     <string name="game_toggle_message_4">You\'ve killed the button.</string>
-    <string name="game_message_ending">Done!!!! Congratulations!!!</string>
+    <string name="game_toggle_message2_0">You\'ve pressed the pause %d times, huh?</string>
+    <string name="game_toggle_message2_1">After pressing %d times, try without the pause!</string>
+    <string name="game_toggle_message2_2">Pausing does not affect the final score.</string>
+    <string name="game_toggle_message2_3">Stop!!!!!!! You\'re going to break the button!!!</string>
+    <string name="game_toggle_message2_4">You\'ve killed the button.</string>
+    <string name="game_message_ending"> </string>
     <string name="game_gamescore">Score : </string>
-    <string name="game_strat">Start</string>
-    <string name="game_numsize_button">Num Size : 1~25</string>
+    <string name="game_strat">Playing Game</string>
+    <string name="game_numsize_button">Num Range : 1~25</string>
     <string name="game_difficulty_button">Difficulty : Easy Mode</string>
     <string name="game_Description_button">Game Description</string>
-    <string name="game_Hint_button">Hint (Find Next Number)</string>
-    <string name="game_Ranking_button">View Rankings</string>
-    <string name="game_GameRestart_button">Game Restart</string>
+    <string name="game_Hint_button">Hint</string>
+    <string name="game_Ranking_button">Rankings</string>
     <string name="game_ScoreBoard_View">ScoreBoard</string>
-    <string name="game_ResetRankings_Button">ResetRankings</string>
+    <string name="game_ResetRankings_Button">Reset Rankings</string>
+    <string name="game_ResetRankings_toggle_message">Rankings have been reset.</string>
+    <string name="game_ResetRankings_score">pts</string>
+    <string name="game_ResetRankings_second">sec</string>
+    <string name="game_ScoreBoard_Text">Top 15 records.</string>
+    <string name="game_button_killing">The button has been\n pressed to death.</string>
+    <string name="game_setting">Setting</string>
+    <string name="game_information">Information</string>
+    <string name="game_support">Support</string>
+    <string name="game_Description">Game Description</string>
+    <string name="game_description_message">
+        Game Objective: Press the numbers in order to eliminate all buttons.\n\n\n
+        Game Modes: Easy, Base, Hard, Hell\n\n\n
+        Easy: The next number is highlighted in a different color.\n\n
+        Base: The default mode.\n\n
+        Hard: Numbers periodically become obscured, but clicking is still possible.\n\n
+        Hell: Numbers periodically become obscured and cannot be clicked when hidden.
+</string>
+
 </resources>

@@ -43,24 +43,45 @@
     <string name="game_game_difficulty">난이도 : </string>
     <string name="game_gameStateRunning">정상</string>
     <string name="game_gameStateFinished">종료</string>
+    <string name="game_gameStatePlayed">게임중</string>
     <string name="game_gameStatePaused">일시정지</string>
-    <string name="game_gameStateResumed">일시정지 해제</string>
-    <string name="game_targetNumber">찾아야 되는 숫자 : </string>
+    <string name="game_targetNumber">다음 숫자 : </string>
     <string name="game_toggle_message_easy">이지모드는 힌트가 의미 없어요~</string>
     <string name="game_toggle_message_0">%d번이나 힌트를 누르셧군요?</string>
     <string name="game_toggle_message_1">%d번 눌렀으면 힌트없이 해보자구요.</string>
     <string name="game_toggle_message_2">힌트를 누르면 최종스코어가 낮아져요.</string>
     <string name="game_toggle_message_3">그만!!!!!!! 버튼부서지겠다!!!</string>
     <string name="game_toggle_message_4">버튼을 죽이셨어요.</string>
-    <string name="game_message_ending">끝!!!! 축하드립니다!!!</string>
+    <string name="game_toggle_message2_0">%d번이나 일시정지를 누르셧군요?</string>
+    <string name="game_toggle_message2_1">%d번 눌렀으면 일시정지없이 해보자구요.</string>
+    <string name="game_toggle_message2_2">일시정지는 최종스코어에 영향을 주지 않아요.</string>
+    <string name="game_toggle_message2_3">그만!!!!!!! 버튼부서지겠다!!!</string>
+    <string name="game_toggle_message2_4">버튼을 죽이셨어요.</string>
+    <string name="game_message_ending"> </string>
     <string name="game_gamescore">점수 : </string>
-    <string name="game_strat">시작하기</string>
-    <string name="game_numsize_button">숫자 크기 : 1~25</string>
+    <string name="game_strat">게임 하러하기</string>
+    <string name="game_numsize_button">숫자 범위 : 1~25</string>
     <string name="game_difficulty_button">난이도 : 이지 모드</string>
     <string name="game_Description_button">게임 설명</string>
-    <string name="game_Hint_button">힌트(다음숫자 찾기)</string>
+    <string name="game_Hint_button">힌트</string>
     <string name="game_Ranking_button">랭킹 보기</string>
-    <string name="game_GameRestart_button">게임 재시작</string>
     <string name="game_ScoreBoard_View">스코어 보드</string>
     <string name="game_ResetRankings_Button">랭킹 초기화</string>
+    <string name="game_ResetRankings_toggle_message">랭킹이 초기화 되었어요.</string>
+    <string name="game_ResetRankings_score">점</string>
+    <string name="game_ResetRankings_second">초</string>
+    <string name="game_ScoreBoard_Text">상위 15등의 기록입니다.</string>
+    <string name="game_button_killing">버튼이 찌그러져 죽었어요.</string>
+    <string name="game_setting">설정</string>
+    <string name="game_information">정보</string>
+    <string name="game_support">지원</string>
+    <string name="game_Description">게임 설명</string>
+    <string name="game_description_message">
+        게임 목표 : 숫자를 차례대로 눌러서 모든 버튼을 없애면 됩니다.\n\n\n
+        게임 모드 : 이지, 기본, 하드, 지옥\n\n\n
+        이지 : 다음 숫자를 다른색으로 표시합니다.\n\n
+        기본 : 기본이 되는 모드\n\n
+        하드 : 숫자가 주기적으로 가려집니다. 클릭은 가능합니다.\n\n
+        지옥 : 숫자가 주기적으로 가려집니다. 가려지면 클릭도 안됩니다.
+</string>
 </resources>

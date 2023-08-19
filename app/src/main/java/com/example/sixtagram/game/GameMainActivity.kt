@@ -11,9 +11,11 @@ import android.os.SystemClock
 import android.view.View
 import android.widget.Button
 import android.widget.Chronometer
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.example.sixtagram.R
 
 class GameMainActivity : AppCompatActivity() {
@@ -55,11 +57,16 @@ class GameMainActivity : AppCompatActivity() {
         )
         val btps = findViewById<Button>(R.id.button26)
         val btfn = findViewById<Button>(R.id.button27)
-        val btrk = findViewById<Button>(R.id.button28)
-        val btri = findViewById<Button>(R.id.button29)
         val tv1 = findViewById<TextView>(R.id.textView1)
         val tv2 = findViewById<TextView>(R.id.textView2)
         val tv3 = findViewById<TextView>(R.id.textView3)
+        val tv5 = findViewById<TextView>(R.id.textView5)
+        val tv6 = findViewById<TextView>(R.id.textView6)
+        val iv7 = findViewById<ImageView>(R.id.imageView7)
+        val iv8 = findViewById<ImageView>(R.id.imageView8)
+        val iv9 = findViewById<ImageView>(R.id.imageView9)
+        val iv10 = findViewById<ImageView>(R.id.imageView10)
+        val iv11 = findViewById<ImageView>(R.id.imageView11)
         chronometer = findViewById(R.id.chronometer)
         var numbers = (1..25).toList().shuffled() // 버튼 숫자 랜덤배치
         var numbers2 = (26..50).toList().shuffled() // 버튼 숫자 랜덤배치
@@ -68,22 +75,23 @@ class GameMainActivity : AppCompatActivity() {
 //        var name: String? = intent.getStringExtra("name") // "사용자 이름"
         var gamestate = getString(R.string.game_gameStateRunning) // "정상" "종료"
 
-        val originalBackgroundColor = buttons[0].backgroundTintList // 원래 버튼 색상 저장
+        val originalBackgroundColor = ColorStateList.valueOf(Color.parseColor("#f8a3bc"))
         val originalTextColor = buttons[0].textColors // 원래 텍스트 색상 저장
+        val color22 = ContextCompat.getColor(this, R.color.pantone_red)
         val hideTextColor = Color.TRANSPARENT // 텍스트를 숨기기 위해 투명한 색상 지정
         var isTextHidden = false // 텍스트 숨기기 위한 논리 변수
 
         var findnumber = 1
         var countfn = 1
+        var countfn2 = 1
         var count2 = 0 // 이지 모드 이전 인덱스 추적용
         var count3 = 0 // 지옥 모드 카운트
         var count4 = 25 // 남은 버튼 확인용
         var count5 = 0 // 헬모드 인덱스 추적용
         var score: Long = 0L
-        var text = Array<String>(25,{""}) // 지옥모드 텍스트 저장용
         var randommessage: String = ""
         var randommessagenumber = 0
-        val originalBackgroundColor2 = buttons[0].backgroundTintList
+
         val updateColorRunnable = object : Runnable {
             override fun run() {
                 if(mode == getString(R.string.game_mode_hard)||(mode == getString(R.string.game_mode_hell))) {
@@ -121,7 +129,21 @@ class GameMainActivity : AppCompatActivity() {
                 handler.postDelayed(this, 400)
             }
         }
-
+        val ScoreupdateRunnable: Runnable = object : Runnable {
+            override fun run() {
+                tv2.setText(
+                    "${getString(R.string.game_gamescore)}${
+                        score(
+                            elapsedTime,
+                            numsize,
+                            mode,
+                            countfn
+                        )
+                    }"
+                )
+                handler.postDelayed(this, 10)
+            }
+        }
         chronometer.onChronometerTickListener = Chronometer.OnChronometerTickListener {
             val elapsedMillis = SystemClock.elapsedRealtime() - it.base
             val totalSeconds = elapsedMillis / 1000
@@ -130,34 +152,22 @@ class GameMainActivity : AppCompatActivity() {
             val milliseconds = elapsedMillis % 1000
             it.text = String.format("%02d:%02d.%03d", minutes, seconds, milliseconds)
         }
-        tv1.setText("${getString(R.string.game_targetNumber)}${findnumber}")
+        tv1.setText("${getString(R.string.game_targetNumber)} ${findnumber}")
 
         btps.isEnabled = false
         btfn.isEnabled = false
-        btrk.setOnClickListener {
-            val intent2 = Intent(this, GameEndActivity::class.java)
-//            intent2.putExtra("name", name)
-            if ((gamestate == getString(R.string.game_gameStateFinished))) {
-                score = score(finalTime, numsize, mode, countfn)
-                intent2.putExtra("score", score)
-                intent2.putExtra("finalTime", finalTime)
-                intent2.putExtra("mode", mode)
-                intent2.putExtra("numsize", numsize)
-//                intent2.putExtra("numsize", name)
-            }
-            startActivity(intent2)
-        }
+
         btps.setOnClickListener {
-            if ((btps.text == getString(R.string.game_gameStatePaused)) && (gamestate == (getString(R.string.game_gameStateRunning)))) {
+            if ((btps.text == getString(R.string.game_gameStatePlayed)) && (gamestate == (getString(R.string.game_gameStateRunning)))) {
                 if (findnumber != 1) {
                     for (i in 0..24) {
                         buttons[i].textSize = 0f
                         buttons[i].isClickable = false
                     }
                     handler.removeCallbacks(updateRunnable)
-                    btps.text = getString(R.string.game_gameStateResumed)
+                    btps.text = getString(R.string.game_gameStatePaused)
                 }
-            } else if ((btps.text == getString(R.string.game_gameStateResumed)) && (gamestate == (getString(R.string.game_gameStateRunning)))) {
+            } else if ((btps.text == getString(R.string.game_gameStatePaused)) && (gamestate == (getString(R.string.game_gameStateRunning)))) {
                 if (findnumber != 1) {
                     for (i in 0..24) {
                         buttons[i].textSize = 20f
@@ -165,8 +175,73 @@ class GameMainActivity : AppCompatActivity() {
                     }
                     handler.postDelayed(updateRunnable, updateIntervalMillis)
                 }
-                btps.text = getString(R.string.game_gameStatePaused)
+                btps.text = getString(R.string.game_gameStatePlayed)
             }
+            val layoutParams = btps.layoutParams
+            layoutParams.height = dpToPx(this@GameMainActivity, 50f - countfn2 * 2).toInt()
+            btps.layoutParams = layoutParams
+            val layoutParams2 = iv7.layoutParams
+            layoutParams2.height = dpToPx(this@GameMainActivity, 50f - countfn2 * 2).toInt()
+            iv7.layoutParams = layoutParams2
+            val layoutParams3 = iv8.layoutParams
+            layoutParams3.height = dpToPx(this@GameMainActivity, 50f - countfn2 * 2).toInt()
+            iv8.layoutParams = layoutParams3
+            if(iv7.visibility == View.VISIBLE)
+            {
+                iv7.visibility = View.INVISIBLE
+                iv8.visibility = View.VISIBLE
+            }
+            else{
+                iv8.visibility = View.INVISIBLE
+                iv7.visibility = View.VISIBLE
+            }
+            if ((countfn2 % 9 == 0)) {
+                randommessagenumber = 3
+            } else {
+                randommessagenumber = (0..2).random()
+            }
+            if ((countfn2 % 3 == 0)||(countfn2 % 20 == 0)) {
+                if (countfn2 == 20) {
+                    btps.visibility = View.INVISIBLE
+                    iv7.visibility = View.INVISIBLE
+                    iv8.visibility = View.INVISIBLE
+                    tv5.visibility = View.VISIBLE
+                    randommessagenumber = 4
+                    if(btfn.visibility == View.INVISIBLE)
+                    {
+                        iv11.visibility = View.INVISIBLE
+                        tv6.visibility = View.INVISIBLE
+                    }
+                }
+                when (randommessagenumber) {
+                    0 -> {
+                        randommessage = getString(R.string.game_toggle_message2_0, countfn2)
+                    }
+
+                    1 -> {
+                        randommessage = getString(R.string.game_toggle_message2_1, countfn2)
+                    }
+
+                    2 -> {
+                        randommessage = getString(R.string.game_toggle_message2_2)
+                    }
+
+                    3 -> {
+                        randommessage = getString(R.string.game_toggle_message2_3)
+                    }
+
+                    4 -> {
+                        randommessage = getString(R.string.game_toggle_message2_4)
+                    }
+                }
+                val toast = Toast.makeText(this, "${randommessage}", Toast.LENGTH_SHORT)
+                toast.show()
+                Handler(Looper.getMainLooper()).postDelayed({
+                    // Toast 숨기기
+                    toast.cancel()
+                }, 2000)  // (delayMillis/2000)초 후에 토스트 메시지를 숨깁니다.
+            }
+            countfn2++
         }
         btfn.setOnClickListener {
             if(mode == getString(R.string.game_mode_easy) ){
@@ -181,6 +256,9 @@ class GameMainActivity : AppCompatActivity() {
             val layoutParams = btfn.layoutParams
             layoutParams.height = dpToPx(this@GameMainActivity, 50f - countfn * 2).toInt()
             btfn.layoutParams = layoutParams
+            val layoutParams2 = iv9.layoutParams
+            layoutParams2.height = dpToPx(this@GameMainActivity, 50f - countfn * 2).toInt()
+            iv9.layoutParams = layoutParams2
             if ((countfn % 9 == 0)) {
                 randommessagenumber = 3
             } else {
@@ -188,9 +266,15 @@ class GameMainActivity : AppCompatActivity() {
             }
             if (countfn % 3 == 0) {
                 if (countfn == 21) {
-                    btfn.isEnabled = false
+                    btfn.visibility = View.INVISIBLE
+                    iv9.visibility = View.INVISIBLE
                     tv3.visibility = View.VISIBLE
                     randommessagenumber = 4
+                    if(btps.visibility == View.INVISIBLE)
+                    {
+                        iv11.visibility = View.INVISIBLE
+                        tv6.visibility = View.INVISIBLE
+                    }
                 }
                 when (randommessagenumber) {
                     0 -> {
@@ -224,20 +308,18 @@ class GameMainActivity : AppCompatActivity() {
             for (i in 0..49) {
                 if (buttons[i].text == findnumber.toString()) {
                     // 클릭 효과 적용
-//                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
-                    buttons[i].setTextColor(Color.BLUE)
+                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#228c22"))
 
                     // 짧은 시간 후 원래의 색상으로 복구
                     Handler(Looper.getMainLooper()).postDelayed({
-//                        buttons[i].backgroundTintList = originalBackgroundColor
-                        buttons[i].setTextColor(originalTextColor)
-                    }, 400)
+                        buttons[i].backgroundTintList = originalBackgroundColor
+                    }, 800)
                     break
                 }
             }
 
         }
-        btri.setOnClickListener {
+        iv10.setOnClickListener {
             finish()
             startActivity(intent)
         }
@@ -250,8 +332,7 @@ class GameMainActivity : AppCompatActivity() {
             for (i in 0..24) {
                 if (buttons[i].text == "1") {
                     count2 = i
-//                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
-                    buttons[i].setTextColor(Color.BLUE)
+                    buttons[i].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#228c22"))
                 }
             }
         }
@@ -262,8 +343,11 @@ class GameMainActivity : AppCompatActivity() {
                     when (findnumber) {
                         1 -> {
                             handler.post(updateRunnable)  // 타이머 시작
+                            handler.post(ScoreupdateRunnable)
                             btps.isEnabled = true
                             btfn.isEnabled = true
+                            iv7.visibility = View.VISIBLE
+                            btps.setText(getString(R.string.game_gameStatePlayed))
                             if ((mode == getString(R.string.game_mode_hard) ) || (mode == getString(R.string.game_mode_hell) )) {
                                 handler.post(updateColorRunnable)
                             }
@@ -308,6 +392,7 @@ class GameMainActivity : AppCompatActivity() {
                         buttons[i].visibility = Button.INVISIBLE
                         count4--
                         handler.removeCallbacks(updateRunnable)  // 타이머 정지
+                        handler.removeCallbacks(ScoreupdateRunnable)
                         finalTime = elapsedTime
                         tv1.setText(getString(R.string.game_message_ending))
                         tv2.setText("${getString(R.string.game_gamescore)}${score(finalTime, numsize, mode, countfn)}")
@@ -319,10 +404,8 @@ class GameMainActivity : AppCompatActivity() {
                     if (mode == getString(R.string.game_mode_easy)) {
                         for (j in 0..24) {
                             if ((findnumber).toString() == ((buttons[j].text).toString())) {
-//                                buttons[j].backgroundTintList = ColorStateList.valueOf(Color.BLUE)
-                                buttons[j].setTextColor(Color.BLUE)
-//                                buttons[count2].backgroundTintList = originalBackgroundColor2
-                                buttons[count2].setTextColor(Color.WHITE)
+                                buttons[j].backgroundTintList = ColorStateList.valueOf(Color.parseColor("#228c22"))
+                                buttons[count2].backgroundTintList = originalBackgroundColor
                                 count2 = j
                                 break
                             }
@@ -331,14 +414,26 @@ class GameMainActivity : AppCompatActivity() {
                     if (gamestate != getString(R.string.game_gameStateFinished)) {
                         tv1.setText("${getString(R.string.game_targetNumber)}${findnumber}")
                     }
+                    else if(gamestate == getString(R.string.game_gameStateFinished)){
+                        val intent2 = Intent(this, GameEndActivity::class.java)
+                        score = score(finalTime, numsize, mode, countfn)
+                        intent2.putExtra("score", score)
+                        intent2.putExtra("finalTime", finalTime)
+                        intent2.putExtra("mode", mode)
+                        intent2.putExtra("numsize", numsize)
+                        startActivity(intent2)
+                    }
                 }
             }
         }
     }
 
-    fun score(finaltime: Long, state: String?, state3: String?, countfn: Int): Long {
+    fun score(time: Long, state: String?, state3: String?, countfn: Int): Long {
         var score = 0L
-        score = 100000000L / finaltime
+        if(time>=100){
+            score = 100000000L / time}
+        else{
+            score = 100000000L}
         when (state3) {
             getString(R.string.game_mode_base) -> {
                 score = score * 5 / 2
@@ -353,7 +448,7 @@ class GameMainActivity : AppCompatActivity() {
             }
         }
         when (state) {
-            "1~50" -> {
+            getString(R.string.game_numsize_50) -> {
                 score = score * 4
             }
         }
@@ -372,8 +467,8 @@ class GameMainActivity : AppCompatActivity() {
             val totalSeconds = elapsedTime / 1000
             val minutes = totalSeconds / 60
             val seconds = totalSeconds % 60
-            val milliseconds = elapsedTime % 1000
-            chronometer.text = String.format("%02d:%02d.%03d", minutes, seconds, milliseconds)
+            val milliseconds = (elapsedTime % 1000) / 10
+            chronometer.text = String.format("%02d:%02d.%02d", minutes, seconds, milliseconds)
 
             handler.postDelayed(this, updateIntervalMillis)
         }
@@ -435,4 +530,8 @@ class GameMainActivity : AppCompatActivity() {
 
 // 35. 버튼에 이미지 넣으면 뭔가 글씨 묻힐수도
 // 36. 아니면 버튼뒤에 이미지를 놔두는식으로(그럼 버튼사라지면 이미지 뙇)
-// 37.
+// 37. 시간초 2개까지만
+// 38.
+
+// 39. 버튼을 눌럿을때 빨간색으로 바꾸는 식 color.xml 에서 가져오는식으로
+// 40.
