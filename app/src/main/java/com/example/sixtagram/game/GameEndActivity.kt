@@ -34,7 +34,7 @@ class GameEndActivity : AppCompatActivity() {
         val btdd = findViewById<Button>(R.id.button1)
         val btrti = findViewById<Button>(R.id.button2)
 
-        if (score != 0L) {
+        if (score != 0L) { // 시작 화면에서 랭킹보기로 오면 0점이 추가되서 0이 아닐때만 데이터가 추가되도록
             tv3.setText(
                 "${getString(R.string.game_end_current)}  ${
                     String.format(
@@ -71,10 +71,11 @@ class GameEndActivity : AppCompatActivity() {
             val editor = sharedPref.edit()
             editor.clear()
             editor.apply()
-            displayGameData()
+            displayGameData() // 화면 갱신
         }
         btrti.setOnClickListener {
             val intent2 = Intent(this, GameStartActivity::class.java)
+            finish()
             startActivity(intent2)
         }
     }
@@ -207,7 +208,8 @@ class GameEndActivity : AppCompatActivity() {
         recordsLayout.removeAllViews() // 기존에 추가된 뷰 제거
 
         val scoreListSize = scoreList.size
-        val scoreList2 = MutableList<Long>(scoreListSize) { 0L }
+        val scoreList2 =
+            MutableList<Long>(scoreListSize) { 0L } // 원본 데이터는 정렬하는 방법을 몰라서 동일한 배열을 만들고 그걸 내림차순 정렬
         val finalTimeList2 = MutableList<Long>(scoreListSize) { 0L }
         val modeList2 = MutableList<String?>(scoreListSize) { "" }
         val numsizeList2 = MutableList<String?>(scoreListSize) { "" }
@@ -232,7 +234,7 @@ class GameEndActivity : AppCompatActivity() {
             hourList2[i] = hourList[originalIndex]
             minuteList2[i] = minuteList[originalIndex]
         }
-        for (i in modeList2.indices) {
+        for (i in modeList2.indices) { // 한글, 영어버전에 따라 제각각으로 표시되어 있어서 현재 언어에 맞게 바꿔주기
             when (modeList2[i]) {
                 "이지", "Easy" -> {
                     modeList2[i] = getString(R.string.game_mode_easy)
@@ -252,7 +254,7 @@ class GameEndActivity : AppCompatActivity() {
             }
         }
         for (i in scoreList.indices) {
-            if (i == 15) {
+            if (i == 15) { // 정렬 후 15번째 기록까지만 표시하도록 하기
                 break
             }
             val textView = TextView(this)
