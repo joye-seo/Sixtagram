@@ -41,9 +41,9 @@
         <activity
             android:name=".community.CommunityActivity"
             android:exported="true" />
-        <activity
-            android:name=".calendar.CalendarActivity"
-            android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".calendar.CalendarActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".member.MemberModifyActivity"
             android:exported="false" />
@@ -51,8 +51,14 @@
             android:name=".member.MemberDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".member.MemberActivity"
-            android:exported="false" />
+            android:name=".calendar.CalendarActivity"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
             android:name=".login.SignUpActivity"
             android:exported="false" />

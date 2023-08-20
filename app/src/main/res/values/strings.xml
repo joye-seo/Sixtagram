@@ -136,4 +136,10 @@
     <string name="input_title">제목을 입력하세요</string>
     <string name="input_content">이야기를 적어주세요</string>
     <string name="game_end_return_to_start">처음 게임화면</string>
+    <string name="deletetxt">삭제</string>
+    <string name="do_deletetxt">삭제 하시겠습니까?</string>
+    <string name="ok_delete">확인</string>
+    <string name="delete_go">삭제 되었습니다.</string>
+    <string name="no_delete">취소</string>
+    <string name="no_do_delete">취소하셨습니다.</string>
 </resources>
