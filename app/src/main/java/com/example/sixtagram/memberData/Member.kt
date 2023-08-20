@@ -12,7 +12,7 @@ object Member {
             "https://coding-martinkwon.tistory.com/",
             "https://github.com/MartinKwon94",
             "우리조에서 나만 못하는듯 ㅠ_ㅠ",
-            "www.naver.com"
+            "https://avatars.githubusercontent.com/u/139086025?v=4"
         ),
         MemberData(
             "2",
@@ -24,7 +24,7 @@ object Member {
             "https://joye.tistory.com/",
             "https://github.com/joye-seo",
             "우리조가 프로젝트 제일 잘한 듯 ㅎ_ㅎ",
-            "www.naver.com"
+            "https://avatars.githubusercontent.com/u/104261048?v=4"
         ),
         MemberData(
             "3",
@@ -36,7 +36,7 @@ object Member {
             "https://velog.io/@asdsad8664",
             "https://github.com/asdsad86642/",
             "열심히할게요!",
-            "www.naver.com"
+            "https://avatars.githubusercontent.com/u/139090280?v=4"
         ),
         MemberData(
             "4",
@@ -48,7 +48,7 @@ object Member {
             "https://wonjun3026.tistory.com/",
             "https://github.com/wonjun3026",
             "아직 코딩 실력이 많이 부족하지만 열심히 실력을 쌓아서 다 같이 가고 싶은 회사에 취업합시다. ㅎㅎ.",
-            "www.naver.com"
+            "https://avatars.githubusercontent.com/u/91948969?v=4"
         ),
         MemberData(
             "5",
@@ -60,8 +60,7 @@ object Member {
             "https://velog.io/@dklee1619",
             "https://github.com/dklee1619",
             "육캔두잇 화이팅!!!!!",
-            "www.naver.com"
-
+            "https://avatars.githubusercontent.com/u/138475088?v=4"
         ),
         MemberData(
             "4",
@@ -73,7 +72,7 @@ object Member {
             "https://tistory.com/",
             "https://github.com/",
             " ",
-            "www.naver.com"
+            "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff13d9219-eec7-4124-b789-396bdbe43179%2FKakaoTalk_20230809_063024964_01.jpg?table=block&id=bf800ccd-274d-4e60-aa4a-162a39224540&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=8cbc65cd-a833-4515-8c5f-0836cea60f66&cache=v2"
         ),
         MemberData(
             "4",
@@ -85,7 +84,7 @@ object Member {
             "https://tistory.com/",
             "https://github.com/",
             " ",
-            "www.naver.com"
+            "https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Ff13d9219-eec7-4124-b789-396bdbe43179%2FKakaoTalk_20230809_063024964_01.jpg?table=block&id=bf800ccd-274d-4e60-aa4a-162a39224540&spaceId=83c75a39-3aba-4ba4-a792-7aefe4b07895&width=2000&userId=8cbc65cd-a833-4515-8c5f-0836cea60f66&cache=v2"
 
         )
     )

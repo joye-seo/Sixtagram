@@ -3,6 +3,7 @@ package com.example.sixtagram.member
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
@@ -12,6 +13,7 @@ import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.sixtagram.R
+import com.example.sixtagram.memberData.Member
 import com.example.sixtagram.memberData.MemberData
 
 class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
@@ -22,6 +24,11 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member_detail)
+
+
+//        val intent = intent
+//        val selectedUser = intent.getSerializableExtra("MemberData") as? MemberData
+
 
 
         val imgMemBack = findViewById<ImageView>(R.id.btn_mem_back)
@@ -45,6 +52,7 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
                 startActivity(intent)
             }
         }
+
         val linkGithub = findViewById<TextView>(R.id.tv_github)
         linkGithub.setOnClickListener {
             val githubLink = linkGithub.text.toString() // 또는 링크 정보를 가져오는 방식에 맞게 수정
@@ -68,6 +76,47 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
 
         val intent = intent
         val selectedUser = intent.getSerializableExtra("MemberData") as? MemberData
+
+        val memberIndex = intent.getIntExtra("MemberIndex", -1)
+
+//        // 수정된 정보를 업데이트하는 코드?였던것..
+//        val save = findViewById<ImageView>(R.id.modify_button)
+//        save.setOnClickListener {
+//            val modifiedEmail = findViewById<EditText>(R.id.et_email).text.toString()
+//            val modifiedResidence = findViewById<EditText>(R.id.tv_regidence).text.toString()
+//            val modifiedName = findViewById<EditText>(R.id.textView9).text.toString()
+//            val modifiedMbti = findViewById<EditText>(R.id.tv_mbti).text.toString()
+//            val modifiedHobby = findViewById<EditText>(R.id.tv_hobby).text.toString()
+//            val modifiedConcern = findViewById<EditText>(R.id.tv_interest).text.toString()
+//            val modifiedBlog = findViewById<EditText>(R.id.tv_blog).text.toString()
+//            val modifiedGithub = findViewById<EditText>(R.id.tv_github).text.toString()
+//            val modifiedText = findViewById<EditText>(R.id.tv_comment).text.toString()
+//            val modifiedImageUrl = "https://example.com/image.jpg" // 이미지 URL
+//            val modifiedImage = findViewById<ImageView>(R.id.imageView2)
+//            Glide.with(this)
+//                .load(modifiedImageUrl)
+//                .into(modifiedImage)
+////             val modifiedPassword = ... // 수정하려는 값에 따라 처리
+//
+//            if (memberIndex != -1 && selectedUser != null) {
+//                Member.updateMember(
+//                    selectedUser.password,
+//                    modifiedResidence,
+//                    modifiedName,
+//                    modifiedMbti,
+//                    modifiedHobby,
+//                    modifiedConcern,
+//                    modifiedBlog,
+//                    modifiedGithub,
+//                    modifiedText,
+//                    modifiedImageUrl, // 이미지 URL도 추가해야 함
+//                    memberIndex
+//                )
+//            }
+//
+//            val intent = Intent(this, MemberDetailActivity::class.java)
+//            startActivity(intent)
+//        }
 
         if (selectedUser != null) {
             // 선택한 사용자 정보를 화면에 표시하는 코드
