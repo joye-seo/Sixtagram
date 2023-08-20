@@ -132,4 +132,5 @@ Pressing the Hint button changes the color of the next number button.
     <string name="game_end_current">Current Game Record:</string>
     <string name="input_title">Enter a title</string>
     <string name="input_content">Enter a story</string>
+    <string name="game_end_return_to_start">Game Start Screen</string>
 </resources>

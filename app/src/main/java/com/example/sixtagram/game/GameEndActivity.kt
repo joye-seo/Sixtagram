@@ -1,6 +1,7 @@
 package com.example.sixtagram.game
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -31,6 +32,7 @@ class GameEndActivity : AppCompatActivity() {
         val minute = calendar.get(Calendar.MINUTE)
         val tv3 = findViewById<TextView>(R.id.textView3)
         val btdd = findViewById<Button>(R.id.button1)
+        val btrti = findViewById<Button>(R.id.button2)
 
         if (score != 0L) {
             tv3.setText(
@@ -70,6 +72,10 @@ class GameEndActivity : AppCompatActivity() {
             editor.clear()
             editor.apply()
             displayGameData()
+        }
+        btrti.setOnClickListener {
+            val intent2 = Intent(this, GameStartActivity::class.java)
+            startActivity(intent2)
         }
     }
 
@@ -274,6 +280,5 @@ class GameEndActivity : AppCompatActivity() {
             recordsLayout.addView(textView)
         }
     }
-
 }
 

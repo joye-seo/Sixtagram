@@ -43,7 +43,6 @@ class GameStartActivity : AppCompatActivity() {
             intent2.putExtra("numsize", numsize)
             intent2.putExtra("mode", mode)
             startActivity(intent2)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 
         btLv.setOnClickListener {
@@ -88,12 +87,10 @@ class GameStartActivity : AppCompatActivity() {
         btd.setOnClickListener {
             val intent2 = Intent(this, GameDescriptionActivity::class.java)
             startActivity(intent2)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
         btrk.setOnClickListener {
             val intent2 = Intent(this, GameEndActivity::class.java)
             startActivity(intent2)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
     }
 
@@ -113,6 +110,7 @@ class GameStartActivity : AppCompatActivity() {
             }
             true
         }
+
         overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
 
     }
@@ -122,3 +120,4 @@ class GameStartActivity : AppCompatActivity() {
         finish()
     }
 }
+
