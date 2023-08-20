@@ -1,7 +1,7 @@
 package com.example.sixtagram.memberData
 
 object Member {
-    internal var members = mutableListOf<MemberData> (
+    internal var members = mutableListOf<MemberData>(
         MemberData(
             "1",
             "권민석",
@@ -62,6 +62,31 @@ object Member {
             "육캔두잇 화이팅!!!!!",
             "www.naver.com"
 
+        ),
+        MemberData(
+            "4",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            "https://tistory.com/",
+            "https://github.com/",
+            " ",
+            "www.naver.com"
+        ),
+        MemberData(
+            "4",
+            " ",
+            " ",
+            " ",
+            " ",
+            " ",
+            "https://tistory.com/",
+            "https://github.com/",
+            " ",
+            "www.naver.com"
+
         )
     )
 
@@ -105,11 +130,13 @@ object Member {
         image: String,
         index: Int
 
-    ){
-        val updateMember = MemberData(password, name, residence, mbti, hobby, concern, blog, github, text, image)
+    ) {
+        val updateMember =
+            MemberData(password, name, residence, mbti, hobby, concern, blog, github, text, image)
         members[index] = updateMember
     }
-    fun deleteMember(index: Int){
+
+    fun deleteMember(index: Int) {
         members.removeAt(index)
     }
 

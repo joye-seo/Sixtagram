@@ -3,13 +3,14 @@ package com.example.sixtagram.member
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.MultiTransformation
+import com.bumptech.glide.load.resource.bitmap.FitCenter
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.sixtagram.R
 import com.example.sixtagram.memberData.MemberData
 
@@ -21,8 +22,6 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member_detail)
-
-
 
 
         val imgMemBack = findViewById<ImageView>(R.id.btn_mem_back)
@@ -64,6 +63,8 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
         val memberBlog = findViewById<TextView>(R.id.tv_blog)
         val memberGithub = findViewById<TextView>(R.id.tv_github)
         val memberComment = findViewById<TextView>(R.id.tv_saying)
+        val memberImage = findViewById<ImageView>(R.id.imageView2)
+        val memberName = findViewById<TextView>(R.id.textView9)
 
         val intent = intent
         val selectedUser = intent.getSerializableExtra("MemberData") as? MemberData
@@ -77,6 +78,11 @@ class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
             memberBlog.text = selectedUser.blog
             memberGithub.text = selectedUser.github
             memberComment.text = selectedUser.text
+            memberName.text = selectedUser.name
+            Glide.with(this)
+                .load(selectedUser.imageEdit)
+                .transform(MultiTransformation(FitCenter(), RoundedCorners(500)))
+                .into(memberImage)
         } else {
             // 선택한 사용자 정보가 없을 때의 처리
         }
