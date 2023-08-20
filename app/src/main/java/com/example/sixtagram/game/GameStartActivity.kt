@@ -34,7 +34,8 @@ class GameStartActivity : AppCompatActivity() {
         val iv19 = findViewById<ImageView>(R.id.imageView19)
         val iv20 = findViewById<ImageView>(R.id.imageView20)
         var numsize: String = getString(R.string.game_numsize_25) // "1~25" "1~50"
-        var mode: String = getString(R.string.game_mode_easy) // "이지" "기본" "하드" "지옥" "Easy" "Base" "Hard" "Hell"
+        var mode: String =
+            getString(R.string.game_mode_easy) // "이지" "기본" "하드" "지옥" "Easy" "Base" "Hard" "Hell"
 
         btSt.setOnClickListener {
 
@@ -89,7 +90,8 @@ class GameStartActivity : AppCompatActivity() {
             startActivity(intent2)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
-        btrk.setOnClickListener {val intent2 = Intent(this, GameEndActivity::class.java)
+        btrk.setOnClickListener {
+            val intent2 = Intent(this, GameEndActivity::class.java)
             startActivity(intent2)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }

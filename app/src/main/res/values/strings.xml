@@ -118,17 +118,21 @@
     <string name="game_Description">게임 설명</string>
     <string name="game_description_message">
         게임 목표 : 숫자를 차례대로 눌러서 모든 버튼을 없애면 됩니다.\n\n\n
-        게임 모드 : 이지, 기본, 하드, 지옥\n\n\n
-        이지 : 다음 숫자를 다른색으로 표시합니다.\n\n
-        기본 : 기본이 되는 모드\n\n
-        하드 : 숫자가 주기적으로 가려집니다. \n가려져도 클릭은 가능합니다.\n\n
-        지옥 : 숫자가 주기적으로 가려집니다. \n가려지면 클릭도 안됩니다.
+        게임 모드 : 이지, 기본, 하드, 지옥\n\n
+        이지 : 다음 숫자를 다른색으로 표시합니다.\n
+        기본 : 기본이 되는 모드\n
+        하드 : 숫자가 주기적으로 가려집니다. \n가려져도 클릭은 가능합니다.\n
+        지옥 : 숫자가 주기적으로 가려집니다. \n가려지면 클릭도 안됩니다.\n\n\n
+        지원 : 일시정지 버튼과 힌트 버튼이 있습니다.\n\n
+        일시정지 버튼을 누르면 타이머가 멈추고 숫자가 가려집니다\n
+        힌트 버튼을 누르면 다음 숫자버튼의 색깔이 바뀝니다\n
 </string>
     <string name="game_start_title">게임</string>
     <string name="game_main_title">게임</string>
     <string name="game_end_title">스코어 보드</string>
     <string name="game_description_title">게임 설명</string>
     <string name="game_main_start_message">위쪽의 1버튼을 누르면 게임이 시작됩니다.</string>
+    <string name="game_end_current">이번 판 기록:</string>
     <string name="input_title">제목을 입력하세요</string>
     <string name="input_content">이야기를 적어주세요</string>
 </resources>
