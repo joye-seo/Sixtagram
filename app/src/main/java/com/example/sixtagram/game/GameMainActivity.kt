@@ -428,7 +428,7 @@ class GameMainActivity : AppCompatActivity() {
                             }"
                         )
                         score = score(finalTime, numsize, mode, countfn)
-                        btps.visibility = View.INVISIBLE
+                        btps.visibility = View.INVISIBLE // 게임이 종료되면 여러가지 버튼과 이미지 비활성화 해주기
                         btfn.visibility = View.INVISIBLE
                         tv6.visibility = View.INVISIBLE
                         iv7.visibility = View.INVISIBLE
@@ -441,6 +441,7 @@ class GameMainActivity : AppCompatActivity() {
                         intent2.putExtra("finalTime", finalTime)
                         intent2.putExtra("mode", mode)
                         intent2.putExtra("numsize", numsize)
+                        finish()
                         startActivity(intent2)
                     }
                 }
@@ -451,11 +452,11 @@ class GameMainActivity : AppCompatActivity() {
     fun score(time: Long, state: String?, state3: String?, countfn: Int): Long {
         var score = 0L
         if (time >= 100) {
-            score = 100000000L / time
+            score = 100000000L / time // time은 ms 단위 즉 1억ms가 흐르면 0점이 된다.
         } else {
             score = 100000000L
         }
-        when (state3) {
+        when (state3) { // 난이도를 나타내는 state3에 따라 score에 배율을 곱해줌
             getString(R.string.game_mode_base) -> {
                 score = score * 5 / 2
             }
@@ -470,10 +471,10 @@ class GameMainActivity : AppCompatActivity() {
         }
         when (state) {
             getString(R.string.game_numsize_50) -> {
-                score = score * 4
+                score = score * 4 // 숫자 범위를 나타내는 state에 따라 score에 배율을 곱해줌
             }
         }
-        score = score * (100 - 4 * (countfn - 1)) / 100
+        score = score * (100 - 4 * (countfn - 1)) / 100 // 힌트버튼을 누른 횟수를 세는 countfn에 따라 일정 비율로 깎음
         return score
     }
 
