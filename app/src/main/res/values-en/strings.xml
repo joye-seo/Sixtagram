@@ -114,18 +114,22 @@
     <string name="game_support">Support</string>
     <string name="game_Description">Game Description</string>
     <string name="game_description_message">
-        Game Objective: Press the numbers in order to eliminate all buttons.\n\n\n
-        Game Modes: Easy, Base, Hard, Hell\n\n\n
-        Easy: The next number is highlighted in a different color.\n\n
-        Base: The default mode.\n\n
-        Hard: Numbers periodically become obscured, \nbut clicking is still possible.\n\n
-        Hell: Numbers periodically become obscured \nand cannot be clicked when hidden.
+        Game Objective : Press the numbers in order to eliminate all buttons.\n\n\n
+        Game Modes : Easy, Base, Hard, Hell\n\n
+        Easy : The next number is highlighted in a different color.\n
+        Base : The default mode.\n
+        Hard : Numbers periodically become obscured, but clicking is still possible.\n
+        Hell : Numbers periodically become obscured and cannot be clicked when hidden.\n\n\n
+        Support : There are Pause and Hint buttons.\n\n
+Pressing the Pause button stops the timer and hides the numbers.\n\n
+Pressing the Hint button changes the color of the next number button.
 </string>
     <string name="game_start_title">Game</string>
-    <string name="game_main_title">게임</string>
+    <string name="game_main_title">Game</string>
     <string name="game_end_title">Score Board</string>
     <string name="game_description_title">Game Description</string>
     <string name="game_main_start_message">Press the button labeled 1 above to start the game.</string>
+    <string name="game_end_current">Current Game Record:</string>
     <string name="input_title">Enter a title</string>
     <string name="input_content">Enter a story</string>
 </resources>

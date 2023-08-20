@@ -63,6 +63,7 @@ class GameMainActivity : AppCompatActivity() {
         val tv5 = findViewById<TextView>(R.id.textView5)
         val tv6 = findViewById<TextView>(R.id.textView6)
         val tv7 = findViewById<TextView>(R.id.textView7)
+        val tv8 = findViewById<TextView>(R.id.textView8)
         val iv7 = findViewById<ImageView>(R.id.imageView7)
         val iv8 = findViewById<ImageView>(R.id.imageView8)
         val iv9 = findViewById<ImageView>(R.id.imageView9)
@@ -73,10 +74,10 @@ class GameMainActivity : AppCompatActivity() {
         var numbers2 = (26..50).toList().shuffled() // 버튼 숫자 랜덤배치
         var numsize: String? = intent.getStringExtra("numsize") // "25" "50"
         var mode: String? = intent.getStringExtra("mode") // "이지 모드" "노멀 모드" 하드 모드" "지옥 모드"
-//        var name: String? = intent.getStringExtra("name") // "사용자 이름"
         var gamestate = getString(R.string.game_gameStateRunning) // "정상" "종료"
 
-        val originalBackgroundColor = ColorStateList.valueOf(ContextCompat.getColor(this, R.color.pantone_189))
+        val originalBackgroundColor =
+            ColorStateList.valueOf(ContextCompat.getColor(this, R.color.pantone_189))
         val originalTextColor = buttons[0].textColors // 원래 텍스트 색상 저장
         val hintcolor = ContextCompat.getColor(this, R.color.pantone_red) // 힌트 받은 색깔
         val hideTextColor = Color.TRANSPARENT // 텍스트를 숨기기 위해 투명한 색상 지정
@@ -92,21 +93,21 @@ class GameMainActivity : AppCompatActivity() {
         var score: Long = 0L
         var randommessage: String = ""
         var randommessagenumber = 0
-
+        tv8.setText("${getString(R.string.game_game_difficulty)} ${mode}")
         val updateColorRunnable = object : Runnable {
             override fun run() {
-                if(mode == getString(R.string.game_mode_hard)||(mode == getString(R.string.game_mode_hell))) {
+                if (mode == getString(R.string.game_mode_hard) || (mode == getString(R.string.game_mode_hell))) {
                     // 모든 버튼의 텍스트 변경
                     for (i in 0..24) {
                         if (isTextHidden) {
                             buttons[i].setTextColor(originalTextColor)
-                            if(mode == getString(R.string.game_mode_hell)){
+                            if (mode == getString(R.string.game_mode_hell)) {
 
                                 buttons[i].isClickable = true
                             }
                         } else {
                             buttons[i].setTextColor(hideTextColor)
-                            if(mode == getString(R.string.game_mode_hell)){
+                            if (mode == getString(R.string.game_mode_hell)) {
 
                                 buttons[i].isClickable = false
                             }
@@ -159,7 +160,10 @@ class GameMainActivity : AppCompatActivity() {
         btfn.isEnabled = false
 
         btps.setOnClickListener {
-            if ((btps.text == getString(R.string.game_gameStatePlayed)) && (gamestate == (getString(R.string.game_gameStateRunning)))) {
+            if ((btps.text == getString(R.string.game_gameStatePlayed)) && (gamestate == (getString(
+                    R.string.game_gameStateRunning
+                )))
+            ) {
                 if (findnumber != 1) {
                     for (i in 0..24) {
                         buttons[i].textSize = 0f
@@ -168,7 +172,10 @@ class GameMainActivity : AppCompatActivity() {
                     handler.removeCallbacks(updateRunnable)
                     btps.text = getString(R.string.game_gameStatePaused)
                 }
-            } else if ((btps.text == getString(R.string.game_gameStatePaused)) && (gamestate == (getString(R.string.game_gameStateRunning)))) {
+            } else if ((btps.text == getString(R.string.game_gameStatePaused)) && (gamestate == (getString(
+                    R.string.game_gameStateRunning
+                )))
+            ) {
                 if (findnumber != 1) {
                     for (i in 0..24) {
                         buttons[i].textSize = 20f
@@ -187,12 +194,10 @@ class GameMainActivity : AppCompatActivity() {
             val layoutParams3 = iv8.layoutParams
             layoutParams3.height = dpToPx(this@GameMainActivity, 50f - countfn2 * 2).toInt()
             iv8.layoutParams = layoutParams3
-            if(iv7.visibility == View.VISIBLE)
-            {
+            if (iv7.visibility == View.VISIBLE) {
                 iv7.visibility = View.INVISIBLE
                 iv8.visibility = View.VISIBLE
-            }
-            else{
+            } else {
                 iv8.visibility = View.INVISIBLE
                 iv7.visibility = View.VISIBLE
             }
@@ -201,15 +206,14 @@ class GameMainActivity : AppCompatActivity() {
             } else {
                 randommessagenumber = (0..2).random()
             }
-            if ((countfn2 % 3 == 0)||(countfn2 % 20 == 0)) {
+            if ((countfn2 % 3 == 0) || (countfn2 % 20 == 0)) {
                 if (countfn2 == 20) {
                     btps.visibility = View.INVISIBLE
                     iv7.visibility = View.INVISIBLE
                     iv8.visibility = View.INVISIBLE
                     tv5.visibility = View.VISIBLE
                     randommessagenumber = 4
-                    if(btfn.visibility == View.INVISIBLE)
-                    {
+                    if (btfn.visibility == View.INVISIBLE) {
                         iv11.visibility = View.INVISIBLE
                         tv6.visibility = View.INVISIBLE
                     }
@@ -245,8 +249,12 @@ class GameMainActivity : AppCompatActivity() {
             countfn2++
         }
         btfn.setOnClickListener {
-            if(mode == getString(R.string.game_mode_easy) ){
-                val toast = Toast.makeText(this, getString(R.string.game_toggle_message_easy), Toast.LENGTH_SHORT)
+            if (mode == getString(R.string.game_mode_easy)) {
+                val toast = Toast.makeText(
+                    this,
+                    getString(R.string.game_toggle_message_easy),
+                    Toast.LENGTH_SHORT
+                )
                 toast.show()
                 Handler(Looper.getMainLooper()).postDelayed({
                     // Toast 숨기기
@@ -271,8 +279,7 @@ class GameMainActivity : AppCompatActivity() {
                     iv9.visibility = View.INVISIBLE
                     tv3.visibility = View.VISIBLE
                     randommessagenumber = 4
-                    if(btps.visibility == View.INVISIBLE)
-                    {
+                    if (btps.visibility == View.INVISIBLE) {
                         iv11.visibility = View.INVISIBLE
                         tv6.visibility = View.INVISIBLE
                     }
@@ -329,7 +336,7 @@ class GameMainActivity : AppCompatActivity() {
             buttons[i].setText("${numbers[i]}")
         }
 
-        if (mode == getString(R.string.game_mode_easy) ) {
+        if (mode == getString(R.string.game_mode_easy)) {
             for (i in 0..24) {
                 if (buttons[i].text == "1") {
                     count2 = i
@@ -350,7 +357,7 @@ class GameMainActivity : AppCompatActivity() {
                             iv7.visibility = View.VISIBLE
                             btps.setText(getString(R.string.game_gameStatePlayed))
                             tv7.visibility = View.INVISIBLE
-                            if ((mode == getString(R.string.game_mode_hard) ) || (mode == getString(R.string.game_mode_hell) )) {
+                            if ((mode == getString(R.string.game_mode_hard)) || (mode == getString(R.string.game_mode_hell))) {
                                 handler.post(updateColorRunnable)
                             }
                             if (numsize == getString(R.string.game_numsize_25)) {
@@ -397,7 +404,16 @@ class GameMainActivity : AppCompatActivity() {
                         handler.removeCallbacks(ScoreupdateRunnable)
                         finalTime = elapsedTime
                         tv1.setText(getString(R.string.game_message_ending))
-                        tv2.setText("${getString(R.string.game_gamescore)}${score(finalTime, numsize, mode, countfn)}")
+                        tv2.setText(
+                            "${getString(R.string.game_gamescore)}${
+                                score(
+                                    finalTime,
+                                    numsize,
+                                    mode,
+                                    countfn
+                                )
+                            }"
+                        )
                         score = score(finalTime, numsize, mode, countfn)
                         btps.isEnabled = false
                         btfn.isEnabled = false
@@ -415,8 +431,7 @@ class GameMainActivity : AppCompatActivity() {
                     }
                     if (gamestate != getString(R.string.game_gameStateFinished)) {
                         tv1.setText("${getString(R.string.game_targetNumber)}${findnumber}")
-                    }
-                    else if(gamestate == getString(R.string.game_gameStateFinished)){
+                    } else if (gamestate == getString(R.string.game_gameStateFinished)) {
                         val intent2 = Intent(this, GameEndActivity::class.java)
                         score = score(finalTime, numsize, mode, countfn)
                         intent2.putExtra("score", score)
@@ -433,10 +448,11 @@ class GameMainActivity : AppCompatActivity() {
 
     fun score(time: Long, state: String?, state3: String?, countfn: Int): Long {
         var score = 0L
-        if(time>=100){
-            score = 100000000L / time}
-        else{
-            score = 100000000L}
+        if (time >= 100) {
+            score = 100000000L / time
+        } else {
+            score = 100000000L
+        }
         when (state3) {
             getString(R.string.game_mode_base) -> {
                 score = score * 5 / 2

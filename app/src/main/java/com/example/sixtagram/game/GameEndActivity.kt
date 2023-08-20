@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.sixtagram.R
+import com.example.sixtagram.memberData.Member
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.util.Calendar
@@ -19,7 +20,6 @@ class GameEndActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gameend)
-//        intent.getStringExtra("name")
         val score = intent.getLongExtra("score", 0L)
         val finalTime = intent.getLongExtra("finalTime", 0L)
         val mode = intent.getStringExtra("mode")
@@ -29,27 +29,37 @@ class GameEndActivity : AppCompatActivity() {
         val day = calendar.get(Calendar.DAY_OF_MONTH)
         val hour = calendar.get(Calendar.HOUR_OF_DAY)
         val minute = calendar.get(Calendar.MINUTE)
-        val tv1 = findViewById<TextView>(R.id.textView1)
-        val tv2 = findViewById<TextView>(R.id.textView2)
         val tv3 = findViewById<TextView>(R.id.textView3)
         val btdd = findViewById<Button>(R.id.button1)
 
-        if(score!= 0L){
-            tv3.setText("이번판 기록 : ${String.format("%06d", score)}${getString(R.string.game_ResetRankings_score)} | ${
-                String.format(
-                    "%03d",
-                    finalTime / 1000
-                )
-            }.${
-                String.format(
-                    "%02d",
-                    (finalTime % 1000) / 10
-                )
-            }${getString(R.string.game_ResetRankings_second)} | ${mode} | ${numsize}")
-        saveGameData(score, finalTime, mode, numsize,month,day,hour,minute)}
+        if (score != 0L) {
+            tv3.setText(
+                "${getString(R.string.game_end_current)}  ${
+                    String.format(
+                        "%06d",
+                        score
+                    )
+                }${getString(R.string.game_ResetRankings_score)} | ${
+                    String.format(
+                        "%03d",
+                        finalTime / 1000
+                    )
+                }.${
+                    String.format(
+                        "%02d",
+                        (finalTime % 1000) / 10
+                    )
+                }${getString(R.string.game_ResetRankings_second)} | ${mode} | ${numsize}"
+            )
+            saveGameData(score, finalTime, mode, numsize, month, day, hour, minute)
+        }
         displayGameData()
         btdd.setOnClickListener {
-            val toast = Toast.makeText(this, getString(R.string.game_ResetRankings_toggle_message), Toast.LENGTH_SHORT)
+            val toast = Toast.makeText(
+                this,
+                getString(R.string.game_ResetRankings_toggle_message),
+                Toast.LENGTH_SHORT
+            )
             toast.show()
             Handler(Looper.getMainLooper()).postDelayed({
                 // Toast 숨기기
@@ -64,7 +74,16 @@ class GameEndActivity : AppCompatActivity() {
     }
 
 
-    private fun saveGameData(score: Long, finalTime: Long, mode: String?, numsize: String?,month:Int,day:Int,hour:Int,minute:Int) {
+    private fun saveGameData(
+        score: Long,
+        finalTime: Long,
+        mode: String?,
+        numsize: String?,
+        month: Int,
+        day: Int,
+        hour: Int,
+        minute: Int
+    ) {
         val sharedPref = getSharedPreferences("game_records", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
 
@@ -108,7 +127,8 @@ class GameEndActivity : AppCompatActivity() {
         // 기존의 minute 데이터 리스트를 가져옵니다.
         val existingminutes = sharedPref.getString("minutes", "[]")
         val typeTokenminute = object : TypeToken<List<Int>>() {}.type
-        val minuteList = Gson().fromJson<List<Int>>(existingminutes, typeTokenminute).toMutableList()
+        val minuteList =
+            Gson().fromJson<List<Int>>(existingminutes, typeTokenminute).toMutableList()
 
         // 새로운 데이터를 리스트에 추가합니다.
 
@@ -206,21 +226,36 @@ class GameEndActivity : AppCompatActivity() {
             hourList2[i] = hourList[originalIndex]
             minuteList2[i] = minuteList[originalIndex]
         }
-        for(i in modeList2.indices)
-        {
-            when(modeList2[i])
-            {
-                "이지","Easy" -> {modeList2[i] = getString(R.string.game_mode_easy)}
-                "기본","Base" -> {modeList2[i] = getString(R.string.game_mode_base)}
-                "하드","Hard" -> {modeList2[i] = getString(R.string.game_mode_hard)}
-                "지옥","Hell" -> {modeList2[i] = getString(R.string.game_mode_hell)}
+        for (i in modeList2.indices) {
+            when (modeList2[i]) {
+                "이지", "Easy" -> {
+                    modeList2[i] = getString(R.string.game_mode_easy)
+                }
+
+                "기본", "Base" -> {
+                    modeList2[i] = getString(R.string.game_mode_base)
+                }
+
+                "하드", "Hard" -> {
+                    modeList2[i] = getString(R.string.game_mode_hard)
+                }
+
+                "지옥", "Hell" -> {
+                    modeList2[i] = getString(R.string.game_mode_hell)
+                }
             }
         }
         for (i in scoreList.indices) {
-            if(i==15)
-            {break}
+            if (i == 15) {
+                break
+            }
             val textView = TextView(this)
-            textView.text = "${i + 1}. ${String.format("%06d", scoreList2[i])}${getString(R.string.game_ResetRankings_score)} | ${
+            textView.text = "${i + 1}. ${
+                String.format(
+                    "%06d",
+                    scoreList2[i]
+                )
+            }${getString(R.string.game_ResetRankings_score)} | ${
                 String.format(
                     "%03d",
                     finalTimeList2[i] / 1000
@@ -230,7 +265,12 @@ class GameEndActivity : AppCompatActivity() {
                     "%02d",
                     (finalTimeList2[i] % 1000) / 10
                 )
-            }${getString(R.string.game_ResetRankings_second)} | ${modeList2[i]} | ${numsizeList2[i]} | ${monthList2[i]}.${dayList2[i]} ${hourList2[i]}:${String.format("%02d",minuteList2[i])}"
+            }${getString(R.string.game_ResetRankings_second)} | ${modeList2[i]} | ${numsizeList2[i]} | ${monthList2[i]}.${dayList2[i]} ${hourList2[i]}:${
+                String.format(
+                    "%02d",
+                    minuteList2[i]
+                )
+            }"
             recordsLayout.addView(textView)
         }
     }
