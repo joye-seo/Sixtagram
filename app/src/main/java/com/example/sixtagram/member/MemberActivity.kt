@@ -46,7 +46,16 @@ class MemberActivity : AppCompatActivity() {
             intent.putExtra("MemberData", selectedUser)
             startActivity(intent)
         }
-
+//        //////////////////////////////////////update메소드 이용해서 수정가능하게하기?
+//        listView1.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+//            val selectedUser = UserList[position] // 선택한 사용자 정보
+//            val intent = Intent(this, MemberDetailActivity::class.java).apply {
+//                putExtra("MemberData", selectedUser)
+//                putExtra("MemberIndex", position) // 선택한 사용자의 인덱스
+//            }
+//            startActivity(intent)
+//        }
+//
 //            }
         initNavigation()
     }
