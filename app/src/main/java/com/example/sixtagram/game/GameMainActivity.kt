@@ -397,7 +397,20 @@ class GameMainActivity : AppCompatActivity() {
                             gamestate = getString(R.string.game_gameStateFinished)
                         }
                     }
-                    if (gamestate == getString(R.string.game_gameStateFinished)) {
+                    findnumber++
+                    if (mode == getString(R.string.game_mode_easy)) {
+                        for (j in 0..24) {
+                            if ((findnumber).toString() == ((buttons[j].text).toString())) {
+                                buttons[j].backgroundTintList = ColorStateList.valueOf(hintcolor)
+                                buttons[count2].backgroundTintList = originalBackgroundColor
+                                count2 = j
+                                break
+                            }
+                        }
+                    }
+                    if (gamestate != getString(R.string.game_gameStateFinished)) {
+                        tv1.setText("${getString(R.string.game_targetNumber)}${findnumber}")
+                    } else if (gamestate == getString(R.string.game_gameStateFinished)) {
                         buttons[i].visibility = Button.INVISIBLE
                         count4--
                         handler.removeCallbacks(updateRunnable)  // 타이머 정지
@@ -415,23 +428,13 @@ class GameMainActivity : AppCompatActivity() {
                             }"
                         )
                         score = score(finalTime, numsize, mode, countfn)
-                        btps.isEnabled = false
-                        btfn.isEnabled = false
-                    }
-                    findnumber++
-                    if (mode == getString(R.string.game_mode_easy)) {
-                        for (j in 0..24) {
-                            if ((findnumber).toString() == ((buttons[j].text).toString())) {
-                                buttons[j].backgroundTintList = ColorStateList.valueOf(hintcolor)
-                                buttons[count2].backgroundTintList = originalBackgroundColor
-                                count2 = j
-                                break
-                            }
-                        }
-                    }
-                    if (gamestate != getString(R.string.game_gameStateFinished)) {
-                        tv1.setText("${getString(R.string.game_targetNumber)}${findnumber}")
-                    } else if (gamestate == getString(R.string.game_gameStateFinished)) {
+                        btps.visibility = View.INVISIBLE
+                        btfn.visibility = View.INVISIBLE
+                        tv6.visibility = View.INVISIBLE
+                        iv7.visibility = View.INVISIBLE
+                        iv8.visibility = View.INVISIBLE
+                        iv9.visibility = View.INVISIBLE
+                        iv11.visibility = View.INVISIBLE
                         val intent2 = Intent(this, GameEndActivity::class.java)
                         score = score(finalTime, numsize, mode, countfn)
                         intent2.putExtra("score", score)
@@ -439,7 +442,6 @@ class GameMainActivity : AppCompatActivity() {
                         intent2.putExtra("mode", mode)
                         intent2.putExtra("numsize", numsize)
                         startActivity(intent2)
-                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
                     }
                 }
             }

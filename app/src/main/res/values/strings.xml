@@ -135,4 +135,5 @@
     <string name="game_end_current">이번 판 기록:</string>
     <string name="input_title">제목을 입력하세요</string>
     <string name="input_content">이야기를 적어주세요</string>
+    <string name="game_end_return_to_start">처음 게임화면</string>
 </resources>
