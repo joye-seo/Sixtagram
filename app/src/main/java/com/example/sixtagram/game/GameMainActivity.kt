@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.Chronometer
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -69,6 +70,7 @@ class GameMainActivity : AppCompatActivity() {
         val iv9 = findViewById<ImageView>(R.id.imageView9)
         val iv10 = findViewById<ImageView>(R.id.imageView10)
         val iv11 = findViewById<ImageView>(R.id.imageView11)
+        val relativeLayout = findViewById<RelativeLayout>(R.id.myRelativeLayout)
         chronometer = findViewById(R.id.chronometer)
         var numbers = (1..25).toList().shuffled() // 버튼 숫자 랜덤배치
         var numbers2 = (26..50).toList().shuffled() // 버튼 숫자 랜덤배치
@@ -94,6 +96,8 @@ class GameMainActivity : AppCompatActivity() {
         var randommessage: String = ""
         var randommessagenumber = 0
         tv8.setText("${getString(R.string.game_game_difficulty)} ${mode}")
+        if(mode == getString(R.string.game_mode_hell))
+        {relativeLayout.visibility = View.VISIBLE}
         val updateColorRunnable = object : Runnable {
             override fun run() {
                 if (mode == getString(R.string.game_mode_hard) || (mode == getString(R.string.game_mode_hell))) {
