@@ -47,7 +47,7 @@ class CommunityActivity : AppCompatActivity() {
         btnAdd.setOnClickListener {
             val intent = Intent(this, CommunityAddActivity::class.java)
             startActivity(intent)
-
+                adapter.saveItem()
         }
 
         //아이템 클릭 시 나오는 결과 값

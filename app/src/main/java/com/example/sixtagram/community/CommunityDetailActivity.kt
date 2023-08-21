@@ -15,6 +15,7 @@ import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.sixtagram.R
+import com.example.sixtagram.adapter.CommentAdapter
 import com.example.sixtagram.data.Comment
 import com.example.sixtagram.data.CommentData
 import com.example.sixtagram.data.CommunityData
@@ -49,8 +50,7 @@ class CommunityDetailActivity : AppCompatActivity() {
             commentList.add(CommentData(edtComment.text.toString()))
             edtComment.text.clear()
 
-            commentAdapter.notifyDataSetChanged()
-
+            commentAdapter.saveItem()
         }
 
         btnHeart.setOnClickListener {
@@ -74,7 +74,6 @@ class CommunityDetailActivity : AppCompatActivity() {
             }
 
             Log.d("test123", likeCount.toString())
-
 
         }
 

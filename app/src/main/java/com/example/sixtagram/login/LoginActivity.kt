@@ -9,6 +9,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
+import com.example.sixtagram.Splash2Activity
 import com.example.sixtagram.member.MemberActivity
 import com.example.sixtagram.memberData.Member
 import com.example.sixtagram.memberData.MemberHashmap
@@ -62,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
 
                 if (i!= null && memberList[i!!].password == password.text.toString()) {
                     toast("로그인 완료")
-                    val loginIntent = Intent(this, MemberActivity::class.java)
+                    val loginIntent = Intent(this, Splash2Activity::class.java)
                     loginIntent.putExtra("index", i)
                     startActivity(loginIntent)
 
