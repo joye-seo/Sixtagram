@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
 //                }
                 i = MemberHashmap.retrieveMemberByEmail(email.text.toString())
 
-                if (memberList[i!!].password == password.text.toString()) {
+                if (i!= null && memberList[i!!].password == password.text.toString()) {
                     toast("로그인 완료")
                     val loginIntent = Intent(this, MemberActivity::class.java)
                     loginIntent.putExtra("index", i)
