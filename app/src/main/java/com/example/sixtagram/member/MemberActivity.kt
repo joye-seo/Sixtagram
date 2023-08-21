@@ -25,6 +25,7 @@ class MemberActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_member)
+        val index = intent.getIntExtra("index", 0)
 
         val linearLayout4 = findViewById<LinearLayout>(R.id.linearLayout4)
         linearLayout4.setOnClickListener {
@@ -69,7 +70,6 @@ class MemberActivity : AppCompatActivity() {
         val game = GameStartActivity()
 
         setOnItemSelectedListener { item ->
-
             when (item.itemId) {
                 R.id.community -> mBinding(com)
                 R.id.calendar -> mBinding(calendar)
