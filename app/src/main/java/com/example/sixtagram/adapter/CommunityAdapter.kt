@@ -12,11 +12,13 @@ import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.sixtagram.R
+import com.example.sixtagram.data.Comment
+import com.example.sixtagram.data.Community
 import com.example.sixtagram.data.CommunityData
 
 class CommunityAdapter(
     val mContext: Context,
-    val mList: ArrayList<CommunityData>
+    var mList: ArrayList<CommunityData>
 ) : BaseAdapter() {
 
     // listview에 속한 item 전체 수
@@ -32,6 +34,10 @@ class CommunityAdapter(
     // 해당 위치에 대한 item id 값, 필요 없으면 0
     override fun getItemId(position: Int): Long {
         return 0
+    }
+    fun saveItem (){
+        mList = Community.communityArrayList
+       this.notifyDataSetChanged()
     }
 
 
