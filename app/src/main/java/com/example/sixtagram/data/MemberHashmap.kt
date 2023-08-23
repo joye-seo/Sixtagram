@@ -1,4 +1,4 @@
-package com.example.sixtagram.memberData
+package com.example.sixtagram.data
 
 object MemberHashmap {
     private val memberHashMap = HashMap<String, Int>()

@@ -3,7 +3,6 @@ package com.example.sixtagram.member
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.result.ActivityResultLauncher
@@ -13,8 +12,7 @@ import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.sixtagram.R
-import com.example.sixtagram.memberData.Member
-import com.example.sixtagram.memberData.MemberData
+import com.example.sixtagram.data.MemberData
 
 class MemberDetailActivity : AppCompatActivity(), MemDelDialogInterface {
     val TAG: String = "로그"

@@ -10,9 +10,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 import com.example.sixtagram.Splash2Activity
-import com.example.sixtagram.member.MemberActivity
-import com.example.sixtagram.memberData.Member
-import com.example.sixtagram.memberData.MemberHashmap
+import com.example.sixtagram.data.Member
+import com.example.sixtagram.data.MemberHashmap
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var activityResultLauncher: ActivityResultLauncher<Intent>

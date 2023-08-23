@@ -1,4 +1,4 @@
-package com.example.sixtagram.memberData
+package com.example.sixtagram.data
 
 object Member {
     internal var members = mutableListOf<MemberData>(

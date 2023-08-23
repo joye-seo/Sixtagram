@@ -1,4 +1,4 @@
-package com.example.sixtagram.member
+package com.example.sixtagram.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -12,8 +12,8 @@ import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.sixtagram.R
-import com.example.sixtagram.memberData.Member.members
-import com.example.sixtagram.memberData.MemberData
+import com.example.sixtagram.data.Member.members
+import com.example.sixtagram.data.MemberData
 
 class MemUserAdap(val context: Context, val UserList: MutableList<MemberData>) : BaseAdapter() {
 
