@@ -6,7 +6,7 @@
 //import android.view.ViewGroup
 //import android.widget.BaseAdapter
 //import com.example.sixtagram.R
-//import com.example.sixtagram.memberData.Member
+//import com.example.sixtagram.data.Member
 //
 //class MemDetailAdap(val context: Context, val UserList: MutableList<Member>) : BaseAdapter() {
 //

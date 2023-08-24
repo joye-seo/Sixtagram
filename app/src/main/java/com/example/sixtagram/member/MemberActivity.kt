@@ -7,11 +7,12 @@ import android.widget.LinearLayout
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
+import com.example.sixtagram.adapter.MemUserAdap
 import com.example.sixtagram.calendar.CalendarActivity
 import com.example.sixtagram.community.CommunityActivity
 import com.example.sixtagram.game.GameStartActivity
-import com.example.sixtagram.memberData.Member
-import com.example.sixtagram.memberData.MemberData
+import com.example.sixtagram.data.Member
+import com.example.sixtagram.data.MemberData
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MemberActivity : AppCompatActivity() {

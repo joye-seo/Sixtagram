@@ -8,8 +8,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.example.sixtagram.R
-import com.example.sixtagram.memberData.Member
-import com.example.sixtagram.memberData.MemberHashmap
+import com.example.sixtagram.data.Member
+import com.example.sixtagram.data.MemberHashmap
 
 class MemberFindActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

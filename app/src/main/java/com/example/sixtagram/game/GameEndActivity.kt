@@ -12,7 +12,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.example.sixtagram.R
-import com.example.sixtagram.memberData.Member
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.util.Calendar

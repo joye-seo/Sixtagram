@@ -5,14 +5,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sixtagram.R
 import com.example.sixtagram.calendar.CalendarActivity
 import com.example.sixtagram.community.CommunityActivity
 import com.example.sixtagram.member.MemberActivity
-import com.example.sixtagram.memberData.Member
-import com.example.sixtagram.memberData.MemberHashmap
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class GameStartActivity : AppCompatActivity() {
